@@ -1,3 +1,11 @@
-.jjj
-  ハロー
-  
+.wrapper
+.header
+  .header-top
+    %img{alt: "", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?582218381"}/
+    .header-top__search-bar
+      %form.header-form{action: "https://www.mercari.com/jp/search/"}
+        %input.header-form__search{name: "keyword", placeholder: "何をお探しですか？", type: "search", value: ""}/
+        %i.icon-search
+  .header-bottom
+    %a.header-bottom__header-login{href: "/"} ログイン
+    %a.header-bottom__header-signup{href: "/"} 新規会員
