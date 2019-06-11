@@ -69,7 +69,7 @@ header {
             font-size: 14px;
             font-weight: 600;
             
-            a {
+            .categories-btn {
               display: block;
               color: #333;
               text-decoration: none;
@@ -86,7 +86,7 @@ header {
             font-size: 14px;
             font-weight: 600;
             
-            a {
+            .brands-btn {
               display: block;
               color: #333;
               text-decoration: none;
@@ -105,7 +105,7 @@ header {
           float: left;
           margin: 0;
 
-          .signup-btn__text{
+          &__text{
             display: block;
             background: #ea352d;
             border: 1px solid #ea352d;
@@ -125,7 +125,7 @@ header {
           margin: 0 0 0 11px;
           border-radius: 4px;
           
-          .signin-btn__text{
+          &__text{
             display: block;
             border: 1px solid #0099e8;
             background: #fff;
