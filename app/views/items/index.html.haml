@@ -1,10 +1,2 @@
-.wrapper
-.header
-  .header-inner
-    .header-top
-      %h1
-        %a{href: "/"}
-          %img{alt: "", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?582218381"}/
-      %form.header-form{action: "https://www.mercari.com/jp/search/"}
-        %input.input-default{name: "keyword", placeholder: "何かお探しですか？", type: "search", value: ""}/
-          = fa_icon 'picture-o', class: 'icon'
+.default-container
+  = render 'header'
