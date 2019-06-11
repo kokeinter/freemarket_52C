@@ -10,6 +10,9 @@
   </head>
 
   <body>
+    <%= link_to "ログアウト",destroy_user_session_path, method: :delete %>
+    <%= link_to "ログイン",new_user_session_path,method: :get %>
+    <%= link_to "新規登録","/users/new" %>
     <%= yield %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
