@@ -1,11 +1,10 @@
 .wrapper
 .header
-  .header-top
-    %img{alt: "", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?582218381"}/
-    .header-top__search-bar
+  .header-inner
+    .header-top
+      %h1
+        %a{href: "/"}
+          %img{alt: "", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?582218381"}/
       %form.header-form{action: "https://www.mercari.com/jp/search/"}
-        %input.header-form__search{name: "keyword", placeholder: "何をお探しですか？", type: "search", value: ""}/
-        %i.icon-search
-  .header-bottom
-    %a.header-bottom__header-login{href: "/"} ログイン
-    %a.header-bottom__header-signup{href: "/"} 新規会員
+        %input.input-default{name: "keyword", placeholder: "何かお探しですか？", type: "search", value: ""}/
+          = fa_icon 'picture-o', class: 'icon'
