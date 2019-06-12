@@ -1,0 +1,20 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Freemarket52c
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all'
+    %link{href: "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css", rel: "stylesheet", type: "text/css"}/
+    = javascript_include_tag 'application'
+    %script{src: "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js", type: "text/javascript"}
+  %body
+    = link_to "ログアウト",destroy_user_session_path, method: :delete
+    = link_to "ログイン",new_user_session_path,method: :get
+    = link_to "新規登録","/users/new"
+    = link_to "出品する",new_item_path, method: :get
+    = link_to "購入確認","/buy"
+    = yield
+    %p.notice= notice
+    %p.alert= alert
