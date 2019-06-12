@@ -19,7 +19,20 @@
     
     .signin-and-signup
       %ul.account
-        %li.signup-btn
-          = link_to "新規会員登録",new_user_registration_path,method: :get, class: "signup-btn__text"
-        %li.signin-btn
-          = link_to "ログイン",new_user_session_path,method: :get, class: "signin-btn__text"
+        - if user_signed_in?
+          %li.kari__signout-btn
+            = link_to "ログアウト",destroy_user_session_path,method: :delete, class: "kari__signout-btn-text"
+          %li.news-btn
+            = link_to "/", class: "news-btn__text" do
+              お知らせ
+          %li.todo-list-btn
+            = link_to "/", class: "todo-list-btn__text" do
+              やることリスト
+          %li.mypage-btn
+            = link_to "/", class: "mypage-btn__text" do
+              マイページ
+        - else
+          %li.signup-btn
+            = link_to "新規会員登録",new_user_registration_path,method: :get, class: "signup-btn__text"
+          %li.signin-btn
+            = link_to "ログイン",new_user_session_path,method: :get, class: "signin-btn__text"

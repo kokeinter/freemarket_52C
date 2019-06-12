@@ -1,6 +1,8 @@
 @import "config/reset";
 @import "font-awesome";
 @import "config/color";
+@import "header.scss";
 @import "items/index.scss";
 @import "items/buy.scss";
-@import "header.scss"
+@import "slick-theme";
+@import "slick";
