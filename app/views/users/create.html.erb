@@ -1,0 +1,27 @@
+<h2>電話番号認証</h2>
+<%= form_for @user do |f| %>
+  <div class ="field">
+    <%= f.label :市町村 %><br />
+    <%= f.text_field :city %>
+  </div>
+
+  <div class ="field">
+    <%= f.label :番地 %><br />
+    <%= f.text_field :address %>
+  </div>
+
+  <div class ="field">
+    <%= f.label :建物名 %><br />
+    <%= f.text_field :building %>
+  </div>
+
+  <div class ="field">
+    <%= f.label :電話 %><br />
+    <%= f.text_field :tel %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "次へ進む" %>
+  </div>
+<% end %>
+
