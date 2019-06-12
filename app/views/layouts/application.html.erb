@@ -7,6 +7,8 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+
   </head>
 
   <body>
@@ -14,6 +16,7 @@
     <%= link_to "ログイン",new_user_session_path,method: :get %>
     <%= link_to "新規登録","/users/new" %>
     <%= link_to "出品する",new_item_path, method: :get %>
+    <%= link_to "購入確認","/buy"%>
     <%= yield %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
