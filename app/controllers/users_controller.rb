@@ -18,6 +18,8 @@ class UsersController < ApplicationController
 
   def complete
   end
+  def info
+  end
 
   
   

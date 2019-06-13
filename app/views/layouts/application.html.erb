@@ -11,12 +11,14 @@
 
   </head>
   <body>
+    <%= link_to "トップページ","/" %>
     <%= link_to "ログアウト",destroy_user_session_path, method: :delete %>
     <%= link_to "ログイン",new_user_session_path,method: :get %>
     <%= link_to "新規登録","/users/new" %>
     <%= link_to "出品する",new_item_path, method: :get %>
     <%= link_to "購入確認","/buy"%>
     <%= link_to "マイページ","/users/#{current_user.id}/mypage"%>
+    <%= link_to "本人情報","/users/#{current_user.id}/info"%>
     <%= yield %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
