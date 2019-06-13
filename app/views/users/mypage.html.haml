@@ -1,0 +1,97 @@
+.default-container
+  = render 'header'
+%main.l-container.clearfix
+  = render "sidebar"
+  .l-content
+    %section.mypage-user-icon
+      %a{:href => "https://www.mercari.com/jp/u/955789351/",class:"mypage_icon_link"}
+        %figure
+          %img{:alt => "", :src => "//static.mercdn.net/thumb/members/955789351.jpg?1539225260",class:"mypage_icon"}/
+        .mypage_name
+          %h2.bold 佐古田雄二郎
+        .mypage-number
+          %span.mypage-text
+            評価
+            %span.bold 1
+          %span.mypage-text
+            出品数
+            %span.bold 2
+    %section.mypage-tab-container-notification-todo
+      %ul.mypage-tabs-wrapper
+        %h3
+          %a.mypage-tabs.li_1{"data-toggle" => "tab", :href => "#mypage-tab-notification"}
+            %li.mypage-tabs_li
+              お知らせ
+          %a.mypage-tabs.li_2{"data-toggle" => "tab", :href => "#mypage-tab-todo"}
+            %li.mypage-tabs_li
+              やることリスト
+      .tab-content
+        %ul#mypage-tab-notification.mypage-item-list.tab-pane.active
+          %li
+            %a.mypage-item-link{:href => "https://www.mercari.com/jp/mypage/news/"}
+              %img.lazyloaded-icon{:alt => "", "data-src" => "//static.mercdn.net/images/mercari_profile.png", :src => "//static.mercdn.net/images/mercari_profile.png"}/
+              .mypage-item-body
+                .mypage-item-text 事務局から個別メッセージ「Googleログイン通知」
+                %time
+                  %i.far.fa-clock
+                  %span 5 分前
+              %i.fas.fa-chevron-right.mypage-li-fa
+          %li
+            %a.mypage-item-link{:href => "https://www.mercari.com/jp/mypage/news/"}
+              %img.lazyloaded-icon{:alt => "", "data-src" => "//static.mercdn.net/images/mercari_profile.png", :src => "//static.mercdn.net/images/mercari_profile.png"}/
+              .mypage-item-body
+                .mypage-item-text 事務局から個別メッセージ「Googleログイン通知」
+                %time
+                  %i.far.fa-clock
+                  %span 1 時間前
+              %i.fas.fa-chevron-right.mypage-li-fa
+          %li
+            %a.mypage-item-link{"data-modal" => "banner", "data-open" => "modal", :href => ""}
+              %img.lazyloaded-icon{:alt => "", "data-src" => "//static.mercdn.net/images/mercari_profile.png", :src => "//static.mercdn.net/images/mercari_profile.png"}/
+              .mypage-item-body
+                .mypage-item-text 《今だけ！》ローソンのからあげクンが"¥16"、アイスダブルエスプレッソラテが"¥100"で買えるクーポン配信中！
+                %time
+                  %i.far.fa-clock
+                  %span 2 時間前
+              %i.fas.fa-chevron-right.mypage-li-fa
+          %li
+            %a.mypage-item-link{"data-modal" => "banner", "data-open" => "modal", :href => ""}
+              %img.lazyloaded-icon{:alt => "", "data-src" => "//static.mercdn.net/images/mercari_profile.png", :src => "//static.mercdn.net/images/mercari_profile.png"}/
+              .mypage-item-body
+                .mypage-item-text 3日後、P999還元お得チケットの有効期限が切れます！タップして詳細を確認しましょう。
+                %time
+                  %i.far.fa-clock
+                  %span 3 時間前
+              %i.fas.fa-chevron-right.mypage-li-fa
+          %li
+            %a.mypage-item-link{:href => "https://www.mercari.com/jp/mypage/news/"}
+              %img.lazyloaded-icon{:alt => "", "data-src" => "//static.mercdn.net/images/mercari_profile.png", :src => "//static.mercdn.net/images/mercari_profile.png"}/
+              .mypage-item-body
+                .mypage-item-text 事務局から個別メッセージ「売上金の残高があります」
+                %time
+                  %i.far.fa-clock
+                  %span 1 日前
+              %i.fas.fa-chevron-right.mypage-li-fa
+          %li.mypage-go-list
+            .mypage-list-link
+              %a.text-decoration{:href => "/jp/mypage/notification/"} 
+                .mypage-item-link-bottun 一覧を見る
+        -# %ul#mypage-tab-todo.mypage-item-list.tab-pane
+        -#   %li.mypage-item-not-found.bold 現在、やることリストはありません
+      %section.mypage-tab-container
+        %h2.mypage-tab-head 購入した商品
+        %ul.mypage-tabs-wrapper
+          %h3
+            %a.mypage-tabs.li_3{"data-toggle" => "tab", :href => "#mypage-tab-transaction-old"}
+              %li
+                取引中
+            %a.mypage-tabs.li_4{"data-toggle" => "tab", :href => "#mypage-tab-transaction-old"}
+              %li
+                過去の取引
+        .tab-content-bottom
+          %ul#mypage-tab-transaction-now.mypage-item-list-bottom.tab-pane.active
+            %li.mypage-item-not-found.bold 取引中の商品がありません
+          -# %ul#mypage-tab-transaction-old.mypage-item-list.tab-pane
+          -#   %li.mypage-item-not-found.bold 過去に取引した商品がありません
+
+          
