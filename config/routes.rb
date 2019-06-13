@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   resources :users
   resources :items
+  get "buy" => "items#buy"
+  get "users/:id/mypage" => "users#mypage"
   resources :addresses ,only:[:new,:create]
   resources :creditcards ,only:[:new,:create]
   get 'complete'   =>    'users#complete'
