@@ -9,9 +9,14 @@ class UsersController < ApplicationController
   end
 
   def update
-    user = User.find(current_user.id)
-    user.update(user_params) 
-    redirect_to new_address_path
+    @tel = Tel.new(tel:user_params[:tel],user_id:current_user.id)
+   
+      if @tel.save
+        redirect_to new_address_path
+      else
+        redirect_to user_path(current_user.id)
+      end
+    
   end
 
   def complete

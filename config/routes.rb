@@ -5,10 +5,10 @@ Rails.application.routes.draw do
     :passwords => 'users/passwords'
    }
    
+  root "items#index"
    devise_scope :user do
     get 'new'   =>    'users/registrations#new'
   end
-  root "items#index"
 
   resources :users
   resources :items
