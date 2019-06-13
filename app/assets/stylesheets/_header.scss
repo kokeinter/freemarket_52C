@@ -60,6 +60,7 @@ header {
       float: left;
       
       ul {
+        padding-top: 5px;
         
         .categories {
           position: relative;
@@ -100,7 +101,78 @@ header {
       ul {
         position: relative;
         float: right;
-        
+        padding: 0 0 10px 0;
+
+        .news-btn {
+          float: left;
+          margin: 0;
+
+          &__text {
+            display: block;
+            font-size: 14px;
+            text-decoration: none;
+            padding: 0 16px;
+            text-align: center;
+            line-height: 30px;
+            color: #333;
+          }
+        }
+
+        .todo-list-btn {
+          margin: 0 0 0 11px;
+          display: inline-block;
+
+          &__text {
+            display: block;
+            font-size: 14px;
+            text-decoration: none;
+            padding: 0 16px;
+            text-align: center;
+            line-height: 30px;
+            color: #333;
+          }
+        }
+
+        .mypage-btn {
+          float: right;
+          margin: 0 0 0 11px;
+          display: inline-block;
+
+          &__text {
+            display: block;
+            font-size: 14px;
+            text-decoration: none;
+            padding: 0 16px;
+            text-align: center;
+            line-height: 30px;
+            color: #333;
+          }
+        }
+
+        .kari__signout-btn {
+          float: right;
+          display: inline-block;
+          margin: 0 0 0 11px;
+          border-radius: 4px;
+          
+          &-text{
+            display: block;
+            color: #333;
+            font-size: 14px;
+            text-decoration: none;
+            padding: 0 0 0 16px;
+            border-radius: 4px;
+            text-align: center;
+            line-height: 30px;
+          }
+        }
+      }
+    }
+    
+    .signin-and-signup {
+      ul {
+        position: relative;
+        float: right;    
         .signup-btn {
           float: left;
           margin: 0;
