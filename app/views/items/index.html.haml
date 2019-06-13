@@ -4,3 +4,492 @@
     .banner-image
       = image_tag "banner-camp.jpg"
       = image_tag "banner-natsukashi.jpg"
+  .pickup-contents
+    %h2.pickup-contents__title
+      ピックアップカテゴリー
+    %section.items-contents.clearfix
+      %h3.items-contents__title
+        = link_to "レディース新着アイテム", "/", class: "items-contents__title-btn"
+      .items-box-content.clearfix
+        - @items.each do |item|
+          .items-box
+            .detail-page
+              = image_tag item.image.url, class: "detail-page__img"
+              .detail-page__body
+                %h3.item-name
+                  = item.name
+                .item-price.clearfix
+                  = item.price
+                %span.like-count
+                  1
+                %i.fa.fa-heart-o
+                .item-tax
+                  (税込)
+        -# .items-box.two
+        -#   %a.detail-page
+        -#     = image_tag("https://static.mercdn.net/item/detail/orig/photos/m55022741185_1.jpg?1560257297", class: "detail-page__img")
+        -#     .detail-page__body
+        -#       %h3.item-name
+        -#         24.0㎝ フィアオブゴッド × ナイキ fear of god × Nike
+        -#       .item-price
+        -#         ¥ 15,400
+        -#       %span.like-count
+        -#         1
+        -#       %i.fa.fa-heart-o
+        -#       .item-tax
+        -#         (税込)
+        -# .items-box.three
+        -#   %a.detail-page
+        -#     = image_tag("https://static.mercdn.net/item/detail/orig/photos/m89007746071_1.jpg?1557200370", class: "detail-page__img")
+        -#     .detail-page__body
+        -#       %h3.item-name
+        -#         24.0㎝ フィアオブゴッド × ナイキ fear of god × Nike
+        -#       .item-price
+        -#         ¥ 15,400
+        -#       %span.like-count
+        -#         1
+        -#       %i.fa.fa-heart-o
+        -#       .item-tax
+        -#         (税込)
+        -# .items-box.four
+        -#   %a.detail-page
+        -#     = image_tag("https://static.mercdn.net/item/detail/orig/photos/m73098265717_1.jpg?1558878508", class: "detail-page__img")
+        -#     .detail-page__body
+        -#       %h3.item-name
+        -#         チャーチ church's ローファー SALLY 36
+              -# .item-price
+              -#   ¥ 18,500
+              -# %span.like-count
+              -#   1
+              -# %i.fa.fa-heart-o
+              -# .item-tax
+              -#   (税込)
+      .pickup-content__all
+        = link_to "すべての商品を見る", "/", class: "pickup-content__all-btn"
+  
+  .pickup-contents
+    %section.items-contents.clearfix
+      %h3.items-contents__title
+        = link_to "メンズ新着アイテム", "/", class: "items-contents__title-btn"
+      .items-box-content.clearfix
+        .items-box.one
+          %a.detail-page
+            = image_tag("https://static.mercdn.net/item/detail/orig/photos/m74553068599_1.jpg?1554345176", class: "detail-page__img")
+            .detail-page__body
+              %h3.item-name
+                アガット ピアス
+              .item-price.clearfix
+                ¥ 9,300
+              %span.like-count
+                1
+              %i.fa.fa-heart-o
+              .item-tax
+                (税込)
+        .items-box.two
+          %a.detail-page
+            = image_tag("https://static.mercdn.net/item/detail/orig/photos/m55022741185_1.jpg?1560257297", class: "detail-page__img")
+            .detail-page__body
+              %h3.item-name
+                バーバリーブルーレーベルサイズ38
+              .item-price
+                ¥ 1,500
+              %span.like-count
+                1
+              %i.fa.fa-heart-o
+              .item-tax
+                (税込)
+        .items-box.three
+          %a.detail-page
+            = image_tag("https://static.mercdn.net/item/detail/orig/photos/m89007746071_1.jpg?1557200370", class: "detail-page__img")
+            .detail-page__body
+              %h3.item-name
+                24.0㎝ フィアオブゴッド × ナイキ fear of god × Nike
+              .item-price
+                ¥ 15,400
+              %span.like-count
+                1
+              %i.fa.fa-heart-o
+              .item-tax
+                (税込)
+        .items-box.four
+          %a.detail-page
+            = image_tag("https://static.mercdn.net/item/detail/orig/photos/m73098265717_1.jpg?1558878508", class: "detail-page__img")
+            .detail-page__body
+              %h3.item-name
+                チャーチ church's ローファー SALLY 36
+              .item-price
+                ¥ 18,500
+              %span.like-count
+                1
+              %i.fa.fa-heart-o
+              .item-tax
+                (税込)
+      .pickup-content__all
+        = link_to "すべての商品を見る", "/", class: "pickup-content__all-btn"
+  
+  .pickup-contents
+    %section.items-contents.clearfix
+      %h3.items-contents__title
+        = link_to "ベビー・キッズ 新着アイテム", "/", class: "items-contents__title-btn"
+      .items-box-content.clearfix
+        .items-box.one
+          %a.detail-page
+            = image_tag("https://static.mercdn.net/item/detail/orig/photos/m74553068599_1.jpg?1554345176", class: "detail-page__img")
+            .detail-page__body
+              %h3.item-name
+                アガット ピアス
+              .item-price.clearfix
+                ¥ 9,300
+              %span.like-count
+                1
+              %i.fa.fa-heart-o
+              .item-tax
+                (税込)
+        .items-box.two
+          %a.detail-page
+            = image_tag("https://static.mercdn.net/item/detail/orig/photos/m55022741185_1.jpg?1560257297", class: "detail-page__img")
+            .detail-page__body
+              %h3.item-name
+                バーバリーブルーレーベルサイズ38
+              .item-price
+                ¥ 1,500
+              %span.like-count
+                1
+              %i.fa.fa-heart-o
+              .item-tax
+                (税込)
+        .items-box.three
+          %a.detail-page
+            = image_tag("https://static.mercdn.net/item/detail/orig/photos/m89007746071_1.jpg?1557200370", class: "detail-page__img")
+            .detail-page__body
+              %h3.item-name
+                24.0㎝ フィアオブゴッド × ナイキ fear of god × Nike
+              .item-price
+                ¥ 15,400
+              %span.like-count
+                1
+              %i.fa.fa-heart-o
+              .item-tax
+                (税込)
+        .items-box.four
+          %a.detail-page
+            = image_tag("https://static.mercdn.net/item/detail/orig/photos/m73098265717_1.jpg?1558878508", class: "detail-page__img")
+            .detail-page__body
+              %h3.item-name
+                チャーチ church's ローファー SALLY 36
+              .item-price
+                ¥ 18,500
+              %span.like-count
+                1
+              %i.fa.fa-heart-o
+              .item-tax
+                (税込)
+      .pickup-content__all
+        = link_to "すべての商品を見る", "/", class: "pickup-content__all-btn"
+
+  .pickup-contents
+    %section.items-contents.clearfix
+      %h3.items-contents__title
+        = link_to "コスメ・香水・美容 新着アイテム", "/", class: "items-contents__title-btn"
+      .items-box-content.clearfix
+        .items-box.one
+          %a.detail-page
+            = image_tag("https://static.mercdn.net/item/detail/orig/photos/m74553068599_1.jpg?1554345176", class: "detail-page__img")
+            .detail-page__body
+              %h3.item-name
+                アガット ピアス
+              .item-price.clearfix
+                ¥ 9,300
+              %span.like-count
+                1
+              %i.fa.fa-heart-o
+              .item-tax
+                (税込)
+        .items-box.two
+          %a.detail-page
+            = image_tag("https://static.mercdn.net/item/detail/orig/photos/m55022741185_1.jpg?1560257297", class: "detail-page__img")
+            .detail-page__body
+              %h3.item-name
+                バーバリーブルーレーベルサイズ38
+              .item-price
+                ¥ 1,500
+              %span.like-count
+                1
+              %i.fa.fa-heart-o
+              .item-tax
+                (税込)
+        .items-box.three
+          %a.detail-page
+            = image_tag("https://static.mercdn.net/item/detail/orig/photos/m89007746071_1.jpg?1557200370", class: "detail-page__img")
+            .detail-page__body
+              %h3.item-name
+                24.0㎝ フィアオブゴッド × ナイキ fear of god × Nike
+              .item-price
+                ¥ 15,400
+              %span.like-count
+                1
+              %i.fa.fa-heart-o
+              .item-tax
+                (税込)
+        .items-box.four
+          %a.detail-page
+            = image_tag("https://static.mercdn.net/item/detail/orig/photos/m73098265717_1.jpg?1558878508", class: "detail-page__img")
+            .detail-page__body
+              %h3.item-name
+                チャーチ church's ローファー SALLY 36
+              .item-price
+                ¥ 18,500
+              %span.like-count
+                1
+              %i.fa.fa-heart-o
+              .item-tax
+                (税込)
+      .pickup-content__all
+        = link_to "すべての商品を見る", "/", class: "pickup-content__all-btn"
+  
+  .pickup-contents
+    %h2.pickup-contents__title
+      ピックアップブランド
+    %section.items-contents.clearfix
+      %h3.items-contents__title
+        = link_to "シャネル 新着アイテム", "/", class: "items-contents__title-btn"
+      .items-box-content.clearfix
+        .items-box.one
+          %a.detail-page
+            = image_tag("https://static.mercdn.net/item/detail/orig/photos/m25295597386_1.jpg?1560305371", class: "detail-page__img")
+            .detail-page__body
+              %h3.item-name
+                レア！新品未使用 香水 アンフルールドゥ シャネル
+              .item-price.clearfix
+                ¥ 7,200
+              %span.like-count
+                1
+              %i.fa.fa-heart-o
+              .item-tax
+                (税込)
+        .items-box.two
+          %a.detail-page
+            = image_tag("https://static.mercdn.net/item/detail/orig/photos/m25268548304_1.jpg?1560354326", class: "detail-page__img")
+            .detail-page__body
+              %h3.item-name
+                シャネル プードゥル ユニヴェルセル リーブル #20 クレール
+              .item-price
+                ¥ 5,900
+              %span.like-count
+                1
+              %i.fa.fa-heart-o
+              .item-tax
+                (税込)
+        .items-box.three
+          %a.detail-page
+            = image_tag("https://static.mercdn.net/item/detail/orig/photos/m25268548304_1.jpg?1560354326", class: "detail-page__img")
+            .detail-page__body
+              %h3.item-name
+                シャネル ニュートラベルライン ショルダーバッグ グレー
+              .item-price
+                ¥ 16,000
+              %span.like-count
+                1
+              %i.fa.fa-heart-o
+              .item-tax
+                (税込)
+        .items-box.four
+          %a.detail-page
+            = image_tag("https://static.mercdn.net/item/detail/orig/photos/m46777387339_1.jpg?1557148613", class: "detail-page__img")
+            .detail-page__body
+              %h3.item-name
+                シャネル★ガ－デニア オ－ドパルファム 75ml
+              .item-price
+                ¥ 13,500
+              %span.like-count
+                1
+              %i.fa.fa-heart-o
+              .item-tax
+                (税込)
+      .pickup-content__all
+        = link_to "すべての商品を見る", "/", class: "pickup-content__all-btn"
+
+  .pickup-contents
+    %section.items-contents.clearfix
+      %h3.items-contents__title
+        = link_to "ルイ ヴィトン 新着アイテム", "/", class: "items-contents__title-btn"
+      .items-box-content.clearfix
+        .items-box.one
+          %a.detail-page
+            = image_tag("https://static.mercdn.net/item/detail/orig/photos/m25295597386_1.jpg?1560305371", class: "detail-page__img")
+            .detail-page__body
+              %h3.item-name
+                レア！新品未使用 香水 アンフルールドゥ シャネル
+              .item-price.clearfix
+                ¥ 7,200
+              %span.like-count
+                1
+              %i.fa.fa-heart-o
+              .item-tax
+                (税込)
+        .items-box.two
+          %a.detail-page
+            = image_tag("https://static.mercdn.net/item/detail/orig/photos/m25268548304_1.jpg?1560354326", class: "detail-page__img")
+            .detail-page__body
+              %h3.item-name
+                シャネル プードゥル ユニヴェルセル リーブル #20 クレール
+              .item-price
+                ¥ 5,900
+              %span.like-count
+                1
+              %i.fa.fa-heart-o
+              .item-tax
+                (税込)
+        .items-box.three
+          %a.detail-page
+            = image_tag("https://static.mercdn.net/item/detail/orig/photos/m25268548304_1.jpg?1560354326", class: "detail-page__img")
+            .detail-page__body
+              %h3.item-name
+                シャネル ニュートラベルライン ショルダーバッグ グレー
+              .item-price
+                ¥ 16,000
+              %span.like-count
+                1
+              %i.fa.fa-heart-o
+              .item-tax
+                (税込)
+        .items-box.four
+          %a.detail-page
+            = image_tag("https://static.mercdn.net/item/detail/orig/photos/m46777387339_1.jpg?1557148613", class: "detail-page__img")
+            .detail-page__body
+              %h3.item-name
+                シャネル★ガ－デニア オ－ドパルファム 75ml
+              .item-price
+                ¥ 13,500
+              %span.like-count
+                1
+              %i.fa.fa-heart-o
+              .item-tax
+                (税込)
+      .pickup-content__all
+        = link_to "すべての商品を見る", "/", class: "pickup-content__all-btn"
+  
+  .pickup-contents
+    %section.items-contents.clearfix
+      %h3.items-contents__title
+        = link_to "シュプリーム 新着アイテム", "/", class: "items-contents__title-btn"
+      .items-box-content.clearfix
+        .items-box.one
+          %a.detail-page
+            = image_tag("https://static.mercdn.net/item/detail/orig/photos/m25295597386_1.jpg?1560305371", class: "detail-page__img")
+            .detail-page__body
+              %h3.item-name
+                レア！新品未使用 香水 アンフルールドゥ シャネル
+              .item-price.clearfix
+                ¥ 7,200
+              %span.like-count
+                1
+              %i.fa.fa-heart-o
+              .item-tax
+                (税込)
+        .items-box.two
+          %a.detail-page
+            = image_tag("https://static.mercdn.net/item/detail/orig/photos/m25268548304_1.jpg?1560354326", class: "detail-page__img")
+            .detail-page__body
+              %h3.item-name
+                シャネル プードゥル ユニヴェルセル リーブル #20 クレール
+              .item-price
+                ¥ 5,900
+              %span.like-count
+                1
+              %i.fa.fa-heart-o
+              .item-tax
+                (税込)
+        .items-box.three
+          %a.detail-page
+            = image_tag("https://static.mercdn.net/item/detail/orig/photos/m25268548304_1.jpg?1560354326", class: "detail-page__img")
+            .detail-page__body
+              %h3.item-name
+                シャネル ニュートラベルライン ショルダーバッグ グレー
+              .item-price
+                ¥ 16,000
+              %span.like-count
+                1
+              %i.fa.fa-heart-o
+              .item-tax
+                (税込)
+        .items-box.four
+          %a.detail-page
+            = image_tag("https://static.mercdn.net/item/detail/orig/photos/m46777387339_1.jpg?1557148613", class: "detail-page__img")
+            .detail-page__body
+              %h3.item-name
+                シャネル★ガ－デニア オ－ドパルファム 75ml
+              .item-price
+                ¥ 13,500
+              %span.like-count
+                1
+              %i.fa.fa-heart-o
+              .item-tax
+                (税込)  
+      .pickup-content__all
+        = link_to "すべての商品を見る", "/", class: "pickup-content__all-btn"
+
+  .pickup-contents
+    %section.items-contents.clearfix
+      %h3.items-contents__title
+        = link_to "ナイキ 新着アイテム", "/", class: "items-contents__title-btn"
+      .items-box-content.clearfix
+        .items-box.one
+          %a.detail-page
+            = image_tag("https://static.mercdn.net/item/detail/orig/photos/m25295597386_1.jpg?1560305371", class: "detail-page__img")
+            .detail-page__body
+              %h3.item-name
+                レア！新品未使用 香水 アンフルールドゥ シャネル
+              .item-price.clearfix
+                ¥ 7,200
+              %span.like-count
+                1
+              %i.fa.fa-heart-o
+              .item-tax
+                (税込)
+        .items-box.two
+          %a.detail-page
+            = image_tag("https://static.mercdn.net/item/detail/orig/photos/m25268548304_1.jpg?1560354326", class: "detail-page__img")
+            .detail-page__body
+              %h3.item-name
+                シャネル プードゥル ユニヴェルセル リーブル #20 クレール
+              .item-price
+                ¥ 5,900
+              %span.like-count
+                1
+              %i.fa.fa-heart-o
+              .item-tax
+                (税込)
+        .items-box.three
+          %a.detail-page
+            = image_tag("https://static.mercdn.net/item/detail/orig/photos/m25268548304_1.jpg?1560354326", class: "detail-page__img")
+            .detail-page__body
+              %h3.item-name
+                シャネル ニュートラベルライン ショルダーバッグ グレー
+              .item-price
+                ¥ 16,000
+              %span.like-count
+                1
+              %i.fa.fa-heart-o
+              .item-tax
+                (税込)
+        .items-box.four
+          %a.detail-page
+            = image_tag("https://static.mercdn.net/item/detail/orig/photos/m46777387339_1.jpg?1557148613", class: "detail-page__img")
+            .detail-page__body
+              %h3.item-name
+                シャネル★ガ－デニア オ－ドパルファム 75ml
+              .item-price
+                ¥ 13,500
+              %span.like-count
+                1
+              %i.fa.fa-heart-o
+              .item-tax
+                (税込)
+      .pickup-content__all
+        = link_to "すべての商品を見る", "/", class: "pickup-content__all-btn"
+
+  .app-banner
+    .app-banner__dl-btn
+      = link_to "", "https://apps.apple.com/jp/app/id667861049?l=ja", class: "app-banner__dl-btn-ios"
+      = link_to "", "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja" , class: "app-banner__dl-btn-google"
