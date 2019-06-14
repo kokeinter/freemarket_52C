@@ -44,3 +44,19 @@ $(document).ready(function(){
   centerPadding: 0
   });
 });
+
+$(function() {
+  $('.app-banner__dl-btn-ios').hover(function() {
+    $(this).css('background', '#FFFFFF').css('opacity', '0.2');
+  }, function() {
+    $(this).css('background', '').css('opacity', '0');
+  });
+});
+
+$(function() {
+  $('.app-banner__dl-btn-google').hover(function() {
+    $(this).css('background', '#FFFFFF').css('opacity', '0.2');
+  }, function() {
+    $(this).css('background', '').css('opacity', '0');
+  });
+});
