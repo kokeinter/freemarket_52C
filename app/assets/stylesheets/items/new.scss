@@ -209,11 +209,13 @@
 // 販売価格
 .container__contents__value{
   display: flex;
+  justify-content: space-between;
   border-bottom: solid 1px rgb(238, 238, 238);
   padding: 40px;
+  margin-right: 10px;
   &__left{
     color: #888;
-    font-size: 14px;
+    font-size: 10px;
     i{
       color: #0099e8;
     }
