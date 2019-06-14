@@ -17,3 +17,13 @@ module Freemarket52c
     # the framework and any gems in your application.
   end
 end
+private
+def after_sign_out_path_for(resource_or_scope)
+  if resource_or_scope == :admin_admin_user
+    root_path
+  else
+    root_path
+  end
+end
+end
+

@@ -13,19 +13,20 @@
         = link_to "レディース新着アイテム", "/", class: "items-contents__title-btn"
       .items-box-content.clearfix
         - @items.each do |item|
-          .items-box
-            .detail-page
-              = image_tag item.image.url, class: "detail-page__img"
-              .detail-page__body
-                %h3.item-name
-                  = item.name
-                .item-price.clearfix
-                  = item.price
-                %span.like-count
-                  1
-                %i.fa.fa-heart-o
-                .item-tax
-                  (税込)
+          %a{href:"items/#{item.id}",class:"item-show-link"}
+            .items-box
+              .detail-page
+                = image_tag item.image.url, class: "detail-page__img"
+                .detail-page__body
+                  %h3.item-name
+                    = item.name
+                  .item-price.clearfix
+                    = item.price
+                  %span.like-count
+                    1
+                  %i.fa.fa-heart-o
+                  .item-tax
+                    (税込)
         
         -# 最新の出品商品を4つ表示させている為、仮置きのビューをコメントアウト
         -# .items-box.two

@@ -15,6 +15,15 @@ class ItemsController < ApplicationController
   end
   def buy
   end
+  def show
+    @item=Item.find(params[:id])
+    @user=User.find(@item.saler_id)
+    @first=FirstGenre.find(@item.first_genre_id)
+    @second=SecondGenre.find(@item.second_genre_id)
+    @third=ThirdGenre.find(@item.third_genre_id)
+    @comment=Comment.new
+    @comments=@item.comments
+  end
 
 private
 
