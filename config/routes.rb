@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   root "items#index"
 
   resources :users
-  resources :items
+  resources :items do
+    resources :comments, only: [:create]
+  end
   get "buy" => "items#buy"
   get "users/:id/mypage" => "users#mypage"
   get "users/:id/info" => "users#info"
@@ -20,6 +22,7 @@ Rails.application.routes.draw do
   get 'complete'   =>    'users#complete'
   
   get '/buy' => 'items#buy'
+  get "/logout" => "users#logout"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
