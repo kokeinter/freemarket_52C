@@ -1,0 +1,20 @@
+%h2 電話番号認証
+= form_for @user do |f|
+  .field
+    = f.label :市町村
+    %br/
+    = f.text_field :city
+  .field
+    = f.label :番地
+    %br/
+    = f.text_field :address
+  .field
+    = f.label :建物名
+    %br/
+    = f.text_field :building
+  .field
+    = f.label :電話
+    %br/
+    = f.text_field :tel
+  .actions
+    = f.submit "次へ進む"

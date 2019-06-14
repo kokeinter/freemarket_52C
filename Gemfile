@@ -75,7 +75,8 @@ gem 'carrierwave'
 gem 'kaminari'
 gem 'font-awesome-rails'
 gem 'ancestry'
-gem "omniauth-rails_csrf_protection"
+# gem "omniauth-rails_csrf_protection"
+
 
 group :production do
   gem 'unicorn', '5.4.1'
