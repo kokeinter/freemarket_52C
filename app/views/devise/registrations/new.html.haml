@@ -2,46 +2,44 @@
 = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   = render "devise/shared/error_messages", resource: resource
   .field
-    = f.label :ニックネーム
+    = f.label :ニックネーム　必須 
     %br/
-    = f.text_field :nickname
+    = f.text_field :nickname, placeholder: '例）メルカリ太郎'
   .field
-    = f.label :メールアドレス
+    = f.label :メールアドレス　必須 
     %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
+    = f.email_field :email, autofocus: true, autocomplete: "email",placeholder: 'PC・携帯どちらでも可'
   .field
-    = f.label :パスワード
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
+    = f.label :パスワード　必須  
+    
     %br/
-    = f.password_field :password, autocomplete: "new-password"
+    = f.password_field :password, autocomplete: "new-password",placeholder: '６文字以上'
   .field
-    = f.label :パスワード（確認）
+    = f.label :パスワード（確認）必須   
     %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
+    = f.password_field :password_confirmation, autocomplete: "new-password",placeholder: '６文字以上'
   .field
-    = f.label :姓（全角）
+    = f.label :姓（全角）必須   
     %br/
-    = f.text_field :first_name
+    = f.text_field :first_name,placeholder: '例）山田'
   .field
-    = f.label :名（全角）
+    = f.label :名（全角）必須   
     %br/
-    = f.text_field :last_name
+    = f.text_field :last_name,placeholder: '例）彩'
   .field
-    = f.label :姓（カナ）
+    = f.label :姓（カナ）必須 
     %br/
-    = f.text_field :kana_first_name
+    = f.text_field :kana_first_name,placeholder: '例）ヤマダ'
   .field
-    = f.label :名（カナ）
+    = f.label :名（カナ）必須  
     %br/
-    = f.text_field :kana_last_name
+    = f.text_field :kana_last_name,placeholder: '例）アヤ'
   .field
-    = f.label :生年月日
+    = f.label :生年月日　必須  
     %br/
-    = f.text_field :birthday_year
-    = f.text_field :birthday_month
-    = f.text_field :birthday_day
+    = f.text_field :birthday_year,placeholder: '年'
+    = f.text_field :birthday_month,placeholder:'月'
+    = f.text_field :birthday_day,placeholder:'日'
   .actions
-    = f.submit "Sign up"
+    = f.submit "次へ進む"
 = render "devise/shared/links"

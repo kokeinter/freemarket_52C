@@ -1,0 +1,17 @@
+%h2 支払い方法
+= form_for @creditcard do |f|
+  .field
+    = f.label :カード番号　必須
+    %br/
+    = f.text_field :card_number,placeholder:'半角数字のみ'
+  .field
+    = f.label :有効期限　必須
+    %br/
+    = f.text_field :limit_month,placeholder:'月'
+    = f.text_field :limit_year,placeholder:'年'
+  .field
+    = f.label :セキュリティコード　必須
+    %br/
+    = f.text_field :security_code,placeholder:'カード背面4桁もしくは3桁の番号'
+  .actions
+    = f.submit "次へ進む"

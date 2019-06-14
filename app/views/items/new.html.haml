@@ -58,11 +58,11 @@
               = "カテゴリー"
               %span.note 必須
               .container__contents__details__right__form__firstgenre
-                = f.select :first_genre_id,[["レディース","1"],["メンズ","2"]],prompt: "---"
+                = f.select :first_genre_id,[["レディース","1"],["メンズ","2"],["ベビー・キッズ","3"],["インテリア・住まい・小物","4"],["本・音楽・小物","5"],["おもちゃ・ホビー・グッズ","6"],["コスメ・香水・美容","7"],["家電・スマホ・カメラ","8"],["スポーツ・レジャー","9"],["ハンドメイド","10"],["チケット","11"],["自転車・オートバイ","12"],["その他","13"]],prompt: "---",class:"item_first_genre_id"
               .container__contents__details__right__form__secondgenre
-                = f.select :second_genre_id,[["トップス","1"],["靴","2"]],prompt: "---"
+                -# = f.select :second_genre_id,[["トップス","1"],["靴","2"]],prompt: "---"
               .container__contents__details__right__form__thirdgenre
-                = f.select :third_genre_id,[["ブーツ","1"],["サンダル","2"]],prompt: "---"
+                -# = f.select :third_genre_id,[["ブーツ","1"],["サンダル","2"]],prompt: "---"
 
               = "サイズ"
               %span.note 必須
@@ -122,7 +122,7 @@
             .container__contents__value__right__price.text
               = "価格"
               %span.note.pricenote 必須
-              %span.yen　　　　　　　¥
+              %span.yen　　　　　　　　¥
               = f.text_field :price,placeholder:"                     例）300"
 
             .container__contents__value__right__fee
