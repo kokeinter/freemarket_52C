@@ -1,8 +1,11 @@
+@import "dropzone/basic";
+@import "dropzone/dropzone";
 @import "config/reset";
 @import "font-awesome";
 @import "config/color";
 @import "header.scss";
 @import "items/index.scss";
+@import "items/show.scss";
 @import "items/buy.scss";
 @import "users/mypage.scss";
 @import "users/info.scss";

@@ -1,0 +1,7 @@
+.default-container
+  = render 'header'
+  = render "sidebar"
+  .l-container
+    .logout_wrapper
+      =link_to "ログアウト",destroy_user_session_path,method: :delete,class:"logout_link"
+      

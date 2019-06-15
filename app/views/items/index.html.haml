@@ -12,19 +12,21 @@
       %h3.items-contents__title
         = link_to "レディース新着アイテム", "/", class: "items-contents__title-btn"
       .items-box-content.clearfix
-        .items-box
-          %a.detail-page
-            = image_tag("https://static.mercdn.net/item/detail/orig/photos/m55022741185_1.jpg?1560257297", class: "detail-page__img")              
-            .detail-page__body
-              %h3.item-name
-                24.0㎝ フィアオブゴッド × ナイキ fear of god × Nike          
-              .item-price
-                ¥ 15,400  
-              %span.like-count
-                1
-              %i.far.fa-heart
-              .item-tax
-                (税込)
+        - @items.each do |item|
+          %a{href:"items/#{item.id}",class:"item-show-link"}
+            .items-box
+              .detail-page
+                = image_tag item.image.url, class: "detail-page__img"
+                .detail-page__body
+                  %h3.item-name
+                    = item.name
+                  .item-price.clearfix
+                    = item.price
+                  %span.like-count
+                    1
+                  %i.fa.fa-heart-o
+                  .item-tax
+                    (税込)
         
         .items-box.two
           %a.detail-page

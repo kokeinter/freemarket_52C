@@ -1,0 +1,340 @@
+= render 'header'
+.item-show-wrapper
+  =@item.name
+  =@user.nickname
+  %section.item-box-container
+    %h1.item-name-show 
+      =@item.name
+    .item-main-content-show
+      .item-photo-wrapper
+        .item-photo_scroll
+          .item-photo
+            =image_tag @item.image.url,class: "owl-lazy",id:"7" 
+            %img{:src => "https://static.mercdn.net/item/detail/orig/photos/m82375932664_2.jpg?1559389004",class:"owl-lazy",id:"3"}
+            %img{:alt => "ZARA", :src => "https://static.mercdn.net/item/detail/orig/photos/m52862035458_2.jpg?1558830306",class:"owl-lazy",id:"4"}
+            %img{:src => "https://static.mercdn.net/item/detail/orig/photos/m63772160546_1.jpg?1559289678",class:"owl-lazy",id:"5"}
+            %img{:src => "https://static.mercdn.net/item/detail/orig/photos/m93862198248_2.jpg?1556887411",class:"owl-lazy",id:"6"}
+        .owl-bots
+          =image_tag @item.image.url,class: "owl-lazy-sub",id:"7" 
+          %img{:src => "https://static.mercdn.net/item/detail/orig/photos/m82375932664_2.jpg?1559389004",class:"owl-lazy-sub",id:"3"}
+          %img{:src => "https://static.mercdn.net/item/detail/orig/photos/m52862035458_2.jpg?1558830306",class:"owl-lazy-sub",id:"4"}
+          %img{:src => "https://static.mercdn.net/item/detail/orig/photos/m63772160546_1.jpg?1559289678",class:"owl-lazy-sub",id:"5"}
+          %img{:src => "https://static.mercdn.net/item/detail/orig/photos/m93862198248_2.jpg?1556887411",class:"owl-lazy-sub",id:"6"}
+      %table.item-detail-table
+        %tbody
+          %tr
+            %th 出品者
+            %td
+              %a.item-detail-link{:href => "https://www.mercari.com/jp/u/316743508/"} 
+                =@user.nickname
+              %div
+                .item-user-ratings
+                  %i.fas.fa-grin
+                  %span 350
+                .item-user-ratings
+                  %i.fas.fa-meh
+                  %span 0
+                .item-user-ratings
+                  %i.fas.fa-frown
+                  %span 0
+          %tr
+            %th カテゴリー
+            %td
+              %a.item-detail-link{:href => "https://www.mercari.com/jp/category/2/"}
+                %div 
+                  =@first.genre
+              %a.item-detail-link{:href => "https://www.mercari.com/jp/category/30/"}
+                .item-detail-table-sub-category
+                %i.fas.fa-chevron-right
+                  =@second.genre
+              %a.item-detail-link{:href => "https://www.mercari.com/jp/category/303/"}
+                .item-detail-table-sub-sub-category
+                %i.fas.fa-chevron-right
+                  =@third.genre
+          %tr
+            %th ブランド
+            %td
+              %a.item-detail-link{:href => "https://www.mercari.com/jp/brand/99/"}
+                %div
+                  =@item.brand
+          %tr
+            %th 商品のサイズ
+            %td 
+              =@item.size
+          %tr
+            %th 商品の状態
+            %td 
+              =@item.condition
+          %tr
+            %th 配送料の負担
+            %td 
+              =@item.postage
+          %tr
+            %th 配送の方法
+            %td 
+              =@item.shipping_style
+          %tr
+            %th 配送元地域
+            %td
+              %a.item-detail-link{:href => "https://www.mercari.com/jp/area/1/"} 
+                =@item.sending_region
+          %tr
+            %th 発送日の目安
+            %td 
+              =@item.shipping_day
+      .item-price-box
+        %span.item-price-show 
+          ¥
+          =@item.price
+        %span.item-tax (税込)
+        %span.item-shipping-fee
+          =@item.shipping_style
+      .sales-point-message
+        売上金 ¥ 270 をお持ちです
+      %section.visible-sp
+        %a.item-buy-btn{"data-client" => "hidden", :href => "https://www.mercari.com/jp/transaction/buy/m93038500301/"} 購入画面に進む
+        .item-btn-float-area
+    .item-description
+      %p.item-description-inner
+      =@item.text
+    .item-button-container
+      .item-button-left
+        %a.item-button.item-button-like.is-liked{"data-ga" => "element", "data-ga-category" => "LIKE", "data-ga-label" => "like!", "data-id" => "m93038500301", "data-toggle" => "like", :name => "unlike", :type => "button"}
+          %i.far.fa-heart.fa-1x
+          %span いいね!
+          %span.fade-in-up{"data-num" => "like"} 1
+        %a.item-button.item-button-report.clearfix{"data-modal" => "report-item", "data-open" => "modal", :href => ""}
+          %i.far.fa-flag
+          %span 不適切な商品の報告
+      .item-button-right
+        %a.item-detail-link{:href => "https://www.mercari.com/jp/safe/description/", :target => "_blank"}
+          %i.fas.fa-lock
+          %span.icon-lock-text あんしん・あんぜんへの取り組み
+  .message-content
+    -@comments.each do |comment|
+      -if current_user.id == comment.user.id
+        %ul.show-comment-li
+          %li.show-my-comment
+            %a{href:"/users/#{current_user.id}/mypage"}
+              .message-my-user
+                .message-user-unknown
+                  %img{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/user-icon.svg?1612736639",height:"32px"}/
+              .comment-my-user-name
+                nickname
+            .message-my-body
+              .message-body-text 
+                text
+              .message-icons
+                %time.message-icon-left
+                  %i.far.fa-clock
+                  .show-icon-text
+                    五日前
+      -else
+        %ul.show-comment-li
+          %li.show-comment
+            %a{href:"/users/#{comment.user.id}/mypage"}
+              .message-user
+                .message-user-unknown
+                  %img{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/user-icon.svg?1612736639",height:"32px"}/
+            .comment-user-name
+              =comment.user.nickname
+            .message-body
+              .message-body-text 
+                =comment.text
+              .message-icons
+                %time.message-icon-left
+                  %i.far.fa-clock
+                  .show-icon-text
+                    五日前
+    .message-form
+      %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+    = form_for [@item,@comment] do |f|
+      =f.text_area :text,class:"textarea-default"
+      =f.submit "コメントする",class:"message-submit"
+  %ul.nav-item-link-prev-next
+    %li.nav-item-link-prev
+      %a{:href => "https://item.mercari.com/jp/m93382116417/",class:"link-prev"}
+        %i.fas.fa-chevron-left
+        おジャ魔女どれみ ナイショ DVD
+    %li.nav-item-link-next
+      %a{:href => "https://item.mercari.com/jp/m20240431141/",class:"link-next"}
+        ドラッグスター250パーツまとめ売り
+        %i.fas.fa-chevron-right
+  .item-social-media-box
+    .text-center
+      .fb-save.fb_iframe_widget{"data-uri" => "product://113299479059860/m52940456685", "fb-iframe-plugin-query" => "app_id=466308336793848&container_width=700&locale=ja_JP&sdk=joey&uri=product%3A%2F%2F113299479059860%2Fm52940456685", "fb-xfbml-state" => "rendered"}
+        %span{:style => "vertical-align: top; width: 0px; height: 0px; overflow: hidden;"}
+          %iframe{:allow => "encrypted-media", :allowfullscreen => "true", :allowtransparency => "true", :frameborder => "0", :height => "1000px", :name => "f36b5f80796aca", :scrolling => "no", :src => "https://www.facebook.com/v2.5/plugins/save.php?app_id=466308336793848&channel=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D44%23cb%3Df3b17d658026544%26domain%3Ditem.mercari.com%26origin%3Dhttps%253A%252F%252Fitem.mercari.com%252Ff1e8e999daefbf4%26relation%3Dparent.parent&container_width=700&locale=ja_JP&sdk=joey&uri=product%3A%2F%2F113299479059860%2Fm52940456685", :style => "border: none; visibility: visible; width: 0px; height: 0px;", :title => "fb:save Facebook Social Plugin", :width => "1000px"}
+    %ul.social-media-box
+      %li
+        %a.share-btn{"data-window-name" => "facebook_window", :href => "http://www.facebook.com/share.php?u=https%3A%2F%2Fitem.mercari.com%2Fjp%2Fm52940456685%2F", :target => "_blank"}
+          %i.fab.fa-facebook-square.fa-3x
+      %li
+        %a.share-btn{"data-window-name" => "twitter_window", :href => "http://twitter.com/share?count=horizontal&original_referer=https%3A%2F%2Fitem.mercari.com%2Fjp%2Fm52940456685%2F&text=ZARA%20%28%C2%A5%204%2C500%29%20https%3A%2F%2Fitem.mercari.com%2Fjp%2Fm52940456685%2F%20%E3%83%95%E3%83%AA%E3%83%9E%E3%82%A2%E3%83%97%E3%83%AA%E3%80%8C%E3%83%A1%E3%83%AB%E3%82%AB%E3%83%AA%E3%80%8D%E3%81%A7%E8%B2%A9%E5%A3%B2%E4%B8%AD%E2%99%AA%20%23%E3%83%A1%E3%83%AB%E3%82%AB%E3%83%AA%20%40mercari_jp%E3%81%95%E3%82%93%E3%81%8B%E3%82%89", :target => "_blank"}
+          %i.fab.fa-twitter-square.fa-3x
+      %li.social-hidden-item
+        %a{:href => "http://line.me/R/msg/text/?ZARA%20%7C%20%E3%83%A1%E3%83%AB%E3%82%AB%E3%83%AA%20%E3%82%B9%E3%83%9E%E3%83%9B%E3%81%A7%E3%81%8B%E3%82%93%E3%81%9F%E3%82%93%20%E3%83%95%E3%83%AA%E3%83%9E%E3%82%A2%E3%83%97%E3%83%AA%0D%0Ahttps://item.mercari.com/jp/m52940456685/", :target => "_blank"}
+          %i.fab.fa-line.fa-3x
+      %li
+        %a.share-btn{"data-window-name" => "pinterest_window", :href => "http://pinterest.com/pin/create/button/?url=https%3A%2F%2Fitem.mercari.com%2Fjp%2Fm52940456685%2F&media=https%3A%2F%2Fstatic.mercdn.net%2Fitem%2Fdetail%2Forig%2Fphotos%2Fm52940456685_1.jpg%3F1560160697&description=%E3%83%A1%E3%83%AB%E3%82%AB%E3%83%AA%E5%95%86%E5%93%81%3A%20ZARA%20%23%E3%83%A1%E3%83%AB%E3%82%AB%E3%83%AA", :target => "_blank"}
+          %i.fab.fa-pinterest.fa-3x
+  %section.items-box-container.clearfix.items-box-overflow.items-in-user-profile
+  %h2.items-box-head
+    %a.items-box-head_link{:href => "https://www.mercari.com/jp/u/971792603/"} ごまさんのその他の出品
+  .items-box-content-show
+    %section.items-box-show
+      %a.show_item_title{:href => "https://item.mercari.com/jp/m65830122895/"}
+        %img.lazyloaded{:alt => "【超美品ですがファスナー壊れ】VOLCOM フルジップ パーカー", "data-src" => "https://static.mercdn.net/thumb/photos/m65830122895_1.jpg?1560145239", :src => "https://static.mercdn.net/thumb/photos/m65830122895_1.jpg?1560145239"}/
+        .items-box-body
+          %h3.items-box-name.font-2 【超美品ですがファスナー壊れ】VOLCOM 
+          .items-box-num
+            .items-box-price.font-5 ¥ 4,700
+            .font-2
+            .like 
+              %i.far.fa-heart
+              %span  1
+          %p.item-box-tax (税込)
+    %section.items-box-show
+      %a.show_item_title{:href => "https://item.mercari.com/jp/m69518443273/"}
+        %img.lazyloaded{:alt => "【超美品】HARE  ハレ 総柄 デザイン オープンカラーシャツ", "data-src" => "https://static.mercdn.net/thumb/photos/m69518443273_1.jpg?1560146395", :src => "https://static.mercdn.net/thumb/photos/m69518443273_1.jpg?1560146395"}/
+        .items-box-body
+          %h3.items-box-name.font-2 【超美品】HARE  ハレ 総柄 デザイン 
+          .items-box-num
+            .items-box-price.font-5 ¥ 5,700
+            .like
+              %i.far.fa-heart
+              %span 5
+          %p.item-box-tax (税込)
+    %section.items-box-show
+      %a.show_item_title{:href => "https://item.mercari.com/jp/m35193836716/"}
+        %img.lazyloaded{:alt => "X-LARGE エクストララージ オレンジ色 長袖シャツ", "data-src" => "https://static.mercdn.net/thumb/photos/m35193836716_1.jpg?1560143741", :src => "https://static.mercdn.net/thumb/photos/m35193836716_1.jpg?1560143741"}/
+        .items-box-body
+          %h3.items-box-name.font-2 X-LARGE エクストララージ オレンジ色 長袖シャツ
+          .items-box-num
+            .items-box-price.font-5 ¥ 4,900
+            .like 
+              %i.far.fa-heart
+              %span  6
+          %p.item-box-tax (税込)
+    %section.items-box-show
+      %a.show_item_title{:href => "https://item.mercari.com/jp/m76562632702/"}
+        %img.lazyloaded{:alt => "【希少】PAGELO パジェロ ビッグキャラクター ナイロンジャケット LL", "data-src" => "https://static.mercdn.net/thumb/photos/m76562632702_1.jpg?1559598579", :src => "https://static.mercdn.net/thumb/photos/m76562632702_1.jpg?1559598579"}/
+        .items-box-body
+          %h3.items-box-name.font-2 【希少】PAGELO パジェロ ビッグキャラクター 
+          .items-box-num
+            .items-box-price.font-5 ¥ 2,400
+            .like 
+              %i.far.fa-heart
+              %span  2
+          %p.item-box-tax (税込)
+    %section.items-box-show
+      %a.show_item_title{:href => "https://item.mercari.com/jp/m71983554499/"}
+        %img.lazyloaded{:alt => "【美品】MAKAVELI 総柄 個性的 シャツ  XL", "data-src" => "https://static.mercdn.net/thumb/photos/m71983554499_1.jpg?1559773982", :src => "https://static.mercdn.net/thumb/photos/m71983554499_1.jpg?1559773982"}/
+        .items-box-body
+          %h3.items-box-name.font-2 【美品】MAKAVELI 総柄 個性的 シャツ  XL
+          .items-box-num
+            .items-box-price.font-5 ¥ 2,400
+            .like 
+              %i.far.fa-heart
+              %span  8
+          %p.item-box-tax (税込)
+    %section.items-box-show
+      %a.show_item_title{:href => "https://item.mercari.com/jp/m91161173891/"}
+        %img.lazyloaded{:alt => "【美品】ZARA MAN デニムシャツ   XL", "data-src" => "https://static.mercdn.net/thumb/photos/m91161173891_1.jpg?1560142837", :src => "https://static.mercdn.net/thumb/photos/m91161173891_1.jpg?1560142837"}/
+        .items-box-body
+          %h3.items-box-name.font-2 【美品】ZARA MAN デニムシャツ   XL
+          .items-box-num
+            .items-box-price.font-5 ¥ 3,800
+            .like 
+              %i.far.fa-heart
+              %span  4
+          %p.item-box-tax (税込)
+  %h2.items-box-head
+    %a.items-box-head_link{:href => "https://www.mercari.com/jp/u/971792603/"} ベアーのスウェット　その他の商品
+  .items-box-content-show
+    %section.items-box-show
+      %a.show_item_title{:href => "https://item.mercari.com/jp/m65830122895/"}
+        %img.lazyloaded{:alt => "【超美品ですがファスナー壊れ】VOLCOM フルジップ パーカー", "data-src" => "https://static.mercdn.net/thumb/photos/m65830122895_1.jpg?1560145239", :src => "https://static.mercdn.net/thumb/photos/m65830122895_1.jpg?1560145239"}/
+        .items-box-body
+          %h3.items-box-name.font-2 【超美品ですがファスナー壊れ】VOLCOM 
+          .items-box-num
+            .items-box-price.font-5 ¥ 4,700
+            .font-2
+            .like 
+              %i.far.fa-heart
+              %span 1
+          %p.item-box-tax (税込)
+    %section.items-box-show
+      %a.show_item_title{:href => "https://item.mercari.com/jp/m69518443273/"}
+        %img.lazyloaded{:alt => "【超美品】HARE  ハレ 総柄 デザイン オープンカラーシャツ", "data-src" => "https://static.mercdn.net/thumb/photos/m69518443273_1.jpg?1560146395", :src => "https://static.mercdn.net/thumb/photos/m69518443273_1.jpg?1560146395"}/
+        .items-box-body
+          %h3.items-box-name.font-2 【超美品】HARE  ハレ 総柄 デザイン 
+          .items-box-num
+            .items-box-price.font-5 ¥ 5,700
+            .like
+              %i.far.fa-heart
+              %span 5
+          %p.item-box-tax (税込)
+    %section.items-box-show
+      %a.show_item_title{:href => "https://item.mercari.com/jp/m35193836716/"}
+        %img.lazyloaded{:alt => "X-LARGE エクストララージ オレンジ色 長袖シャツ", "data-src" => "https://static.mercdn.net/thumb/photos/m35193836716_1.jpg?1560143741", :src => "https://static.mercdn.net/thumb/photos/m35193836716_1.jpg?1560143741"}/
+        .items-box-body
+          %h3.items-box-name.font-2 X-LARGE エクストララージ オレンジ色 長袖シャツ
+          .items-box-num
+            .items-box-price.font-5 ¥ 4,900
+            .font-2
+            .like 
+              %i.far.fa-heart
+              %span  6
+          %p.item-box-tax (税込)
+    %section.items-box-show
+      %a.show_item_title{:href => "https://item.mercari.com/jp/m76562632702/"}
+        %img.lazyloaded{:alt => "【希少】PAGELO パジェロ ビッグキャラクター ナイロンジャケット LL", "data-src" => "https://static.mercdn.net/thumb/photos/m76562632702_1.jpg?1559598579", :src => "https://static.mercdn.net/thumb/photos/m76562632702_1.jpg?1559598579"}/
+        .items-box-body
+          %h3.items-box-name.font-2 【希少】PAGELO パジェロ ビッグキャラクター 
+          .items-box-num
+            .items-box-price.font-5 ¥ 2,400
+            .font-2
+            .like 
+              %i.far.fa-heart
+              %span  2
+          %p.item-box-tax (税込)
+    %section.items-box-show
+      %a.show_item_title{:href => "https://item.mercari.com/jp/m71983554499/"}
+        %img.lazyloaded{:alt => "【美品】MAKAVELI 総柄 個性的 シャツ  XL", "data-src" => "https://static.mercdn.net/thumb/photos/m71983554499_1.jpg?1559773982", :src => "https://static.mercdn.net/thumb/photos/m71983554499_1.jpg?1559773982"}/
+        .items-box-body
+          %h3.items-box-name.font-2 【美品】MAKAVELI 総柄 個性的 シャツ  XL
+          .items-box-num
+            .items-box-price.font-5 ¥ 2,400
+            .font-2
+            .like 
+              %i.far.fa-heart
+              %span 8
+          %p.item-box-tax (税込)
+    %section.items-box-show
+      %a.show_item_title{:href => "https://item.mercari.com/jp/m91161173891/"}
+        %img.lazyloaded{:alt => "【美品】ZARA MAN デニムシャツ   XL", "data-src" => "https://static.mercdn.net/thumb/photos/m91161173891_1.jpg?1560142837", :src => "https://static.mercdn.net/thumb/photos/m91161173891_1.jpg?1560142837"}/
+        .items-box-body
+          %h3.items-box-name.font-2 【美品】ZARA MAN デニムシャツ   XL
+          .items-box-num
+            .items-box-price.font-5 ¥ 3,800
+            .font-2
+            .like 
+              %i.far.fa-heart
+              %span 4
+          %p.item-box-tax (税込)
+ 
+     
+
+    
+
+
+
+
+
+
+    
+
+
+
+

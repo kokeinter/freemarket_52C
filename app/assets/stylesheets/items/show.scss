@@ -1,0 +1,460 @@
+.item{
+  &-show-wrapper{
+  background-color: rgb(243, 243, 243);
+  padding-top: 50px;
+  padding-bottom: 200px;
+  }
+  &-box-container{
+    background-color: white;
+    margin-left:380px;
+    width: 700px;
+    height: 1000px;
+    padding-bottom: 70px;
+  }
+  &-name-show{
+    padding-top: 20px;
+    text-align: center;
+    font-size: 24px;
+  }
+  &-photo{
+    position: absolute;
+    display: table;
+    width: 3000px;
+    height: 300px;
+    background-color: rgb(214, 218, 218);
+  }
+  &-photo-wrapper{
+    float: left;
+    margin: 20px 0 0 30px;
+    background-color: rgb(238, 238, 238);
+    width: 300px;
+    height: 420px;
+  }
+  &-price-box{
+    padding:30px 50px 0 40px;
+    float: left;
+    margin-bottom: 30px;
+  }
+  &-price-show{
+    font-family:"ＭＳ Ｐ明朝", serif;
+    font-size: 50px;
+    margin-left: 200px;
+  }
+  &-tax{
+    font-size: 12px;
+  }
+  &-shipping-fee{
+    font-size: 15px;
+  }
+  &-buy-btn{
+    border-radius: 5px;
+    float: left;
+    margin: 0px 0px 0px 20px;
+    background-color: red;
+    text-decoration: none;
+    color:white;
+    padding: 8px 240px 8px 240px;
+    // visibility:hidden
+    font-size: 25px;
+  
+  }
+  &-detail-table{
+    margin: 20px 20px 0 0px;
+    width: 300px;
+    float: right;
+  }
+  &-description{
+    font-size: 18px;
+    padding:20px 0 50px 10px;
+    margin: 50px 0 0 20px; 
+    float: left;
+    
+  }
+  
+}
+.item-photo_scroll{
+  position: relative;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+}
+
+.item-detail-link{
+  color:#0099E8;
+  text-decoration: none;
+}
+.sales-point-message{
+  position: relative;
+  font-size: 14px;
+  border-radius: 5px;
+  padding: 8px;
+  background-color: #05b0b4;
+  margin: 0 250px 0px 250px;
+  color: white;
+  float: left;
+  margin-bottom: 30px;
+}
+.sales-point-message:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -15px;
+  border: 10px solid transparent;
+  border-top: 12px solid #05b0b4;
+  float: left;
+}
+.owl-lazy{
+  display:table-cell;
+  height: 300px;
+  width: 300px;
+  float: left;
+}
+.owl-lazy-sub{
+  opacity: 0.6;
+  float: left;
+  height: 60px;
+  width: 60px;
+}
+th{
+  font-size: 13px;
+  background-color: #fafafa;
+  border: solid 1px rgb(216, 216, 216);
+  width: 90px;
+  padding-left: 5px;
+}
+td{
+  border: solid 1px rgb(212, 212, 212);
+  padding: 12px 0 12px 5px;
+  font-size: 13px;
+}
+.item-show-space{
+  height: 70px;
+}
+.item-button-container{
+  padding: 0 10px 60px 10px;
+  background-color: white;
+  width: 100%;
+  
+  float: left;
+}
+.item-button-left{
+  width: 400px;
+  float: left;
+}
+.item-button-right{
+  float: right;
+}
+.icon-lock-text{
+  font-size: 14px;
+}
+.message-content{
+  margin:60px 0 0 380px;
+  background-color: white;
+  padding-bottom: 30px;
+  width: 700px;
+
+}
+.message-form{
+  padding: 9px;
+  font-size: 14px;
+  margin-left: 25px;
+  height: 55px;
+  width: 650px;
+  background-color:#fff6de;
+}
+.textarea-default{
+  margin-top: 15px;
+  height: 200px;
+  width: 650px;
+  margin-left: 25px;
+}
+.message-submit{
+  color: white;
+  font-size: 15px;
+  margin-top: 15px;
+  height: 70px;
+  width: 650px;
+  margin-left: 25px;
+  background-color: rgb(153, 153, 153);
+}
+.nav-item-link-prev-next{
+}
+.nav-item-link-prev{
+  margin: 20px 0 10px 400px;
+  display: inline;
+  text-decoration: none;
+  float: left;
+  font-size: 14px;
+}
+.link-prev{
+  color:#0099E8;
+  text-decoration: none;
+}
+.nav-item-link-next{
+  margin: 20px 360px 10px 0px;
+  text-decoration: none;
+  font-size: 14px;
+  float: right;
+}
+.link-next{
+  color:#0099E8;
+  text-decoration: none;
+}
+.item-social-media-box{
+  height: 160px;
+  width: 700px;
+  background-color:white;
+  margin: 60px 0 0 380px;
+}
+.items-box-content-show{
+  width: 720px;
+  height: 700px;
+  margin-left: 380px;
+}
+.items-box-head{
+  font-size: 22px;
+  margin:30px 0 10px 390px;
+}
+.items-box-head_link{
+  color:#0099E8;
+  text-decoration: none;
+}
+.items-box-show{
+  float: left;
+  margin-right: 20px;
+  width: 220px;
+  height:330px;
+  margin-bottom: 10px;
+}
+.lazyloaded{
+  text-decoration: none;
+  float: left;
+  height: 220px;
+  width: 220px;
+}
+.items-box-body{
+  float: left;
+  display: block;
+  text-decoration: none;
+  height: 110px;
+  width: 220px;
+  background-color: white;
+  margin-bottom: 20px;
+}
+.items-box-name {
+  margin: 15px 0 0 10px;
+}
+.items-box-price{
+  float: left;
+  margin: 0 0 0 10px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.item-box-tax{
+  float: left;
+  margin-left: 10px;
+  text-decoration: none;
+  font-size: 10px;
+}
+.like{
+  margin-right: 10px;
+  float: right;
+}
+.show_item_title{
+  color: black;
+  display: block;
+  text-decoration: none;
+}
+.items-box-num{
+  height: 28px;
+}
+.fa-twitter-square{
+  margin: 30px 20px 0 0;
+  color: #5d9dc9;
+  float: left;
+}
+.fa-facebook-square{
+  margin: 30px 20px 0 250px;
+  color:#385185;
+  float: left;
+}
+.fa-line{
+  margin: 30px 20px 0 0;
+  color:#00c137;
+  float: left;
+
+}
+.fa-pinterest{
+  margin: 30px 20px 0 0;
+  color:#aa262a;
+  float: left;
+
+}
+
+.fa-heart{
+  opacity: 0.5;
+}
+// .fa-chevron-right{
+//   color:#0099E8;
+//   margin-top: 3px;
+//   padding-left: 3px;
+// }
+
+.item-button{
+  margin-right: 10px;
+  text-decoration: none;
+  background-color: #f5f5f5;
+  color: #333333;
+  border-radius: 20px;
+  padding: 8px 16px;
+}
+.fa-grin{
+  color: rgb(250, 98, 123);
+  font-size: 17px;
+}
+.item-user-ratings{
+  float: left;
+  margin:5px 15px 0 5px;
+}
+.fa-meh{
+  color: rgb(255, 237, 74);
+  font-size: 17px;
+}
+.fa-frown{
+  color: rgb(98, 194, 250);
+  font-size: 17px;
+}
+.js-animation {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(40px);
+
+  transition: all 1s;
+}
+.js-animation.is-show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+}
+.message-content{
+  text-decoration: none;
+  padding-top: 20px;
+}
+.show-comment-li{
+  text-decoration: none;
+}
+.show-comment{
+  padding-left: 20px;
+  padding-top:10px;
+  margin-bottom: 30px;
+}
+.message-my-user{
+  margin-left: 30px;
+  margin-right: 20px;
+  border-radius: 50px;
+  height: 30px;
+  width: 40px;
+  height: 40px;
+  background-color: rgb(233, 233, 233);
+  float: right;
+  overflow: hidden;
+}
+
+
+.message-user{
+  margin-right: 20px;
+  
+  border-radius: 50px;
+  height: 30px;
+  width: 40px;
+  height: 40px;
+  background-color: rgb(233, 233, 233);
+  float: left;
+  overflow: hidden;
+}
+.message-user-unknown{
+  margin: 10px 0 0 5px;
+ 
+
+}
+.message-body{
+  
+  font-size: 14px;
+  padding: 15px 0 20px 15px;
+  margin-top:5px;
+  margin-left: 60px;
+  background-color: rgb(238, 238, 238);
+  width: 600px;
+  border-radius: 15px;
+  position: relative;
+
+}
+.message-my-body{
+  clear: both; 
+  font-size: 14px;
+  padding: 15px 0 20px 15px;
+  margin-top:5px;
+  margin-left: 20px;
+  background-color: #fbf0e6;
+  width: 600px;
+  border-radius: 15px;
+  position: relative;
+  margin-bottom: 30px;
+
+}
+
+.message-body:before {
+  position: absolute;
+  content: "";
+  top: 5%;
+  left: 0%;
+  margin-left: -15px;
+  border: 5px solid transparent;
+  border-right: 16px solid rgb(238, 238, 238);
+  float: left;
+  transform: rotate(35deg);
+ 
+}
+
+.message-my-body:before {
+  position: absolute;
+  content: "";
+  top: 5%;
+  left: 100%;
+  margin-left: -5px;
+  border: 5px solid transparent;
+  border-right: 16px solid #fbf0e6;
+  float: left;
+  transform: rotate(140deg);
+}
+.message-icons{
+  color: #05b0b4;
+}
+.message-body-text{
+  margin-bottom: 10px;
+}
+.message-icons{
+  color: #05b0b4;
+}
+.message-icon-left{
+  color: rgb(172, 172, 172);
+}
+.show-icon-text{
+  float: right;
+  margin-right: 530px;
+  margin-top: 5px;
+
+}
+.comment-user-name{
+  font-size: 14px;
+
+}
+.comment-my-user-name{
+  color: #ea352d;
+  margin-top: 10px;
+  left: 440px;
+  font-size: 15px;
+  float: right;
+ 
+}
