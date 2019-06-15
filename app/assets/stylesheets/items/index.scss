@@ -21,6 +21,7 @@
   overflow: hidden;
   padding: 40px;
   background: #f5f5f5;
+
   &__title {
     text-align: center;
     font-size: 28px;
@@ -30,11 +31,13 @@
   .items-contents {
     width: 940px;
     margin: 0 auto;
+
     &__title {
       font-size: 22px;
       margin: 26px 0 11px 0;
       text-align: center;
       font-weight: bold;
+
       &-btn{
         text-decoration: none;
         color: #0099e8;
@@ -42,11 +45,16 @@
     }
     .items-box-content {
       width: auto;
+
       .items-box {
+        width: auto;
+        height: auto;
         position: relative;
         float: left;
         margin: 0 0 20px 15px;
+
         .detail-page {
+
           &__img { 
             width: 220px;
             height: 220px;
@@ -57,6 +65,7 @@
             padding: 16px;
             box-sizing: border-box;
             background-color: #fff;
+
             .item-name {
               overflow: hidden;
               font-weight: 400;
@@ -69,15 +78,13 @@
             .item-price {
               margin: 8px 0 0;
               float: left;
-            }
-            
+            }            
             .like-count {
               float: right;
               margin: 8px 0 0;
               padding-left: 5px;
             }
-
-            .fa.fa-heart-o {
+            .far.fa-heart {
               margin: 12px 0 0;
               float: right;
             }
@@ -90,15 +97,19 @@
       }
     }
   }
-  .pickup-content__all {
-    width: 100%;
-    padding: 20px 0 30px;
-    &-btn {
-      color: #0099e8;
-      font-size: 14px;
-      text-decoration: none;
-      float: right
-    }
+}
+.pickup-content__all {
+  width: 940px;
+  margin: 0 auto;
+  background: #f5f5f5;
+  position: relative;
+
+  &-btn {
+    color: #0099e8;
+    font-size: 14px;
+    text-decoration: none;
+    position: absolute;
+    right: 0;
   }
 }
 
@@ -109,10 +120,12 @@
   overflow: hidden;
   position: relative;
   background-size: cover;
+
   &__dl-btn {
     width: 565px;
     height: 200px;
     margin: 0 auto;
+
     &-ios {
       width: 134px;
       text-align: center;
