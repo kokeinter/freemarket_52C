@@ -2,7 +2,6 @@ class ItemsController < ApplicationController
   before_action :item_params,only:[:create]
 
   def index
-    @items = Item.last(4)
   end
 
   def new
