@@ -79,7 +79,7 @@
         %span.item-tax (税込)
         %span.item-shipping-fee
           =@item.shipping_style
-    .item-description
+    .item-edit-description
       %p.item-description-inner
       =@item.text
   .item-edit-second
@@ -91,8 +91,8 @@
     %a.item-edit-bottun-link{href:"/"}
       .item-edit-bottun-sub
         出品を一旦停止する
-    %a.item-edit-bottun-link{href:"/"}
-      .item-edit-bottun-sub
+    %a.item-edit-bottun-link
+      .item-edit-bottun-sub#delete-item-btn
         この商品を削除する
   .message-content
     -@comments.each do |comment|
@@ -130,8 +130,25 @@
                   %i.far.fa-clock
                   .show-icon-text
                     五日前
-      .message-form
-        %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-      = form_for [@item,@comment] do |f|
-        =f.text_area :text,class:"textarea-default"
-        =f.submit "コメントする",class:"message-submit"
+    .message-form
+      %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+    = form_for [@item,@comment] do |f|
+      =f.text_area :text,class:"textarea-default"
+      =f.submit "コメントする",class:"message-submit"
+.delete-log-wrapper.edit-sample-2
+.item-delete-log.edit-sample#delete-dialog
+  .delete-dialog
+    .delete-dialog-top
+      .dialog-title
+        確認
+      .dialog-text
+        削除すると二度と復活できません。
+        %p 削除する代わりに停止することもできます。
+      .dialog-text
+        本当に削除しますか？
+    .delete-dialog-bottom
+      %bottun.delete-dialog-bottun-left
+        キャンセル
+      .delete-dialog-bottun-right
+        =link_to "削除する","/items/#{params[:id]}",method: :delete,class:"delete-dialog-bottun-right"
+

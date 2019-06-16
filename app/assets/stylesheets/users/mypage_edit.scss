@@ -41,13 +41,16 @@
     }
   }
 }
+.item-edit-description{
+  clear: both;
+  margin-left: 30px;
+}
 .tab-content-edit{
   clear: both;
   display: block;
   height: 100px;
   background-color: white;
 }
-
 .mypage-edit-item-body{
   float: left;
   margin: 10px 0 0 10px;
@@ -95,4 +98,34 @@
 }
 .mypage-edit-icon{
   color: rgb(70, 70, 70);
+}
+.delete-complete{
+  &-log{
+  height: 60px;
+  width: 100%;
+  background-color: #dff0d8;
+  color: #468847;
+  opacity: 0;
+  }
+  &-text{
+    float: right;
+    line-height: 60px;
+  }
+}
+div.delete-sample {
+  animation: anime3 5s ;
+}
+@keyframes anime3 {
+  from {
+    opacity: 0.6;
+  }
+  5%{
+    opacity: 1.0;
+  }
+  80%{
+    opacity: 1.0;
+  }
+  to {
+    opacity: 0;
+  }
 }
