@@ -1,38 +1,45 @@
-.mypage-tab-container-edit{
+.mypage{
+  &-tab-container-edit{
   width: 700px;
   float: right;
   margin: 50px 200px 0 0;
-}
-.mypage-tab-head-edit{
+  }
+  &-tab-head-edit{
   height: 80px;
   background-color: #fafafa;
   line-height: 80px;
   font-size: 17px;
   padding-left: 15px;
-}
-.mypage-edit-left{
-  float: left;
-  width: 34%;
-  height: 60px;
-  background-color: rgb(255, 255, 255);
-  border-top:red solid 2px;
-  text-decoration: none;
-  text-align: center;
-  line-height: 60px;
-  font-size: 17px;
-  color: black;
-  
-}
-.mypage-edit{
-  float: left;
-  width: 33%;
-  height: 60px;
-  background-color: rgb(228, 228, 228);
-  text-decoration: none;
-  text-align: center;
-  line-height: 60px;
-  font-size: 17px;
-  color: black;
+  }
+  &-edit{
+    float: left;
+    width: 33%;
+    height: 60px;
+    background-color: rgb(228, 228, 228);
+    text-decoration: none;
+    text-align: center;
+    line-height: 60px;
+    font-size: 17px;
+    color: black;
+    &-left{
+      float: left;
+      width: 34%;
+      height: 60px;
+      background-color: rgb(255, 255, 255);
+      border-top:red solid 2px;
+      text-decoration: none;
+      text-align: center;
+      line-height: 60px;
+      font-size: 17px;
+      color: black;
+    }
+    &-image{
+      margin:10px 0 0 20px;
+      float: left;
+      height: 50px;
+      width: 50px;
+    }
+  }
 }
 .tab-content-edit{
   clear: both;
@@ -40,17 +47,10 @@
   height: 100px;
   background-color: white;
 }
-.mypage-edit-image{
-  margin:10px 0 0 20px;
-  float: left;
-  height: 50px;
-  width: 50px;
-}
+
 .mypage-edit-item-body{
   float: left;
   margin: 10px 0 0 10px;
-  
-  
 }
 .mypage-edit-item-text{
   color: black;
@@ -95,6 +95,4 @@
 }
 .mypage-edit-icon{
   color: rgb(70, 70, 70);
-  
-
 }

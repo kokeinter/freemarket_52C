@@ -4,7 +4,6 @@
   margin-left:380px;
   width: 700px;
   margin-bottom: 80px;
-
 }
 
 .item-description-edit{
@@ -30,19 +29,19 @@
   line-height: 50px;
   color: white;
 }
-.item-edit-bottun-link{
-  
+.item-edit-bottun{
+  &-link{
   text-decoration: none;
- 
-}
-.item-edit-bottun-or{
+  }
+
+  &-or{
   font-size: 13px;
   line-height: 50px;
   text-align: center;
   width: 95%;
   height: 50px;
-}
-.item-edit-bottun-sub{
+  }
+  &-sub{
   display: block;
   height: 50px;
   width: 95%;
@@ -51,12 +50,12 @@
   line-height: 50px;
   margin-bottom: 20px;
   color: white;
-  
+  }
 }
 .item-box-edit{
-    background-color: white;
-    margin-left:380px;
-    width: 700px;
-    padding-bottom: 30px;
-    height: 800px;
+  background-color: white;
+  margin-left:380px;
+  width: 700px;
+  padding-bottom: 30px;
+  height: 800px;
 }

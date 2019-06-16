@@ -8,23 +8,16 @@
         .item-photo_scroll
           .item-photo
             =image_tag @item.image.url,class: "owl-lazy",id:"7" 
-            %img{:src => "https://static.mercdn.net/item/detail/orig/photos/m82375932664_2.jpg?1559389004",class:"owl-lazy",id:"3"}
-            %img{:alt => "ZARA", :src => "https://static.mercdn.net/item/detail/orig/photos/m52862035458_2.jpg?1558830306",class:"owl-lazy",id:"4"}
-            %img{:src => "https://static.mercdn.net/item/detail/orig/photos/m63772160546_1.jpg?1559289678",class:"owl-lazy",id:"5"}
-            %img{:src => "https://static.mercdn.net/item/detail/orig/photos/m93862198248_2.jpg?1556887411",class:"owl-lazy",id:"6"}
+            =image_tag "https://static.mercdn.net/item/detail/orig/photos/m82375932664_2.jpg?1559389004",class: "owl-lazy",id:"3"
         .owl-bots
           =image_tag @item.image.url,class: "owl-lazy-sub",id:"7" 
-          %img{:src => "https://static.mercdn.net/item/detail/orig/photos/m82375932664_2.jpg?1559389004",class:"owl-lazy-sub",id:"3"}
-          %img{:src => "https://static.mercdn.net/item/detail/orig/photos/m52862035458_2.jpg?1558830306",class:"owl-lazy-sub",id:"4"}
-          %img{:src => "https://static.mercdn.net/item/detail/orig/photos/m63772160546_1.jpg?1559289678",class:"owl-lazy-sub",id:"5"}
-          %img{:src => "https://static.mercdn.net/item/detail/orig/photos/m93862198248_2.jpg?1556887411",class:"owl-lazy-sub",id:"6"}
+          =image_tag "https://static.mercdn.net/item/detail/orig/photos/m82375932664_2.jpg?1559389004",class: "owl-lazy-sub",id:"3"
       %table.item-detail-table
         %tbody
           %tr
             %th 出品者
             %td
-              %a.item-detail-link{:href => "https://www.mercari.com/jp/u/316743508/"} 
-                =@user.nickname
+              =link_to "#{@user.nickname}","/",class:"item-detail-link"
               %div
                 .item-user-ratings
                   %i.fas.fa-grin
@@ -74,8 +67,7 @@
           %tr
             %th 配送元地域
             %td
-              %a.item-detail-link{:href => "https://www.mercari.com/jp/area/1/"} 
-                =@item.sending_region
+              =link_to "#{@item.sending_region}","/",class:"item-detail-link"
           %tr
             %th 発送日の目安
             %td 
@@ -127,7 +119,7 @@
             %a{href:"/users/#{comment.user.id}/mypage"}
               .message-user
                 .message-user-unknown
-                  %img{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/user-icon.svg?1612736639",height:"32px"}/
+                  =image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/user-icon.svg?1612736639",height:"32px"
             .comment-user-name
               =comment.user.nickname
             .message-body
