@@ -77,6 +77,7 @@ gem 'font-awesome-rails'
 gem 'ancestry'
 # gem "omniauth-rails_csrf_protection"
 gem "dropzonejs-rails"
+gem 'fog-aws'
 
 
 group :production do
