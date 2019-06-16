@@ -1,11 +1,9 @@
 = render 'header'
 .item-show-wrapper
-  =@item.name
-  =@user.nickname
   %section.item-box-container
     %h1.item-name-show 
       =@item.name
-    .item-main-content-show
+    .item-main-content
       .item-photo-wrapper
         .item-photo_scroll
           .item-photo
@@ -92,7 +90,7 @@
       .sales-point-message
         売上金 ¥ 270 をお持ちです
       %section.visible-sp
-        %a.item-buy-btn{"data-client" => "hidden", :href => "https://www.mercari.com/jp/transaction/buy/m93038500301/"} 購入画面に進む
+        %a.item-buy-btn{"data-client" => "hidden", :href => "/items/#{@item.id}/buy"} 購入画面に進む
         .item-btn-float-area
     .item-description
       %p.item-description-inner
@@ -120,10 +118,10 @@
                 .message-user-unknown
                   %img{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/user-icon.svg?1612736639",height:"32px"}/
               .comment-my-user-name
-                nickname
+                =current_user.nickname
             .message-my-body
               .message-body-text 
-                text
+                =comment.text
               .message-icons
                 %time.message-icon-left
                   %i.far.fa-clock
@@ -180,7 +178,9 @@
           %i.fab.fa-pinterest.fa-3x
   %section.items-box-container.clearfix.items-box-overflow.items-in-user-profile
   %h2.items-box-head
-    %a.items-box-head_link{:href => "https://www.mercari.com/jp/u/971792603/"} ごまさんのその他の出品
+    %a.items-box-head_link{:href => "/"} 
+      = @user.nickname
+      さんの他の商品
   .items-box-content-show
     %section.items-box-show
       %a.show_item_title{:href => "https://item.mercari.com/jp/m65830122895/"}

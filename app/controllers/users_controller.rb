@@ -20,12 +20,17 @@ class UsersController < ApplicationController
       end
     
   end
+  def items_status
+    @user = User.find(current_user.id)
+    @items=Item.where("saler_id=?","#{@user.id}")
+  end
 
   def complete
   end
   def info
   end
-
+  
+  
   
   
   def destroy

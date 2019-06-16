@@ -1,0 +1,44 @@
+= render 'header'
+=render "sidebar"
+.l-container
+  %section.mypage-tab-container-edit
+    %h2.mypage-tab-head-edit 出品した商品
+    %ul.listing-tabs
+      %li
+        %h3
+          %a.mypage-edit-left{:href => "/"}
+            出品中
+      %li
+        %h3
+          %a.mypage-edit{:href => "/"}
+            取引中
+      %li
+        %h3
+          %a.mypage-edit{:href => "/"}
+            売却済み
+      -@items.each do |item|
+        .tab-content-edit
+          %li
+            %a.mypage-item-link-edit{:href => "/items/#{item.id}/before_edit"}
+              =image_tag item.image.url,class: "mypage-edit-image" 
+              .mypage-edit-item-body
+                .mypage-edit-item-text
+                  =item.name
+                %div
+                  %span.listing-item-count
+                    %i.far.fa-heart
+                    %span 0
+                  %span.listing-item-count
+                    %i.far.fa-comment-alt
+                    %span 0
+                  %span.mypage-item-status
+                    出品中
+              %i.icon-arrow-right
+    .mypage-history
+      .mypage-prev
+        %a{:href => "/"}
+          %i.fas.fa-chevron-left.mypage-edit-icon
+      .mypage-next
+        %a{:href => "/"}
+          %i.fas.fa-chevron-right.mypage-edit-icon
+  

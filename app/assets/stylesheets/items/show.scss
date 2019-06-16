@@ -8,8 +8,8 @@
     background-color: white;
     margin-left:380px;
     width: 700px;
-    height: 1000px;
     padding-bottom: 70px;
+    height: 1000px;
   }
   &-name-show{
     padding-top: 20px;
@@ -434,9 +434,6 @@ td{
 .message-body-text{
   margin-bottom: 10px;
 }
-.message-icons{
-  color: #05b0b4;
-}
 .message-icon-left{
   color: rgb(172, 172, 172);
 }
@@ -444,11 +441,9 @@ td{
   float: right;
   margin-right: 530px;
   margin-top: 5px;
-
 }
 .comment-user-name{
   font-size: 14px;
-
 }
 .comment-my-user-name{
   color: #ea352d;

@@ -20,9 +20,11 @@ Rails.application.routes.draw do
   resources :addresses ,only:[:new,:create]
   resources :creditcards ,only:[:new,:create]
   get 'complete'   =>    'users#complete'
-  
-  get '/buy' => 'items#buy'
+  get 'items/:id/buy' => 'items#buy'
   get "/logout" => "users#logout"
+  get '/items/:id/before_edit' => 'items#before_edit'
+  get "users/:id/items_status" => "users#items_status"
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
