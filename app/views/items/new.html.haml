@@ -8,7 +8,6 @@
   -# フォーム表示部分
   .container.single-main
 
-
     .container__contents
 
       -# ページタイトル
@@ -25,13 +24,22 @@
         .container__contents__image__middle
         .container__contents__image__under
 
-          = form_tag(root_path, class: 'dropzone', id: 'upload-dropzone') do
-            .fallback
-              = file_field_tag('attach[file]')
+          -# = form_tag(root_path, class: 'dropzone', id: 'upload-dropzone') do
+          -#   .fallback
+          -#     = file_field_tag('attach[file]')
 
-          -# = form_for @item do |f|
-          -#   = f.label :image,"ドラッグアンドドロップまたはクリックしてアップロード",class:"item_image_label"
-          -#   = f.file_field :image,class:"item_image"
+          = form_for @item do |f|
+            = f.label :image,"ドラッグアンドドロップまたはクリックしてアップロード",class:"item_image_label"
+            = f.file_field :image,class:"item_image"
+
+
+          -# %div
+          -#   = form_for @item, html: {class:'dropzone', id: "item-dropzone"} do |f|
+          -#     .dz-message.needsclick
+          -#       ドラッグアンドドロップまたはクリックしてアップロード
+          -#     .fallback
+          -#       = f.file_field :image
+
         
         
       
@@ -147,7 +155,7 @@
 
           .container__contents__value__right__fee
             .container__contents__value__right__fee__text
-              = "販売手数料"
+              = "販売手数料(10%)"
             .container__contents__value__right__fee__calculate
               = "-"
 
