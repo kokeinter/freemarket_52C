@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   before_action :item_params,only:[:create]
 
   def index
+    @items=Item.all
   end
 
   def new
@@ -40,6 +41,10 @@ class ItemsController < ApplicationController
     item=Item.find(params[:id])
     item.update(name: item_params[:name],text: item_params[:text],image: item_params[:image],condition: item_params[:condition],first_genre_id: item_params[:first_genre_id],second_genre_id: item_params[:second_genre_id],third_genre_id: item_params[:third_genre_id],size: item_params[:size],postage: item_params[:postage],sending_region: item_params[:sending_region],shipping_day: item_params[:shipping_day],price: item_params[:price],shipping_style: item_params[:shipping_style],brand: item_params[:brand],saler_id: current_user.id)
     redirect_to root_path
+  end
+  def destroy
+    Item.delete(params[:id])
+    redirect_to "/users/#{current_user.id}/items_status" ,notice: '商品を削除しました'
   end
 
 

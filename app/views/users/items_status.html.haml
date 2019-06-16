@@ -1,4 +1,8 @@
 = render 'header'
+- if flash[:notice]
+  .delete-complete-log.delete-sample
+    .delete-complete-text
+      = flash[:notice]
 =render "sidebar"
 .l-container
   %section.mypage-tab-container-edit
@@ -41,4 +45,3 @@
       .mypage-next
         %a{:href => "/"}
           %i.fas.fa-chevron-right.mypage-edit-icon
-  
