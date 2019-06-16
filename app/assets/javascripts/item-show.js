@@ -8,6 +8,9 @@ $(function() {
       scrollLeft: pos.left
     }, 300);
   } 
+  var start=function(){
+    console.log("ok!")
+  }
   $('.owl-lazy-sub').hover(function() {
     var data = this
     
@@ -15,4 +18,7 @@ $(function() {
    }, function() {
     clearTimeout(timeID)
   });
+  window.onload = function() {
+    $(".mypage-edit-left").addClass("changed");
+  };
 });

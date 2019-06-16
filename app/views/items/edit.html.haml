@@ -1,0 +1,203 @@
+-# ヘッダー
+.shared_wrapper
+  %header.single-header
+    %h1
+      %a{href: "/"}
+        %img{alt: "mercari", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?4069491723",class:"buy_logo"}/
+
+  -# フォーム表示部分
+  .container.single-main
+
+
+    .container__contents
+
+      -# ページタイトル
+      .container__contents__pagetitle.l-single-head
+        商品の情報を入力
+
+      -# 出品画像
+      .container__contents__image
+        .container__contents__image__upper
+          .container__contents__image__upper__text.text
+            出品画像　
+            %span.note 必須
+          -# .container__contents__image__upper__note
+        .container__contents__image__middle
+        .container__contents__image__under
+
+          = form_tag(root_path, class: 'dropzone', id: 'upload-dropzone') do
+            .fallback
+              = file_field_tag('attach[file]')
+
+          -# = form_for @item do |f|
+          -#   = f.label :image,"ドラッグアンドドロップまたはクリックしてアップロード",class:"item_image_label"
+          -#   = f.file_field :image,class:"item_image"
+        
+        
+      
+      -# 商品名と説明
+      .container__contents__item
+        .container__contents__item__name
+          .container__contents__item__name__upper
+            .container__contents__item__name__upper__text
+            .container__contents__item__name__upper__note
+            .containew__contents__item__name__upper__form
+              = form_for @item do |f|
+                = f.label :name,"商品名　",class: "text"
+                %span.note 必須
+                .containew__contents__item__name__upper__form__filefield
+                  = f.text_field :name,class: "item_name",placeholder:"商品名（必須40文字まで）"
+        .container__contents__item__explain
+          .container__contents__item__explain__under
+            .container__contents__item__explain__under__text
+            .container__contents__item__explain__under__note
+            .containew__contents__item__explain__under__form
+              = form_for @item do |f|
+                = f.label :text,"商品説明　",class: "text"
+                %span.note 必須
+                .containew__contents__item__explain__under__form__textarea
+                = f.text_area :text,class:"item_text",placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+
+      -# 商品の詳細（カテゴリーや状態など）
+      .container__contents__details
+        .container__contents__details__left
+          商品の詳細
+        .container__contents__details__right
+          .container__contents__details__right__form.text
+            = "カテゴリー"
+            %span.note 必須
+            .container__contents__details__right__form__firstgenre
+              = form_for @item do |f|
+                = f.select :first_genre_id,[["レディース","1"],["メンズ","2"],["ベビー・キッズ","3"],["インテリア・住まい・小物","4"],["本・音楽・小物","5"],["おもちゃ・ホビー・グッズ","6"],["コスメ・香水・美容","7"],["家電・スマホ・カメラ","8"],["スポーツ・レジャー","9"],["ハンドメイド","10"],["チケット","11"],["自転車・オートバイ","12"],["その他","13"]],prompt: "---",class:"item_first_genre_id"
+            .container__contents__details__right__form__secondgenre
+              = form_for @item do |f|
+                -# = f.select :second_genre_id,[["トップス","1"],["靴","2"]],prompt: "---"
+            .container__contents__details__right__form__thirdgenre
+              = form_for @item do |f|
+                -# = f.select :third_genre_id,[["ブーツ","1"],["サンダル","2"]],prompt: "---"
+
+            = "サイズ"
+            %span.note 必須
+            .container__contents__details__right__form__size
+              = form_for @item do |f|
+                = f.select :size,["20cm以下","20.5cm"],prompt: "---"
+
+            = "ブランド"
+            .container__contents__details__right__form__brand
+              = form_for @item do |f|
+                = f.text_field :brand,placeholder:"例）シャネル"
+
+            = "商品の状態"
+            %span.note 必須
+            .container__contents__details__right__form__condition
+              = form_for @item do |f|
+                = f.select :condition,["新品、未使用","未使用に近い"],prompt: "---"
+
+      -# 配送について
+      .container__contents__shipping
+
+        .container__contents__shipping__left
+          配送について
+          %a{href:"https://www.mercari.com/jp/help_center/article/68/"}
+            %i.fa.fa-question-circle{"aria-hidden" => "true"}
+
+        .container__contents__shipping__right.text
+
+          = "配送料の負担"
+          %span.note 必須
+          .container__contents__shipping__right__postage
+            = form_for @item do |f|
+              = f.select :postage,["送料込み","着払い"],prompt: "---"
+
+          = "配送の方法"
+          %span.note 必須
+          .container__contents__shipping__right__style
+            = form_for @item do |f|
+              = f.select :shipping_style,["未定","クロネコヤマト"],prompt: "---"
+
+          = "発送元の地域"
+          %span.note 必須
+          .container__contents__shipping__right__region
+            = form_for @item do |f|
+              = f.select :sending_region,["東京","神奈川"],prompt: "---"
+
+          = "発送までの日数"
+          %span.note 必須
+          .container__contents__shipping__right__day
+            = form_for @item do |f|
+              = f.select :shipping_day,["1~2日で発送","2~3日で発送"],prompt: "---"
+          
+
+      -# 販売価格
+      .container__contents__value
+
+        .container__contents__value__left
+          販売価格(300〜9,999,999)
+          %a{href:"https://www.mercari.com/jp/help_center/article/64/"}
+            %i.fa.fa-question-circle{"aria-hidden" => "true"}
+
+        .container__contents__value__right
+
+          .container__contents__value__right__price.text
+            = "価格"
+            %span.note.pricenote 必須
+            %span.yen　　　　　　　　¥
+            = form_for @item do |f|
+              = f.text_field :price,placeholder:"                     例）300"
+
+          .container__contents__value__right__fee
+            .container__contents__value__right__fee__text
+              = "販売手数料"
+            .container__contents__value__right__fee__calculate
+              = "-"
+
+          .container__contents__value__right__profit.text
+            .container__contents__value__right__profit__text
+              = "販売利益"
+            .container__contents__value__right__profit__result
+              = "-"
+
+
+
+      -# 商品の出品とページバックのボタン
+      .container__contents__btns
+        .container__contents__btns__text
+          %a{href:"https://www.mercari.com/jp/help_center/getting_started/prohibited_items/"}
+            %span 禁止されている出品
+          %span 、
+          %a{href:"https://www.mercari.com/jp/help_center/getting_started/prohibited_conduct/"}
+            %span 行為
+          %span を必ずご確認ください。
+          %br
+          %span またブランド品でシリアルナンバー等がある場合はご記載ください。
+          %a{href:"https://www.mercari.com/jp/help_center/getting_started/counterfeit_goods/"}
+            %span 偽ブランドの販売
+          %span は犯罪であり処罰される可能性があります。
+          %br
+          %span また、出品をもちまして
+          %a{href:"https://www.mercari.com/jp/seller_terms/"}
+            %span 加盟店規約
+          %span に同意したことになります。
+
+        .container__contents__btns__create.text
+          = form_for @item do |f|
+            = f.submit "出品する",class:"container__contents__btns__create__red"
+        .container__contents__btns__pageback
+          %input{href: :back, type: "button", value: "もどる",class:"container__contents__btns__pageback__link"}/
+
+          
+
+  -# フッター
+  %footer.single-footer
+    %ul.buy_list_wrapper
+      %li
+        %a{:href => "https://www.mercari.com/jp/privacy/",class:"buy_inf_list"} プライバシーポリシー
+      %li
+        %a{:href => "https://www.mercari.com/jp/tos/",class:"buy_inf_list"} メルカリ利用規約
+      %li
+        %a{:href => "https://www.mercari.com/jp/tokutei/",class:"buy_inf_list"} 特定商取引に関する表記
+    .footer-logo-wrapper
+      %a.single-footer-logo{:href => "https://www.mercari.com/jp/"}
+      %img{:alt => "mercari", :height => "65", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?4069491723", :width => "80"}/
+    .footer-small
+      %small © 2019 Mercari
