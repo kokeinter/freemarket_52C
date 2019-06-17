@@ -3,7 +3,7 @@
   %header.single-header
     %h1
       %a{href: "/"}
-        %img{alt: "mercari", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?4069491723",class:"buy_logo"}/
+        =image_tag  "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?4069491723",class:"buy_logo"
 
   -# フォーム表示部分
   .container.single-main
@@ -149,13 +149,13 @@
             .container__contents__value__right__fee__text
               = "販売手数料"
             .container__contents__value__right__fee__calculate
-              .jq-cost --
+              = "-"
 
           .container__contents__value__right__profit.text
             .container__contents__value__right__profit__text
               = "販売利益"
             .container__contents__value__right__profit__result
-              .jq-profit --
+              = "-"
 
 
 

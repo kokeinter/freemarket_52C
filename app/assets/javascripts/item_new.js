@@ -105,6 +105,24 @@ $(function(){
                 </select>`
     return html
   }
+  function appendcost(price,cost){
+            if (299 < price && price < 10000000) {
+              var html = `<div class="jq-cost">${cost}</div>`
+              $('.jq-cost').html(html);
+            } else {
+              var html = `<div class="jq-cost"> -- </div>`
+              $('.jq-cost').html(html);
+            }
+  }
+  function appendprofit(price,profit){
+            if (299 < price && price < 10000000) {
+              var html = `<div class="jq-profit">${profit}</div>`
+              $('.jq-profit').html(html);
+            } else {
+              var html = `<div class="jq-profit">--</div>`
+              $('.jq-profit').html(html);
+            }
+  }
 
 
   // ページを読み込んだ時にセカンド・サードジャンルを隠しておく
@@ -175,5 +193,14 @@ $(function(){
       var html = appendSelectBox13(int);
       $('.container__contents__details__right__form__secondgenre').append(html)
     }
+  })
+  //利益計算
+  $("#item_price").on("keyup", function() {
+  var price = $(this).val();
+  var cost = price/10
+  cost = Math.floor(cost) 
+  var profit = price - cost
+  appendcost(price,cost)
+  appendprofit(price,profit)
   })
 })

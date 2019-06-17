@@ -1,0 +1,138 @@
+.item-box-container-edit{
+  float: left;
+  background-color: white;
+  margin-left:380px;
+  width: 700px;
+  margin-bottom: 80px;
+}
+.item-description-edit{
+  float: left;
+  font-size: 18px;
+  padding:20px 0 50px 10px;
+  margin: 50px 0 0 20px; 
+}
+.item-edit-second{
+  padding: 20px 0 0 40px;
+  margin:60px 0 0 380px;
+  width: 700px;
+  height: 260px;
+  background-color: white;
+}
+.item-edit-bottun{
+  display: block;
+  height: 50px;
+  width: 95%;
+  background-color: red;
+  text-align: center;
+  line-height: 50px;
+  color: white;
+}
+.item-edit-bottun{
+  &-link{
+  text-decoration: none;
+  }
+  &-or{
+  font-size: 13px;
+  line-height: 50px;
+  text-align: center;
+  width: 95%;
+  height: 50px;
+  }
+  &-sub{
+  display: block;
+  height: 50px;
+  width: 95%;
+  background-color: rgb(153, 153, 153);
+  text-align: center;
+  line-height: 50px;
+  margin-bottom: 20px;
+  color: white;
+  }
+}
+.item-box-edit{
+  background-color: white;
+  margin-left:380px;
+  width: 700px;
+  padding-bottom: 30px;
+  height: 800px;
+}
+#delete-dialog {
+  display: none;
+  position: fixed;
+  top:5%;
+  left: 30%;
+  width: 40%;
+  margin: auto;
+  text-align: center;
+  background-color: white;
+}
+.delete-dialog{
+  &-top{
+  height: 230px;
+  padding: 64px;
+  }
+  &-bottom{
+    height: 80px;
+    border-top: solid 1px rgb(202, 202, 202);
+  }
+  &-bottun-left{
+    border-right: solid 1px rgb(202, 202, 202);
+    float: left;
+    text-align: center;
+    width: 50%;
+    line-height: 80px;
+    font-size: 14px;
+  }
+  &-bottun-right{
+    color: #0099e8;
+    text-align: center;
+    line-height: 80px;
+    font-size: 14px;
+    text-decoration: none;
+    display: block;
+  }
+}
+.dialog-title{
+  font-size: 18px;
+}
+.dialog-text{
+  font-size: 13px;
+  margin-bottom: 10px;
+  color: rgb(43, 43, 43);
+}
+.delete-log-wrapper{
+  position: fixed;
+  background-color: black;
+  top: 0%;
+  height: 100%;
+  width: 100%;
+  opacity: 0.5;
+  display: none;
+}
+div.edit-sample {
+  animation: anime1 0.3s ;
+  &-2{
+    animation: anime2 0.3s;
+  }
+}
+@keyframes anime1 {
+  from {
+    top:0%;
+    opacity: 0;
+  }
+  to{
+    top: 5%;
+    opacity: 1.0;
+  }
+}
+@keyframes anime2 {
+  from {
+    background-color: rgb(0, 0, 0);
+    opacity: 0;
+  }
+  to {
+    background-color: rgb(0, 0, 0);
+    opacity: 0.5;
+  }
+}
+  

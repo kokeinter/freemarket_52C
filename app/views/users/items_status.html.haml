@@ -1,0 +1,30 @@
+= render 'header'
+- if flash[:notice]
+  .delete-complete-log.delete-sample
+    .delete-complete-text
+      = flash[:notice]
+=render "sidebar"
+.l-container
+  %section.mypage-tab-container-edit
+    %h2.mypage-tab-head-edit 出品した商品
+    %ul.listing-tabs
+      %li
+        %h3
+          %a.mypage-edit-left{:href => "/"}
+            出品中
+      %li
+        %h3
+          %a.mypage-edit{:href => "/"}
+            取引中
+      %li
+        %h3
+          %a.mypage-edit{:href => "/"}
+            売却済み
+      = render partial: 'items_status', collection: @items, as: "item" 
+    .mypage-history
+      .mypage-prev
+        %a{:href => "/"}
+          %i.fas.fa-chevron-left.mypage-edit-icon
+      .mypage-next
+        %a{:href => "/"}
+          %i.fas.fa-chevron-right.mypage-edit-icon

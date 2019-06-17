@@ -1,0 +1,154 @@
+= render 'header'
+.item-show-wrapper
+  %section.item-box-edit
+    %h1.item-name-show
+      =@item.name
+    .item-main-content
+      .item-photo-wrapper
+        .item-photo_scroll
+          .item-photo
+            =image_tag @item.image.url,class: "owl-lazy",id:"7" 
+            =image_tag "https://static.mercdn.net/item/detail/orig/photos/m82375932664_2.jpg?1559389004",class: "owl-lazy",id:"3"
+        .owl-bots
+          =image_tag @item.image.url,class: "owl-lazy-sub",id:"7" 
+          =image_tag "https://static.mercdn.net/item/detail/orig/photos/m82375932664_2.jpg?1559389004",class: "owl-lazy-sub",id:"3"
+      %table.item-detail-table
+        %tbody
+          %tr
+            %th 出品者
+            %td
+              =link_to "#{@user.nickname}","/",class:"item-detail-link"
+              %div
+                .item-user-ratings
+                  %i.fas.fa-grin
+                  %span 350
+                .item-user-ratings
+                  %i.fas.fa-meh
+                  %span 0
+                .item-user-ratings
+                  %i.fas.fa-frown
+                  %span 0
+          %tr
+            %th カテゴリー
+            %td
+              %a.item-detail-link{:href => "https://www.mercari.com/jp/category/2/"}
+                %div 
+                  =@first.genre
+              %a.item-detail-link{:href => "https://www.mercari.com/jp/category/30/"}
+                .item-detail-table-sub-category
+                %i.fas.fa-chevron-right
+                  =@second.genre
+              %a.item-detail-link{:href => "https://www.mercari.com/jp/category/303/"}
+                .item-detail-table-sub-sub-category
+                %i.fas.fa-chevron-right
+                  =@third.genre
+          %tr
+            %th ブランド
+            %td
+              %a.item-detail-link{:href => "https://www.mercari.com/jp/brand/99/"}
+                %div
+                  =@item.brand
+          %tr
+            %th 商品のサイズ
+            %td 
+              =@item.size
+          %tr
+            %th 商品の状態
+            %td 
+              =@item.condition
+          %tr
+            %th 配送料の負担
+            %td 
+              =@item.postage
+          %tr
+            %th 配送の方法
+            %td 
+              =@item.shipping_style
+          %tr
+            %th 配送元地域
+            %td
+              =link_to "#{@item.sending_region}","/",class:"item-detail-link"
+          %tr
+            %th 発送日の目安
+            %td 
+              =@item.shipping_day
+      .item-price-box
+        %span.item-price-show 
+          ¥
+          =@item.price
+        %span.item-tax (税込)
+        %span.item-shipping-fee
+          =@item.shipping_style
+    .item-edit-description
+      %p.item-description-inner
+      =@item.text
+  .item-edit-second
+    %a.item-edit-bottun-link{href:"/items/#{params[:id]}/edit"}
+      .item-edit-bottun
+        商品の編集
+    .item-edit-bottun-or
+      or
+    %a.item-edit-bottun-link{href:"/"}
+      .item-edit-bottun-sub
+        出品を一旦停止する
+    %a.item-edit-bottun-link
+      .item-edit-bottun-sub#delete-item-btn
+        この商品を削除する
+  .message-content
+    -@comments.each do |comment|
+      -if current_user.id == comment.user.id
+        %ul.show-comment-li
+          %li.show-my-comment
+            %a{href:"/users/#{current_user.id}/mypage"}
+              .message-my-user
+                .message-user-unknown
+                  %img{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/user-icon.svg?1612736639",height:"32px"}/
+              .comment-my-user-name
+                =current_user.nickname
+            .message-my-body
+              .message-body-text 
+                =comment.text
+              .message-icons
+                %time.message-icon-left
+                  %i.far.fa-clock
+                  .show-icon-text
+                    五日前
+      -else
+        %ul.show-comment-li
+          %li.show-comment
+            %a{href:"/users/#{comment.user.id}/mypage"}
+              .message-user
+                .message-user-unknown
+                  =image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/user-icon.svg?1612736639",height:"32px"
+            .comment-user-name
+              =comment.user.nickname
+            .message-body
+              .message-body-text 
+                =comment.text
+              .message-icons
+                %time.message-icon-left
+                  %i.far.fa-clock
+                  .show-icon-text
+                    五日前
+    .message-form
+      %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+    = form_for [@item,@comment] do |f|
+      =f.text_area :text,class:"textarea-default"
+      =f.submit "コメントする",class:"message-submit"
+.delete-log-wrapper.edit-sample-2
+.item-delete-log.edit-sample#delete-dialog
+  .delete-dialog
+    .delete-dialog-top
+      .dialog-title
+        確認
+      .dialog-text
+        削除すると二度と復活できません。
+        %p 削除する代わりに停止することもできます。
+      .dialog-text
+        本当に削除しますか？
+    .delete-dialog-bottom
+      %bottun.delete-dialog-bottun-left
+        キャンセル
+      .delete-dialog-bottun-right
+        =link_to "削除する","/items/#{params[:id]}",method: :delete,class:"delete-dialog-bottun-right"
+
