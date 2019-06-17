@@ -21,23 +21,25 @@
           %a.mypage-edit{:href => "/"}
             売却済み
       -@items.each do |item|
-        %li
-          %a.mypage-item-link-edit{:href => "/items/#{item.id}/before_edit"}
-            .tab-content-edit
-              =image_tag item.image.url,class: "mypage-edit-image" 
-              .mypage-edit-item-body
-                .mypage-edit-item-text
-                  =item.name
-                %div
-                  %span.listing-item-count
-                    %i.far.fa-heart
-                    %span 0
-                  %span.listing-item-count
-                    %i.far.fa-comment-alt
-                    %span 0
-                  %span.mypage-item-status
-                    出品中
-              %i.fas.fa-chevron-right.mypage-edit-list-icon
+        = render partial: 'items_status', locals: { item: item }
+      -# -@items.each do |item|
+      -#   %li
+      -#     %a.mypage-item-link-edit{:href => "/items/#{item.id}/before_edit"}
+      -#       .tab-content-edit
+      -#         =image_tag item.image.url,class: "mypage-edit-image" 
+      -#         .mypage-edit-item-body
+      -#           .mypage-edit-item-text
+      -#             =item.name
+      -#           %div
+      -#             %span.listing-item-count
+      -#               %i.far.fa-heart
+      -#               %span 0
+      -#             %span.listing-item-count
+      -#               %i.far.fa-comment-alt
+      -#               %span 0
+      -#             %span.mypage-item-status
+      -#               出品中
+      -#         %i.fas.fa-chevron-right.mypage-edit-list-icon
     .mypage-history
       .mypage-prev
         %a{:href => "/"}
