@@ -22,7 +22,7 @@
           出品する
           %i.fas.fa-chevron-right.mypage-fa
       %li
-        %a.mypage-nav-list-item{:href => "/users/#{current_user.id}/items_status"}
+        =link_to "/users/#{current_user.id}/items_status",class:"mypage-nav-list-item" do
           出品した商品 - 出品中
           %i.fas.fa-chevron-right.mypage-fa
       %li
