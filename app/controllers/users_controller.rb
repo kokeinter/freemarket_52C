@@ -3,7 +3,6 @@ class UsersController < ApplicationController
     @user = User.new
   end
   def mypage
-    @user= User.find(current_user.id)
   end
   def index
   end
