@@ -45,19 +45,12 @@ $(document).ready(function(){
   });
 });
 
+// ログインボタンのアニメーション
 $(function() {
   $('.signin-btn__text').hover(function() {
-    $(this).stop().animate({'color': '#FFF', 'background': '#0099e8'}, 500);
+    $(this).stop().animate({'color': '#FFF', 'backgroundColor': '#0099e8'}, 300);
   },function() {
-    $(this).stop().animate({'color': '#0099e8', 'background': '#FFF'}, 500);
-  });
-});
-
-$(function() {
-  $('.signin-btn__text').hover(function() {
-    $(this).css({'color': '#FFF', 'background': '#0099e8'});
-  },function() {
-    $(this).css({'color': '#0099e8', 'background': '#FFF'});
+    $(this).stop().animate({'color': '#0099e8', 'backgroundColor': '#FFF'}, 300);
   });
 });
 
