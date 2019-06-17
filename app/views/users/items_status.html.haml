@@ -20,8 +20,7 @@
         %h3
           %a.mypage-edit{:href => "/"}
             売却済み
-      -@items.each do |item|
-        = render partial: 'items_status', locals: { item: item }
+      = render partial: 'items_status', collection: @items, as: "item" 
     .mypage-history
       .mypage-prev
         %a{:href => "/"}
