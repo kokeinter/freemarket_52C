@@ -48,7 +48,7 @@
 .tab-content-edit{
   clear: both;
   display: block;
-  height: 100px;
+  height: 80px;
   background-color: white;
 }
 .mypage-edit-item-body{
@@ -58,6 +58,11 @@
 .mypage-edit-item-text{
   color: black;
   font-size: 13px;
+}
+.mypage-edit-list-icon{
+  float: right;
+  color: rgb(70, 70, 70);
+  margin: 40px 20px 0 0; 
 }
 .listing-item-count{
   color: rgb(184, 184, 184);

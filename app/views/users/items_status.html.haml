@@ -21,9 +21,9 @@
           %a.mypage-edit{:href => "/"}
             売却済み
       -@items.each do |item|
-        .tab-content-edit
-          %li
-            %a.mypage-item-link-edit{:href => "/items/#{item.id}/before_edit"}
+        %li
+          %a.mypage-item-link-edit{:href => "/items/#{item.id}/before_edit"}
+            .tab-content-edit
               =image_tag item.image.url,class: "mypage-edit-image" 
               .mypage-edit-item-body
                 .mypage-edit-item-text
@@ -37,7 +37,7 @@
                     %span 0
                   %span.mypage-item-status
                     出品中
-              %i.icon-arrow-right
+              %i.fas.fa-chevron-right.mypage-edit-list-icon
     .mypage-history
       .mypage-prev
         %a{:href => "/"}

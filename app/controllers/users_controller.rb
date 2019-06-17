@@ -3,6 +3,7 @@ class UsersController < ApplicationController
     @user = User.new
   end
   def mypage
+    @user= User.find(params[:id])
   end
   def index
   end
