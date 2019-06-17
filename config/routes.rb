@@ -10,21 +10,24 @@ Rails.application.routes.draw do
     get 'new'   =>    'users/registrations#new'
   end
 
-  resources :users
+  resources :users do
+    member do
+      get "items_status"
+    end
+    collection do
+      get "mypage","complete","logout","info"
+    end
+  end
+
   resources :items do
+    member do
+      get "buy","before_edit"
+    end
     resources :comments, only: [:create]
   end
-  get "buy" => "items#buy"
-  get "/mypage" => "users#mypage"
-  get "users/:id/info" => "users#info"
+  
   resources :addresses ,only:[:new,:create]
   resources :creditcards ,only:[:new,:create]
-  get 'complete'   =>    'users#complete'
-  get 'items/:id/buy' => 'items#buy'
-  get "/logout" => "users#logout"
-  get '/items/:id/before_edit' => 'items#before_edit'
-  get "users/:id/items_status" => "users#items_status"
-
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

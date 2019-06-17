@@ -1,5 +1,5 @@
 %li
-  =link_to "/items/#{item.id}/before_edit",class:"mypage-item-link-edit" do
+  =link_to before_edit_item_path(item.id),class:"mypage-item-link-edit" do
     .tab-content-edit
       =image_tag item.image.url,class: "mypage-edit-image" 
       .mypage-edit-item-body
