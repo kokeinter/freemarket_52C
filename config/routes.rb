@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     resources :comments, only: [:create]
   end
   get "buy" => "items#buy"
-  get "users/:id/mypage" => "users#mypage"
+  get "/mypage" => "users#mypage"
   get "users/:id/info" => "users#info"
   resources :addresses ,only:[:new,:create]
   resources :creditcards ,only:[:new,:create]
