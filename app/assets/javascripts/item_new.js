@@ -1,179 +1,132 @@
 $(function(){
-
-  // 追加するセレクトボックスを作成
-  function appendSelectBox1(){
-    var html = `<select name="item[second_genre_id]" id="item_second_genre_id" style="display: block;">
-                  <option value="">---</option>
-                  <option value="1">トップス</option>
-                  <option value="2">靴</option>
-                </select>`
-    return html
-  }
-  function appendSelectBox2(){
-    var html = `<select name="item[second_genre_id]" id="item_second_genre_id" style="display: block;">
-                  <option value="">---</option>
-                  <option value="1">トップス</option>
-                  <option value="2">靴</option>
-                </select>`
-    return html
-  }
-  function appendSelectBox3(){
-    var html = `<select name="item[second_genre_id]" id="item_second_genre_id" style="display: block;">
-                  <option value="">---</option>
-                  <option value="1">トップス</option>
-                  <option value="2">靴</option>
-                </select>`
-    return html
-  }
-  function appendSelectBox4(){
-    var html = `<select name="item[second_genre_id]" id="item_second_genre_id" style="display: block;">
-                  <option value="">---</option>
-                  <option value="1">トップス</option>
-                  <option value="2">靴</option>
-                </select>`
-    return html
-  }
-  function appendSelectBox5(){
-    var html = `<select name="item[second_genre_id]" id="item_second_genre_id" style="display: block;">
-                  <option value="">---</option>
-                  <option value="1">トップス</option>
-                  <option value="2">靴</option>
-                </select>`
-    return html
-  }
-  function appendSelectBox6(){
-    var html = `<select name="item[second_genre_id]" id="item_second_genre_id" style="display: block;">
-                  <option value="">---</option>
-                  <option value="1">トップス</option>
-                  <option value="2">靴</option>
-                </select>`
-    return html
-  }
-  function appendSelectBox7(){
-    var html = `<select name="item[second_genre_id]" id="item_second_genre_id" style="display: block;">
-                  <option value="">---</option>
-                  <option value="1">トップス</option>
-                  <option value="2">靴</option>
-                </select>`
-    return html
-  }
-  function appendSelectBox8(){
-    var html = `<select name="item[second_genre_id]" id="item_second_genre_id" style="display: block;">
-                  <option value="">---</option>
-                  <option value="1">トップス</option>
-                  <option value="2">靴</option>
-                </select>`
-    return html
-  }
-  function appendSelectBox9(){
-    var html = `<select name="item[second_genre_id]" id="item_second_genre_id" style="display: block;">
-                  <option value="">---</option>
-                  <option value="1">トップス</option>
-                  <option value="2">靴</option>
-                </select>`
-    return html
-  }
-  function appendSelectBox10(){
-    var html = `<select name="item[second_genre_id]" id="item_second_genre_id" style="display: block;">
-                  <option value="">---</option>
-                  <option value="1">トップス</option>
-                  <option value="2">靴</option>
-                </select>`
-    return html
-  }
-  function appendSelectBox11(){
-    var html = `<select name="item[second_genre_id]" id="item_second_genre_id" style="display: block;">
-                  <option value="">---</option>
-                  <option value="1">トップス</option>
-                  <option value="2">靴</option>
-                </select>`
-    return html
-  }
-  function appendSelectBox12(){
-    var html = `<select name="item[second_genre_id]" id="item_second_genre_id" style="display: block;">
-                  <option value="">---</option>
-                  <option value="1">トップス</option>
-                  <option value="2">靴</option>
-                </select>`
-    return html
-  }
-  function appendSelectBox13(){
-    var html = `<select name="item[second_genre_id]" id="item_second_genre_id" style="display: block;">
-                  <option value="">---</option>
-                  <option value="1">トップス</option>
-                  <option value="2">靴</option>
-                </select>`
+  function appendSecondSelectBox(){
+    var html = `
+                <div class=".container__contents__details__right__form__secondgenre">
+                  <select class="item_second_genre_id" id="item_second_genre_id" name="item[category]">
+                    <option value="">---</option>
+                  </select>
+                </div>`
     return html
   }
 
+  function appendOptionChild(child){
+    var html = `<option value="${child.id}">
+                  ${child.name}
+                </option>`
+    return html
+  }
 
-  // ページを読み込んだ時にセカンド・サードジャンルを隠しておく
-  $(document).ready( function(){
-    $("#item_second_genre_id").css('display','none');
-    $("#item_third_genre_id").css('display','none');
-  });
+  function appendThirdSelectBox(){
+    var html = `
+                <div class=".container__contents__details__right__form__thirdgenre">
+                  <select class="item_third_genre_id" id="item_third_genre_id" name="item[category]">
+                    <option value="">---</option>
+                  </select>
+                </div>`
+    return html
+  }
 
-  // セレクトボックスで値が選択されたらイベント発火
-  $("#item_first_genre_id").on('change',function(){
+  function appendOptionGrandChild(grandchild){
+    var html = `<option value="${grandchild.id}">
+                  ${grandchild.name}
+                </option>`
+    return html
+  }
 
-    // セレクトボックスで選択された値を取得
-    const int = document.getElementById("item_first_genre_id").value;
-    console.log(int)
+  // セカンドジャンルの追加
+  $("#item_first_genre_id").on("change",function(){
 
-    // 選択した値によって次のセレクトボックスを変更
-    if(int == 1){
-      console.log("OK")
-      // $("#item_second_genre_id").css('display','block');
-      var html = appendSelectBox1(int);
-      $('.container__contents__details__right__form__secondgenre').append(html)
-    }else if(int == 2){
-      console.log("OK")
-      var html = appendSelectBox2(int);
-      $('.container__contents__details__right__form__secondgenre').append(html)
-    }else if(int == 3){
-      console.log("OK")
-      var html = appendSelectBox3(int);
-      $('.container__contents__details__right__form__secondgenre').append(html)
-    }else if(int == 4){
-      console.log("OK")
-      var html = appendSelectBox4(int);
-      $('.container__contents__details__right__form__secondgenre').append(html)
-    }else if(int == 5){
-      console.log("OK")
-      var html = appendSelectBox5(int);
-      $('.container__contents__details__right__form__secondgenre').append(html)
-    }else if(int == 6){
-      console.log("OK")
-      var html = appendSelectBox6(int);
-      $('.container__contents__details__right__form__secondgenre').append(html)
-    }else if(int == 7){
-      console.log("OK")
-      var html = appendSelectBox7(int);
-      $('.container__contents__details__right__form__secondgenre').append(html)
-    }else if(int == 8){
-      console.log("OK")
-      var html = appendSelectBox8(int);
-      $('.container__contents__details__right__form__secondgenre').append(html)
-    }else if(int == 9){
-      console.log("OK")
-      var html = appendSelectBox9(int);
-      $('.container__contents__details__right__form__secondgenre').append(html)
-    }else if(int == 10){
-      console.log("OK")
-      var html = appendSelectBox10(int);
-      $('.container__contents__details__right__form__secondgenre').append(html)
-    }else if(int == 11){
-      console.log("OK")
-      var html = appendSelectBox11(int);
-      $('.container__contents__details__right__form__secondgenre').append(html)
-    }else if(int == 12){
-      console.log("OK")
-      var html = appendSelectBox12(int);
-      $('.container__contents__details__right__form__secondgenre').append(html)
-    }else if(int == 13){
-      console.log("OK")
-      var html = appendSelectBox13(int);
-      $('.container__contents__details__right__form__secondgenre').append(html)
+    // ファーストジャンルのidを取得してそのidをAjax通信でコントローラーへ送る
+    var parentValue = document.getElementById("item_first_genre_id").value;
+    console.log(parentValue)
+
+    // 選択したのがprompt（　"---" ）でセカンドジャンルがあれば、削除する
+    // なければ非同期通信を実行する
+    if(parentValue == ""){
+      $('#item_second_genre_id').remove();
+      $('#item_third_genre_id').remove();
+    }
+
+    else{
+      var url = '/categories'
+      $.ajax({
+        url: url,
+        type: "GET",
+        data: {
+          parent_id: parentValue
+          // 親ボックスの値をparent_idという変数にする。
+        },
+        dataType: 'json'
+      })
+      
+      .done(function(children){
+        // すでにセカンドジャンルがあれば削除
+        $('#item_second_genre_id').remove();
+        // セレクトボックスの箱のみをまず追加
+        var selectbox = appendSecondSelectBox(children);
+        $('.container__contents__details__right__form__genre').append(selectbox);
+        // セレクトボックスの選択しを追加
+        children.forEach(function(child){
+          var options = appendOptionChild(child);
+          $('#item_second_genre_id').append(options);
+        });
+      })
+      .fail(function(){
+        alert('error');
+      })
     }
   })
-})
+// ーーーーーーーーーここまでセカンドジャンルーーーーーーーーーー
+
+// サードジャンルの追加
+// ajaxで追加したDOM要素はセレクタが変わり、追加した要素の親要素をセレクタにして、onの中で本来セレクタにしたい要素を指定する
+  $(".container__contents__details__right__form__genre").on("change","#item_second_genre_id",function(){
+
+    // セカンドジャンルのidを取得
+    var parentValue = document.getElementById("item_second_genre_id").value;
+    console.log(parentValue)
+
+    // 選択したのがprompt（　"---" ）で、かつサードジャンルがあれば、削除する
+    // なければ非同期通信を実行する
+    if(parentValue == ""){
+      $('#item_third_genre_id').remove();
+    }
+    else{
+      // var url = '/categories'
+      $.ajax({
+        url: '/categories/show',
+        type: "GET",
+        data: {
+          child_id: parentValue
+          // 親ボックスの値をparent_idという変数にする。
+        },
+        dataType: 'json'
+      })
+            
+      .done(function(grandchildren){
+
+        // すでにサードジャンルがあれば削除
+          $('#item_third_genre_id').remove();
+
+        // セレクトボックスの箱のみをまず追加
+        var selectbox = appendThirdSelectBox(grandchildren);
+
+
+        $('.container__contents__details__right__form__genre').append(selectbox);
+        // セレクトボックスの選択しを追加
+        grandchildren.forEach(function(child){
+          var options = appendOptionGrandChild(child);
+          $('#item_third_genre_id').append(options);
+        });
+      })
+      .fail(function(){
+        alert('error');
+      })
+    }
+
+
+
+
+  })
+
+});
