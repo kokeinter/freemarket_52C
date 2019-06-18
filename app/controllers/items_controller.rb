@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   before_action :item_params,only:[:create]
 
   def index
-    @items=Item.all
+    @items = Item.all
   end
 
   def new

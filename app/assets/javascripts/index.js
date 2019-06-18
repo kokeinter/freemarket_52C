@@ -45,18 +45,56 @@ $(document).ready(function(){
   });
 });
 
+// ログインボタンのアニメーション
 $(function() {
-  $('.app-banner__dl-btn-ios').hover(function() {
-    $(this).css('background', '#FFFFFF').css('opacity', '0.2');
+  $('.signin-btn__text').hover(function() {
+    $(this).stop().animate({'color': '#FFF', 'backgroundColor': '#0099e8'}, 300);
+  },function() {
+    $(this).stop().animate({'color': '#0099e8', 'backgroundColor': '#FFF'}, 300);
+  });
+});
+
+// カテゴリボタン、ブランドボタン、お知らせ、やることリスト、マイページの色変更
+$(function() {
+  $('.categories-btn, .brands-btn, .news-btn__text, .todo-list-btn__text, .mypage-btn__text, .kari__signout-btn-text')
+  .hover(function() {
+    $(this).css('color', '#0099e8');
   }, function() {
-    $(this).css('background', '').css('opacity', '0');
+    $(this).css('color', '#333');
+  });
+});
+
+// ピックアップカテゴリ、すべての商品表示のスタイル変更
+$(function() {
+  $('.items-contents__title-btn, .pickup-content__all-btn').hover(function() {
+    $(this).css({'textDecoration': 'underline', 'opacity': 0.7});
+  }, function() {
+    $(this).css({'textDecoration': 'none', 'opacity': 1});
+  });
+});
+
+// バナーの各ストアのボタン色変化
+$(function() {
+  $('.app-banner__dl-btn-ios, .app-banner__dl-btn-google').hover(function() {
+    $(this).css('background', '#FFFFFF').css('opacity', 0.2);
+  }, function() {
+    $(this).css('background', '').css('opacity', 0);
+  });
+});
+
+// フッターリストのスタイル変更
+$(function() {
+  $('.footer-list').hover(function() {
+    $(this).css('textDecoration', 'underline');
+  }, function() {
+    $(this).css('textDecoration', 'none');
   });
 });
 
 $(function() {
-  $('.app-banner__dl-btn-google').hover(function() {
-    $(this).css('background', '#FFFFFF').css('opacity', '0.2');
+  $('.footer-social-link__app-icon, .footer-bottom__logo').hover(function() {
+    $(this).css('opacity', 0.7);
   }, function() {
-    $(this).css('background', '').css('opacity', '0');
+    $(this).css('opacity', 1);
   });
 });
