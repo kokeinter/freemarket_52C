@@ -24,12 +24,11 @@
 .container__contents__image__upper__text{
   margin-bottom: 81px;
 }
+
 .container__contents__image{
   border-bottom: solid 1px rgb(238, 238, 238);
-  padding-top: 40px;
-  padding-left: 40px;
-  padding-right: 40px;
-  padding-bottom: 120px;
+  padding: 40px;
+  padding-bottom: 100px;
 }
 .item_image_label{
   padding: 81px;
@@ -41,6 +40,26 @@
 .item_image{
   display: none;
 }
+
+.dropzone {
+  border: 1px dashed #ccc;
+  background: #f5f5f5;
+    .dz-message {
+      font-size: 16px;
+      text-align: center;
+      margin: 0
+    }
+  }
+.dz-message.needsclick{
+  position: absolute;
+  top: 40%;
+  left: 16px;
+  right: 16px;
+  text-align: center;
+  font-size: 14px;
+}
+
+
 
 // 商品名と説明
 .container__contents__item{
