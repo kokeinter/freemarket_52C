@@ -7,10 +7,9 @@
       = image_tag "banner-natsukashi.jpg"
   .pickup-contents
     %h2.pickup-contents__title
-      ピックアップカテゴリー
+      商品一覧表示
     %section.items-contents.clearfix
       %h3.items-contents__title
-        = link_to "レディース新着アイテム", "/", class: "items-contents__title-btn"
       .items-box-content.clearfix
         - @items.each do |item|
           %a{href:"items/#{item.id}",class:"item-show-link"}
@@ -24,9 +23,30 @@
                     = item.price
                   %span.like-count
                     1
-                  %i.fa.fa-heart-o
+                  %i.far.fa-heart
                   .item-tax
                     (税込)
+
+  .pickup-contents
+    %h2.pickup-contents__title
+      ピックアップカテゴリー
+    %section.items-contents.clearfix
+      %h3.items-contents__title
+        = link_to "レディース新着アイテム", root_path, class: "items-contents__title-btn"
+      .items-box-content.clearfix
+        .items-box.one
+          %a.detail-page
+            = image_tag("https://static.mercdn.net/item/detail/orig/photos/m55022741185_1.jpg?1560257297", class: "detail-page__img")
+            .detail-page__body
+              %h3.item-name
+                24.0㎝ フィアオブゴッド × ナイキ fear of god × Nike
+              .item-price.clearfix
+                ¥ 15,400
+              %span.like-count
+                1
+              %i.far.fa-heart
+              .item-tax
+                (税込)
         
         .items-box.two
           %a.detail-page
@@ -68,12 +88,12 @@
               .item-tax
                 (税込)
   .pickup-content__all
-    = link_to "すべての商品を見る", "/", class: "pickup-content__all-btn"
+    = link_to "すべての商品を見る", root_path, class: "pickup-content__all-btn"
   
   .pickup-contents
     %section.items-contents.clearfix
       %h3.items-contents__title
-        = link_to "メンズ新着アイテム", "/", class: "items-contents__title-btn"
+        = link_to "メンズ新着アイテム", root_path, class: "items-contents__title-btn"
       .items-box-content.clearfix
         .items-box.one
           %a.detail-page
@@ -128,12 +148,12 @@
               .item-tax
                 (税込)
   .pickup-content__all
-    = link_to "すべての商品を見る", "/", class: "pickup-content__all-btn"
+    = link_to "すべての商品を見る", root_path, class: "pickup-content__all-btn"
   
   .pickup-contents
     %section.items-contents.clearfix
       %h3.items-contents__title
-        = link_to "ベビー・キッズ 新着アイテム", "/", class: "items-contents__title-btn"
+        = link_to "ベビー・キッズ 新着アイテム", root_path, class: "items-contents__title-btn"
       .items-box-content.clearfix
         .items-box.one
           %a.detail-page
@@ -188,12 +208,12 @@
               .item-tax
                 (税込)
   .pickup-content__all
-    = link_to "すべての商品を見る", "/", class: "pickup-content__all-btn"
+    = link_to "すべての商品を見る", root_path, class: "pickup-content__all-btn"
 
   .pickup-contents
     %section.items-contents.clearfix
       %h3.items-contents__title
-        = link_to "コスメ・香水・美容 新着アイテム", "/", class: "items-contents__title-btn"
+        = link_to "コスメ・香水・美容 新着アイテム", root_path, class: "items-contents__title-btn"
       .items-box-content.clearfix
         .items-box.one
           %a.detail-page
@@ -248,14 +268,14 @@
               .item-tax
                 (税込)
   .pickup-content__all
-    = link_to "すべての商品を見る", "/", class: "pickup-content__all-btn"
+    = link_to "すべての商品を見る", root_path, class: "pickup-content__all-btn"
   
   .pickup-contents
     %h2.pickup-contents__title
       ピックアップブランド
     %section.items-contents.clearfix
       %h3.items-contents__title
-        = link_to "シャネル 新着アイテム", "/", class: "items-contents__title-btn"
+        = link_to "シャネル 新着アイテム", root_path, class: "items-contents__title-btn"
       .items-box-content.clearfix
         .items-box.one
           %a.detail-page
@@ -310,12 +330,12 @@
               .item-tax
                 (税込)
   .pickup-content__all
-    = link_to "すべての商品を見る", "/", class: "pickup-content__all-btn"
+    = link_to "すべての商品を見る", root_path, class: "pickup-content__all-btn"
 
   .pickup-contents
     %section.items-contents.clearfix
       %h3.items-contents__title
-        = link_to "ルイ ヴィトン 新着アイテム", "/", class: "items-contents__title-btn"
+        = link_to "ルイ ヴィトン 新着アイテム", root_path, class: "items-contents__title-btn"
       .items-box-content.clearfix
         .items-box.one
           %a.detail-page
@@ -370,12 +390,12 @@
               .item-tax
                 (税込)
   .pickup-content__all
-    = link_to "すべての商品を見る", "/", class: "pickup-content__all-btn"
+    = link_to "すべての商品を見る", root_path, class: "pickup-content__all-btn"
   
   .pickup-contents
     %section.items-contents.clearfix
       %h3.items-contents__title
-        = link_to "シュプリーム 新着アイテム", "/", class: "items-contents__title-btn"
+        = link_to "シュプリーム 新着アイテム", root_path, class: "items-contents__title-btn"
       .items-box-content.clearfix
         .items-box.one
           %a.detail-page
@@ -430,12 +450,12 @@
               .item-tax
                 (税込)  
   .pickup-content__all
-    = link_to "すべての商品を見る", "/", class: "pickup-content__all-btn"
+    = link_to "すべての商品を見る", root_path, class: "pickup-content__all-btn"
 
   .pickup-contents
     %section.items-contents.clearfix
       %h3.items-contents__title
-        = link_to "ナイキ 新着アイテム", "/", class: "items-contents__title-btn"
+        = link_to "ナイキ 新着アイテム", root_path, class: "items-contents__title-btn"
       .items-box-content.clearfix
         .items-box.one
           %a.detail-page
@@ -490,7 +510,7 @@
               .item-tax
                 (税込)
   .pickup-content__all
-    = link_to "すべての商品を見る", "/", class: "pickup-content__all-btn"
+    = link_to "すべての商品を見る", root_path, class: "pickup-content__all-btn"
 
   .app-banner
     .app-banner__dl-btn

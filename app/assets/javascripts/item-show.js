@@ -15,4 +15,7 @@ $(function() {
    }, function() {
     clearTimeout(timeID)
   });
+  window.onload = function() {
+    $(".mypage-edit-left").addClass("changed");
+  };
 });

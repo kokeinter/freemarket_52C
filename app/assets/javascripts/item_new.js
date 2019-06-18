@@ -32,6 +32,24 @@ $(function(){
                 </option>`
     return html
   }
+  function appendcost(price,cost){
+            if (299 < price && price < 10000000) {
+              var html = `<div class="jq-cost">${cost}</div>`
+              $('.jq-cost').html(html);
+            } else {
+              var html = `<div class="jq-cost"> -- </div>`
+              $('.jq-cost').html(html);
+            }
+  }
+  function appendprofit(price,profit){
+            if (299 < price && price < 10000000) {
+              var html = `<div class="jq-profit">${profit}</div>`
+              $('.jq-profit').html(html);
+            } else {
+              var html = `<div class="jq-profit">--</div>`
+              $('.jq-profit').html(html);
+            }
+  }
 
   // セカンドジャンルの追加
   $("#item_first_genre_id").on("change",function(){
@@ -129,4 +147,13 @@ $(function(){
 
   })
 
-});
+  //利益計算
+  $("#item_price").on("keyup", function() {
+  var price = $(this).val();
+  var cost = price/10
+  cost = Math.floor(cost) 
+  var profit = price - cost
+  appendcost(price,cost)
+  appendprofit(price,profit)
+  })
+})

@@ -2,35 +2,35 @@
   %nav.mypage-nav
     %ul.mypage-nav-list
       %li
-        %a.mypage-nav-list-item.active{:href => "/jp/mypage/"}
+        %a.mypage-nav-list-item.active{:href => "/"}
           マイページ
           %i.fas.fa-chevron-right.mypage-fa
       %li
-        %a.mypage-nav-list-item{:href => "/jp/mypage/notification/"}
+        %a.mypage-nav-list-item{:href => "/"}
           お知らせ
           %i.fas.fa-chevron-right.mypage-fa
       %li
-        %a.mypage-nav-list-item{:href => "/jp/mypage/todo/"}
+        %a.mypage-nav-list-item{:href => "/"}
           やることリスト
           %i.fas.fa-chevron-right.mypage-fa
       %li
-        %a.mypage-nav-list-item{:href => "/jp/mypage/like/history/"}
+        %a.mypage-nav-list-item{:href => "/"}
           いいね！一覧
           %i.fas.fa-chevron-right.mypage-fa
       %li
-        %a.mypage-nav-list-item{:href => "/jp/sell/"}
+        %a.mypage-nav-list-item{:href => "/"}
           出品する
           %i.fas.fa-chevron-right.mypage-fa
       %li
-        %a.mypage-nav-list-item{:href => "/jp/mypage/listings/listing/"}
+        =link_to  items_status_user_path(current_user.id),class:"mypage-nav-list-item" do
           出品した商品 - 出品中
           %i.fas.fa-chevron-right.mypage-fa
       %li
-        %a.mypage-nav-list-item{:href => "/jp/mypage/listings/in_progress/"}
+        %a.mypage-nav-list-item{:href => "/"}
           出品した商品 - 取引中
           %i.fas.fa-chevron-right.mypage-fa
       %li
-        %a.mypage-nav-list-item{:href => "/jp/mypage/listings/completed/"}
+        %a.mypage-nav-list-item{:href => "/"}
           出品した商品 - 売却済み
           %i.fas.fa-chevron-right.mypage-fa
       %li
