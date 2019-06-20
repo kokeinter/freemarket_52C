@@ -63,6 +63,7 @@ $(function(){
     if(parentValue == ""){
       $('#item_second_genre_id').remove();
       $('#item_third_genre_id').remove();
+      $('.sizebrand').remove();
     }
 
     else{
@@ -107,6 +108,7 @@ $(function(){
     // なければ非同期通信を実行する
     if(parentValue == ""){
       $('#item_third_genre_id').remove();
+      $('.sizebrand').remove();
     }
     else{
       // var url = '/categories'
