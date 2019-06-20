@@ -2,13 +2,11 @@ class ItemsController < ApplicationController
   before_action :item_params,only:[:create]
 
   def index
-
     @items = Item.all
   end
 
   def new
     @item = Item.new
-
     10.times{@item.images.build}
     @parents = Category.where(ancestry: nil).order("id ASC")
   end
@@ -22,19 +20,21 @@ class ItemsController < ApplicationController
   end
   def show
     @item=Item.find(params[:id])
+    @images=@item.images
     @user=User.find(@item.saler_id)
-    @first=FirstGenre.find(@item.first_genre_id)
-    @second=SecondGenre.find(@item.second_genre_id)
-    @third=ThirdGenre.find(@item.third_genre_id)
+    @first=Category.find(@item.first_genre_id)
+    @second=Category.find(@item.second_genre_id)
+    @third=Category.find(@item.third_genre_id)
     @comment=Comment.new
     @comments=@item.comments
   end
   def before_edit
     @item=Item.find(params[:id])
+    @images=@item.images
     @user=User.find(current_user.id)
-    @first=FirstGenre.find(@item.first_genre_id)
-    @second=SecondGenre.find(@item.second_genre_id)
-    @third=ThirdGenre.find(@item.third_genre_id)
+    @first=Category.find(@item.first_genre_id)
+    @second=Category.find(@item.second_genre_id)
+    @third=Category.find(@item.third_genre_id)
     @comment=Comment.new
     @comments=@item.comments
   end

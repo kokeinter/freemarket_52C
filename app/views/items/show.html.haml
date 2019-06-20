@@ -7,17 +7,11 @@
       .item-photo-wrapper
         .item-photo_scroll
           .item-photo
-            =image_tag @item.image.url,class: "owl-lazy",id:"7" 
-            %img{:src => "https://static.mercdn.net/item/detail/orig/photos/m82375932664_2.jpg?1559389004",class:"owl-lazy",id:"3"}
-            %img{:alt => "ZARA", :src => "https://static.mercdn.net/item/detail/orig/photos/m52862035458_2.jpg?1558830306",class:"owl-lazy",id:"4"}
-            %img{:src => "https://static.mercdn.net/item/detail/orig/photos/m63772160546_1.jpg?1559289678",class:"owl-lazy",id:"5"}
-            %img{:src => "https://static.mercdn.net/item/detail/orig/photos/m93862198248_2.jpg?1556887411",class:"owl-lazy",id:"6"}
+            -@images.each_with_index do |image,id|
+              =image_tag image.image.url,class:"owl-lazy",id:"#{id}"
         .owl-bots
-          =image_tag @item.image.url,class: "owl-lazy-sub",id:"7" 
-          %img{:src => "https://static.mercdn.net/item/detail/orig/photos/m82375932664_2.jpg?1559389004",class:"owl-lazy-sub",id:"3"}
-          %img{:src => "https://static.mercdn.net/item/detail/orig/photos/m52862035458_2.jpg?1558830306",class:"owl-lazy-sub",id:"4"}
-          %img{:src => "https://static.mercdn.net/item/detail/orig/photos/m63772160546_1.jpg?1559289678",class:"owl-lazy-sub",id:"5"}
-          %img{:src => "https://static.mercdn.net/item/detail/orig/photos/m93862198248_2.jpg?1556887411",class:"owl-lazy-sub",id:"6"}
+          -@images.each_with_index do |image,id|
+            =image_tag image.image.url,class:"owl-lazy-sub",id:"#{id}"
       %table.item-detail-table
         %tbody
           %tr
@@ -40,15 +34,15 @@
             %td
               %a.item-detail-link{:href => "https://www.mercari.com/jp/category/2/"}
                 %div 
-                  =@first.genre
+                  =@first.name
               %a.item-detail-link{:href => "https://www.mercari.com/jp/category/30/"}
                 .item-detail-table-sub-category
                 %i.fas.fa-chevron-right
-                  =@second.genre
+                  =@second.name
               %a.item-detail-link{:href => "https://www.mercari.com/jp/category/303/"}
                 .item-detail-table-sub-sub-category
                 %i.fas.fa-chevron-right
-                  =@third.genre
+                  =@third.name
           %tr
             %th ブランド
             %td
