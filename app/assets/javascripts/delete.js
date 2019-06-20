@@ -1,7 +1,6 @@
 
 $(function() {
   $("#delete-item-btn").on("click",function() {
-      console.log("ok")
       $("#delete-dialog").css('display', "block");
       $(".delete-log-wrapper").css('display', "block");
     })
