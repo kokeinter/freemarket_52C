@@ -26,7 +26,12 @@
                   .buy-price-cell-2
                     %span{"data-buy-pay" => "4000"} ¥ 4,000
               %p.has-error-text 配送先と支払い方法の入力を完了してください。
-              %a{href:"/"}
+
+              = form_tag action: :pay, method: :post do
+                %script.payjp-button{"data-key" => "pk_test_5639ca7841be81b2de8fa6a5", src: "https://checkout.pay.jp", type: "text/javascript", class: "buy-btn-default btn-red bold"}
+
+              %a{href:done_item_path(1)}
+                %button.buy-btn-default.btn-red.bold{:type => "submit"} 購入する
                 %button.buy-btn-default.btn-red.bold{:disabled => "disabled", :type => "submit"} 購入する
               %input#user_info_is_not_complete{:type => "hidden"}/
         %section.buy-content1.buy-item

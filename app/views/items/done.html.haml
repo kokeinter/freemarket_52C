@@ -1,0 +1,103 @@
+.shared_wrapper
+  %header.single-header
+    %h1
+      %a{href: "/"}
+        %img{alt: "mercari", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?4069491723",class:"buy_logo"}/
+
+  .container.single-main
+    .container__contents
+
+      .container__contents__arart
+        .container__contents__arart__upper
+          .container__contents__arart__upper__icon
+            %i.far.fa-clock.fa-2x
+          .container__contents__arart__upper__text
+            = "発送をお待ちください"
+        .container__contents__arart__under  
+          = "出品者からの発送通知をお待ちください"
+
+      .container__contents__pagetitle.done.l-single-head
+        購入が完了しました
+
+      -# 商品情報
+      .container__contents__itemdone
+        .container__contents__itemdone__image
+          = "image"
+        .container__contents__itemdone__name
+          = "name"
+          
+      -# 金額
+      .container__contents__price
+        %span ¥ 金額
+        = "送料込み"
+
+      -# 配送先
+      .container__contents__address
+        .container__contents__address__box
+          .container__contents__address__box__title
+            = "配送先"
+          .container__contents__address__box__address
+            = "〒000-0000"
+            %br
+            = "神奈川県"
+            %br
+            = "名前"
+
+      -# 支払い方法
+      .container__contents__payment
+        .container__contents__payment__box
+          .container__contents__payment__box__title
+            = "支払い方法"
+          .container__contents__payment__box__number
+            = "****************1234"
+          .container__contents__payment__box__limit
+            = "02 / 20"
+          .container__contents__payment__box__icon
+            %p JCB
+            -# %i.fab.fa-cc-jcb.fa-2x
+
+
+      -# 発送通知後の流れ
+      .container__contents__note
+        .container__contents__note__title
+          = "発送通知後の流れ"
+        .container__contents__note__icon
+          .container__contents__note__icon__box
+            .container__contents__note__icon__box__star
+              %i.fas.fa-star
+            .container__contents__note__icon__box__red
+              %i.fas.fa-grin.fa-2x
+            .container__contents__note__icon__box__yellow
+              %i.fas.fa-meh.fa-2x
+            .container__contents__note__icon__box__blue
+              %i.fas.fa-frown.fa-2x
+            .container__contents__note__icon__box__star
+              %i.fas.fa-star
+
+        .container__contents__note__text
+          = "商品を受け取ったら"
+          %br
+          = "出品者の評価をしましょう"
+          %br
+          = "購入代金が出品者に振り込まれます。"
+          %br
+          ="評価後に取引は完了です。"
+
+        .container__contents__note__link
+          = "マイページへ戻る"
+
+
+  %footer.single-footer
+    %ul.buy_list_wrapper
+      %li
+        %a{:href => "https://www.mercari.com/jp/privacy/",class:"buy_inf_list"} プライバシーポリシー
+      %li
+        %a{:href => "https://www.mercari.com/jp/tos/",class:"buy_inf_list"} メルカリ利用規約
+      %li
+        %a{:href => "https://www.mercari.com/jp/tokutei/",class:"buy_inf_list"} 特定商取引に関する表記
+    .footer-logo-wrapper
+      %a.single-footer-logo{:href => "https://www.mercari.com/jp/"}
+      %img{:alt => "mercari", :height => "65", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?4069491723", :width => "80"}/
+    .footer-small
+      %small © 2019 Mercari
+  

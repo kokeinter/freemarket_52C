@@ -21,10 +21,14 @@ Rails.application.routes.draw do
 
   resources :items do
     member do
-      get "buy","before_edit"
+      get "buy","before_edit","done"
+    end
+    member do
+      post "pay"
     end
     resources :comments, only: [:create]
   end
+  get "users/:id/info" => "users#info"
   
   resources :addresses ,only:[:new,:create]
   resources :creditcards ,only:[:new,:create]

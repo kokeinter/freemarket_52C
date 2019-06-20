@@ -9,13 +9,15 @@
     -# = stylesheet_link_tag '/dropzone/basic'
     -# = stylesheet_link_tag '/dropzone/dropzone'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    %script{src: "https://js.pay.jp/", type: "text/javascript"}
     %link{:href => "https://use.fontawesome.com/releases/v5.6.1/css/all.css", :rel => "stylesheet"}/
   %body
     = link_to "トップページ","/"
     = link_to "ログイン",new_user_session_path,method: :get
     = link_to "新規登録","/users/new"
     = link_to "出品する",new_item_path, method: :get
-    = link_to "購入確認","/buy"
+    = link_to "購入確認",buy_item_path(1)
+    = link_to "購入完了",done_item_path(1)
     - if user_signed_in?
       = link_to "ログアウト","/logout"
       = link_to "マイページ",mypage_users_path
