@@ -12,10 +12,12 @@
       %h3.items-contents__title
       .items-box-content.clearfix
         - @items.each do |item|
+          - images=Image.where("item_id=?",item.id).limit(1)
           %a{href:"items/#{item.id}",class:"item-show-link"}
             .items-box
               .detail-page
-                = image_tag item.image.url, class: "detail-page__img"
+                -# -images.each do |image|
+                -#   = image_tag image.image.url, class: "detail-page__img"
                 .detail-page__body
                   %h3.item-name
                     = item.name
@@ -26,6 +28,7 @@
                   %i.far.fa-heart
                   .item-tax
                     (税込)
+
 
   .pickup-contents
     %h2.pickup-contents__title
@@ -48,6 +51,7 @@
               .item-tax
                 (税込)
         
+
         .items-box.two
           %a.detail-page
             = image_tag("https://static.mercdn.net/item/detail/orig/photos/m55022741185_1.jpg?1560257297", class: "detail-page__img")

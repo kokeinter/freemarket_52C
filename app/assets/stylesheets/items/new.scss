@@ -19,6 +19,16 @@
   vertical-align: top;
   font-weight: bolder;
 }
+.brand{
+
+  background-color: #ccc;
+  color: white;
+  border-radius: 2px;
+  font-size: 12px;
+  padding:3px;
+  vertical-align: top;
+  font-weight: bolder;
+}
 
 // 商品画像
 .container__contents__image__upper__text{
@@ -83,6 +93,20 @@
   border: 1px solid #ccc;
   padding: 10px 16px 8px;
 }
+
+
+// // セレクトボックスの三角をなくす
+// select{
+//   -webkit-appearance: none;
+//   -moz-appearance: none;
+//   appearance: none;
+// }
+// select::-ms-expand {
+//   display: none;
+// }
+// i{
+//   float: right;
+// }
 
 
 // 商品詳細
@@ -312,4 +336,61 @@
     }
   }
 
+}
+//出品画像
+.image_select{
+  &_wrapper{
+    
+  }
+  &_label{
+    display: table-cell;
+    background-color:#f5f5f5;
+    border:dashed 1px rgb(209, 209, 209);
+    height: 175px;
+    width: 700px;
+    text-align: center;
+    padding-top:50px;
+  }
+}
+.selected_image{
+  &_wrapper{
+    margin-bottom: 1%;
+    margin-right: 1%;
+    float: left;
+    height: 50%;
+    width: 19%;
+  }
+  &_top{
+    height: 70%;
+    overflow: hidden;
+    &_inner{
+      height: 110px;
+      width: 120px;
+    }
+  }
+  &_left{
+    height: 30%;
+    width: 50%;
+    background-color: #f5f5f5;
+    float: left;
+    color: #0099e8;
+    text-align: center;
+    line-height: 50px;
+    border-right: solid 1px rgb(228, 228, 228);
+    font-size: 14px;
+
+  }
+  &_right{
+    font-size: 14px;
+    text-align: center;
+    line-height: 50px;
+    height: 30%;
+    width: 50%;
+    float: right;
+    background-color: #f5f5f5;
+    color: #0099e8;
+  }
+}
+.before_label{
+  display: none;
 }
