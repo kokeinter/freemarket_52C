@@ -12,10 +12,10 @@ Rails.application.routes.draw do
 
   resources :users do
     member do
-      get "items_status"
+      get "items_status","info"
     end
     collection do
-      get "mypage","complete","logout","info"
+      get "mypage","complete","logout"
     end
   end
 
@@ -28,7 +28,6 @@ Rails.application.routes.draw do
     end
     resources :comments, only: [:create]
   end
-  get "users/:id/info" => "users#info"
   
   resources :addresses ,only:[:new,:create]
   resources :creditcards ,only:[:new,:create]

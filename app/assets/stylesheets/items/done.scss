@@ -1,117 +1,118 @@
-.container__contents__arart{
-  border-bottom: solid 1px rgb(238, 238, 238);
-  padding: 40px;
-  background-color: #fff6dd;
-  &__upper{
-    color: #ed5542;
-    font-weight:bolder;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 10px;
-    &__icon{
-      margin-right: 10px;
-    }
-  }
-  &__under{
-    text-align: center;
-    font-size: 90%;
-  }
-}
+.container__contents{
 
-
-.container__contents__itemdone{
-  border-bottom: solid 1px rgb(238, 238, 238);
-  padding: 40px;
-  text-align: center;
-  &__image{
-    height: 150px;
-    width: 150px;
-    background-color: #ed5542;
-    margin:auto;
-  }
-  &__name{
-    font-weight: bolder;
-    margin: 5px;
-  }
-}
-
-.container__contents__price{
-  text-align: center;
-  border-bottom: solid 1px rgb(238, 238, 238);
-  padding: 40px;
-  span{
-    font-size: 150%;
-    font-weight: bolder;
-    margin-right: 10px;
-  }
-}
-
-.container__contents__address{
-  border-bottom: solid 1px rgb(238, 238, 238);
-  &__box{
+  &__arart{
+    border-bottom: solid 1px rgb(238, 238, 238);
     padding: 40px;
-    width: 50%;
-    margin: auto;
-    &__title{
-      font-weight: bolder;
+    background-color: #fff6dd;
+    &__upper{
+      color: #ed5542;
+      font-weight:bolder;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+      &__icon{
+        margin-right: 10px;
+      }
     }
-    &__address{
-      font-size: 90%
+    &__under{
+      text-align: center;
+      font-size: 90%;
     }
   }
   
-}
-
-.container__contents__payment{
-  border-bottom: solid 1px rgb(238, 238, 238);
-  &__box{
+  
+  &__itemdone{
+    border-bottom: solid 1px rgb(238, 238, 238);
     padding: 40px;
-    width: 50%;
-    margin: auto;
-    &__title{
+    text-align: center;
+    &__image{
+      height: 150px;
+      width: 150px;
+      background-color: #ed5542;
+      margin:auto;
+    }
+    &__name{
       font-weight: bolder;
+      margin: 5px;
     }
-    &__number{
-      font-size: 90%
+  }
+  
+  &__price{
+    text-align: center;
+    border-bottom: solid 1px rgb(238, 238, 238);
+    padding: 40px;
+    span{
+      font-size: 150%;
+      font-weight: bolder;
+      margin-right: 10px;
     }
-    &__limit{
-      font-size: 90%
-    }
-    &__icon{
-      background: linear-gradient(to right,blue 0%,blue 27%,white 27%,white 29%,red 29%,red 64%,white 64%,white 66%,green 66%,green 100%); 
-      // .fab.fa-cc-jcb{
-      //   background: linear-gradient(to right,blue 33%,red 66%,green); 
-      // }
-      width: 35px;
-      p{
-        color: white;
+  }
+  
+  &__address{
+    border-bottom: solid 1px rgb(238, 238, 238);
+    &__box{
+      padding: 40px;
+      width: 50%;
+      margin: auto;
+      &__title{
         font-weight: bolder;
       }
-    }
-  }
-}
-
-.container__contents__note{
-  border-bottom: solid 1px rgb(238, 238, 238);
-  padding: 40px;
-  font-size: 80%;
-  text-align: center;
-  &__title{
-    font-weight: 600;
-  }
-  &__icon{
-    width: 20%;
-    margin:auto;
-    &__box{
-      justify-content: space-between;
-      display: flex;
-      margin-top: 10px;
-      margin-bottom: 10px;
-      .fas.fa-star{
-        color: #fcf394;
+      &__address{
+        font-size: 90%
       }
     }
-
+    
   }
+  
+  &__payment{
+    border-bottom: solid 1px rgb(238, 238, 238);
+    &__box{
+      padding: 40px;
+      width: 50%;
+      margin: auto;
+      &__title{
+        font-weight: bolder;
+      }
+      &__number{
+        font-size: 90%
+      }
+      &__limit{
+        font-size: 90%
+      }
+      &__icon{
+        background: linear-gradient(to right,blue 0%,blue 27%,white 27%,white 29%,red 29%,red 64%,white 64%,white 66%,green 66%,green 100%); 
+        width: 35px;
+        p{
+          color: white;
+          font-weight: bolder;
+        }
+      }
+    }
+  }
+  
+  &__note{
+    border-bottom: solid 1px rgb(238, 238, 238);
+    padding: 40px;
+    font-size: 80%;
+    text-align: center;
+    &__title{
+      font-weight: 600;
+    }
+    &__icon{
+      width: 20%;
+      margin:auto;
+      &__box{
+        justify-content: space-between;
+        display: flex;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        .fas.fa-star{
+          color: #fcf394;
+        }
+      }
+  
+    }
+  }
+  
 }

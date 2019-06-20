@@ -2,8 +2,9 @@
   .single-container
     %header.single-header
       %h1
-        %a{href: "/"}
-          %img{alt: "mercari", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?4069491723",class:"buy_logo"}/
+        = link_to root_path do
+          = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?4069491723",class:"buy_logo"
+          
     %main.single-main
       %section.l-single-container.buy-item-container
         %h2.l-single-head 購入内容の確認
@@ -31,9 +32,8 @@
                 %script.payjp-button{"data-key" => "pk_test_5639ca7841be81b2de8fa6a5", src: "https://checkout.pay.jp", type: "text/javascript", class: "buy-btn-default btn-red bold"}
 
               %a{href:done_item_path(1)}
-                %button.buy-btn-default.btn-red.bold{:type => "submit"} 購入する
-                %button.buy-btn-default.btn-red.bold{:disabled => "disabled", :type => "submit"} 購入する
-              %input#user_info_is_not_complete{:type => "hidden"}/
+                %button.buy-btn-default.btn-red.bold{type: "submit"} 購入する
+              %input#user_info_is_not_complete{type: "hidden"}/
         %section.buy-content1.buy-item
           .buy-content-inner1
             %h3 配送先
@@ -45,7 +45,7 @@
               %br/
               佐古田 雄二郎
             %p.buy-user-info-text
-            %a.buy-user-info-fix{:href => "https://www.mercari.com/jp/transaction/address/m76934274468/"}
+            %a.buy-user-info-fix{href: "https://www.mercari.com/jp/transaction/address/m76934274468/"}
               .buy-change
                 %span 変更する
                 %i.fas.fa-chevron-right.buy-right-icon
@@ -56,23 +56,23 @@
               %br/
               \/
             %figure
-              %img{:alt => "", :height => "", :src => "", :width => ""}/
+              %img{alt: "", height: "", src: "", width: ""}/
             %p
-            %a.buy-user-info-fix{:href => "https://www.mercari.com/jp/transaction/card/m76934274468/"}
+            %a.buy-user-info-fix{href: "https://www.mercari.com/jp/transaction/card/m76934274468/"}
               .buy-change
                 %span 変更する
                 %i.fas.fa-chevron-right.buy-right-icon
     %footer.single-footer
       %ul.buy_list_wrapper
         %li
-          %a{:href => "https://www.mercari.com/jp/privacy/",class:"buy_inf_list"} プライバシーポリシー
+          %a{href: "https://www.mercari.com/jp/privacy/",class:"buy_inf_list"} プライバシーポリシー
         %li
-          %a{:href => "https://www.mercari.com/jp/tos/",class:"buy_inf_list"} メルカリ利用規約
+          %a{href: "https://www.mercari.com/jp/tos/",class:"buy_inf_list"} メルカリ利用規約
         %li
-          %a{:href => "https://www.mercari.com/jp/tokutei/",class:"buy_inf_list"} 特定商取引に関する表記
+          %a{href: "https://www.mercari.com/jp/tokutei/",class:"buy_inf_list"} 特定商取引に関する表記
       .footer-logo-wrapper
-        %a.single-footer-logo{:href => "https://www.mercari.com/jp/"}
-        %img{:alt => "mercari", :height => "65", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?4069491723", :width => "80"}/
+        %a.single-footer-logo{href: "https://www.mercari.com/jp/"}
+        %img{alt: "mercari", height: "65", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?4069491723", width: "80"}/
       .footer-small
         %small © 2019 Mercari
   
