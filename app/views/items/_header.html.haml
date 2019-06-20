@@ -21,7 +21,7 @@
       %ul.account
         - if user_signed_in?
           %li.kari__signout-btn
-            = link_to "ログアウト",destroy_user_session_path,method: :delete, class: "kari__signout-btn-text"
+            = link_to "ログアウト",logout_users_path, class: "kari__signout-btn-text"
           %li.news-btn
             = link_to "/", class: "news-btn__text" do
               お知らせ

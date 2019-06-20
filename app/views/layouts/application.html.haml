@@ -17,7 +17,7 @@
     = link_to "出品する",new_item_path, method: :get
     = link_to "購入確認","/buy"
     - if user_signed_in?
-      = link_to "ログアウト","/logout"
+      = link_to "ログアウト",logout_users_path
       = link_to "マイページ",mypage_users_path
       = link_to "本人情報","/users/#{current_user.id}/info"
       = link_to "本人情報編集","/users/#{current_user.id}/edit"
