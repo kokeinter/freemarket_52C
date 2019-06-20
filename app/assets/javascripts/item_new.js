@@ -1,8 +1,8 @@
 $(function(){
   function appendSecondSelectBox(){
     var html = `
-                <div class=".container__contents__details__right__form__secondgenre">
-                  <select class="item_second_genre_id" id="item_second_genre_id" name="item[category]">
+                <div class="container__contents__details__right__form__secondgenre">
+                  <select class="item_second_genre_id" id="item_second_genre_id" name="item[second_genre_id]">
                     <option value="">---</option>
                   </select>
                 </div>`
@@ -18,8 +18,8 @@ $(function(){
 
   function appendThirdSelectBox(){
     var html = `
-                <div class=".container__contents__details__right__form__thirdgenre">
-                  <select class="item_third_genre_id" id="item_third_genre_id" name="item[category]">
+                <div class="container__contents__details__right__form__thirdgenre">
+                  <select class="item_third_genre_id" id="item_third_genre_id" name="item[third_genre_id]">
                     <option value="">---</option>
                   </select>
                 </div>`
@@ -50,6 +50,7 @@ $(function(){
               $('.jq-profit').html(html);
             }
   }
+
 
   // セカンドジャンルの追加
   $("#item_first_genre_id").on("change",function(){
@@ -127,8 +128,8 @@ $(function(){
         // セレクトボックスの箱のみをまず追加
         var selectbox = appendThirdSelectBox(grandchildren);
 
-
         $('.container__contents__details__right__form__genre').append(selectbox);
+
         // セレクトボックスの選択しを追加
         grandchildren.forEach(function(child){
           var options = appendOptionGrandChild(child);
@@ -140,10 +141,122 @@ $(function(){
       })
     }
 
+  })
+
+
+// サイズとブランド
+// 三つ目のカテゴリーが選ばれたら表示する
+
+function appendSizeBrand(){
+  var html = `<p class="sizebrand">
+                サイズ
+                  <span class="note">
+                    必須
+                  </span>
+              </p>
+              <div class="container__contents__details__right__form__size sizebrand">
+                <select name="item[size]" id="item_size">
+                  <option value="">---</option>
+                  <option value="20cm以下">20cm以下</option>
+                  <option value="20.5cm">20.5cm</option>
+                </select>
+              </div>
+              
+              <p class="sizebrand">
+                ブランド
+                  <span class="note brand">
+                    任意
+                  </span>
+              </p>
+              <div class="container__contents__details__right__form__brand sizebrand">
+                <input placeholder="例）シャネル" type="text" name="item[brand]" id="item_brand">
+              </div>
+              `
+  return html
+}
+
+
+$(".container__contents__details__right__form__genre").on("change","#item_third_genre_id",function(){
+
+  var genreValue = document.getElementById("item_third_genre_id").value;
+  console.log(genreValue)
+  if(genreValue == ""){
+    $('.sizebrand').remove();
+  }
+  else{
+    var size = appendSizeBrand();
+    $('.container__contents__details__right__form__genre').append(size);
+  }
+
+})
+
+
+
+// ーーーーーーーーーーーここまでサイズとブランドーーーーーーーーー
+// ーーーーーーーーーここから配送方法ーーーーーーーーーー
+
+function appendShippingStyle1(){
+  var html = `
+                <p>
+                  配送の方法
+                    <span class="note">
+                      必須
+                    </span>
+                </p>
+                <select name="item[shipping_style]" id="item_shipping_style">
+                  <option value="">---</option>
+                  <option value="未定">未定</option>
+                  <option value="らくらくメルカリ便">らくらくメルカリ便</option>
+                  <option value="ゆうメール">ゆうメール</option>
+                  <option value="レターパック">レターパック</option>
+                  <option value="普通郵便">普通郵便</option>
+                  <option value="クロネコヤマト">クロネコヤマト</option>
+                  <option value="ゆうパック">ゆうパック</option>
+                  <option value="クリックポスト">クリックポスト</option>
+                  <option value="ゆうパケット">ゆうパケット</option>
+              </select>`
+  return html
+}
+function appendShippingStyle2(){
+  var html = `
+              <p>
+                配送の方法
+                  <span class="note">
+                    必須
+                  </span>
+              </p>
+              <select name="item[shipping_style]" id="item_shipping_style">
+                <option value="">---</option>
+                <option value="未定">未定</option>
+                <option value="クロネコヤマト">クロネコヤマト</option>
+                <option value="ゆうパック">ゆうパック</option>
+                <option value="ゆうメール">ゆうメール</option>
+              </select>`
+  return html
+}
+
+  $("#item_postage").on('change',function(){
+    var postageValue = document.getElementById("item_postage").value;
+
+    if(postageValue == "送料込み"){
+      var html = appendShippingStyle1();
+      $('.container__contents__shipping__right__postage').append(html)
+    }
+    else if(postageValue == "着払い"){
+      var html = appendShippingStyle2();
+      $('.container__contents__shipping__right__postage').append(html)
+    }
+    else{
+      $('#item_shipping_style').remove();
+      $('p').remove();
+    }
 
 
 
   })
+
+// -----------ここまで配送方法------------
+
 
   //利益計算
   $("#item_price").on("keyup", function() {

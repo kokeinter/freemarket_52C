@@ -56,16 +56,11 @@
               %span.note 必須
               .container__contents__details__right__form__genre
                 .container__contents__details__right__form__firstgenre
-                  = f.collection_select :category, @parents, :id, :name,{prompt: "---"}, class: "item_first_genre_id", id: "item_first_genre_id"
+                  = f.collection_select :first_genre_id, @parents, :id, :name,{prompt: "---"}, class: "item_first_genre_id", id: "item_first_genre_id"
 
-              = "サイズ"
-              %span.note 必須
-              .container__contents__details__right__form__size
-                = f.select :size,["20cm以下","20.5cm"],prompt: "---"
+              -# = "サイズはjQueryで追加"
 
-              = "ブランド"
-              .container__contents__details__right__form__brand
-                = f.text_field :brand,placeholder:"例）シャネル"
+              -# = "ブランドはjQueryで追加"
 
               = "商品の状態"
               %span.note 必須
@@ -87,10 +82,7 @@
             .container__contents__shipping__right__postage
               = f.select :postage,["送料込み","着払い"],prompt: "---"
 
-            = "配送の方法"
-            %span.note 必須
-            .container__contents__shipping__right__style
-              = f.select :shipping_style,["未定","クロネコヤマト"],prompt: "---"
+            -# = "配送の方法はjQueryで追加"
 
             = "発送元の地域"
             %span.note 必須
@@ -134,28 +126,27 @@
 
 
 
-      -# 商品の出品とページバックのボタン
-      .container__contents__btns
-        .container__contents__btns__text
-          %a{href:"https://www.mercari.com/jp/help_center/getting_started/prohibited_items/"}
-            %span 禁止されている出品
-          %span 、
-          %a{href:"https://www.mercari.com/jp/help_center/getting_started/prohibited_conduct/"}
-            %span 行為
-          %span を必ずご確認ください。
-          %br
-          %span またブランド品でシリアルナンバー等がある場合はご記載ください。
-          %a{href:"https://www.mercari.com/jp/help_center/getting_started/counterfeit_goods/"}
-            %span 偽ブランドの販売
-          %span は犯罪であり処罰される可能性があります。
-          %br
-          %span また、出品をもちまして
-          %a{href:"https://www.mercari.com/jp/seller_terms/"}
-            %span 加盟店規約
-          %span に同意したことになります。
+        -# 商品の出品とページバックのボタン
+        .container__contents__btns
+          .container__contents__btns__text
+            %a{href:"https://www.mercari.com/jp/help_center/getting_started/prohibited_items/"}
+              %span 禁止されている出品
+            %span 、
+            %a{href:"https://www.mercari.com/jp/help_center/getting_started/prohibited_conduct/"}
+              %span 行為
+            %span を必ずご確認ください。
+            %br
+            %span またブランド品でシリアルナンバー等がある場合はご記載ください。
+            %a{href:"https://www.mercari.com/jp/help_center/getting_started/counterfeit_goods/"}
+              %span 偽ブランドの販売
+            %span は犯罪であり処罰される可能性があります。
+            %br
+            %span また、出品をもちまして
+            %a{href:"https://www.mercari.com/jp/seller_terms/"}
+              %span 加盟店規約
+            %span に同意したことになります。
 
-        .container__contents__btns__create.text
-          = form_for @item do |f|
+          .container__contents__btns__create.text
             = f.submit "出品する",class:"container__contents__btns__create__red"
           .container__contents__btns__pageback
             %input{href: :back, type: "button", value: "もどる",class:"container__contents__btns__pageback__link"}/

@@ -19,6 +19,16 @@
   vertical-align: top;
   font-weight: bolder;
 }
+.brand{
+
+  background-color: #ccc;
+  color: white;
+  border-radius: 2px;
+  font-size: 12px;
+  padding:3px;
+  vertical-align: top;
+  font-weight: bolder;
+}
 
 // 商品画像
 .container__contents__image__upper__text{
@@ -83,6 +93,20 @@
   border: 1px solid #ccc;
   padding: 10px 16px 8px;
 }
+
+
+// // セレクトボックスの三角をなくす
+// select{
+//   -webkit-appearance: none;
+//   -moz-appearance: none;
+//   appearance: none;
+// }
+// select::-ms-expand {
+//   display: none;
+// }
+// i{
+//   float: right;
+// }
 
 
 // 商品詳細
