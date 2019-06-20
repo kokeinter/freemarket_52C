@@ -2,20 +2,22 @@ class ItemsController < ApplicationController
   before_action :item_params,only:[:create]
 
   def index
-    @items=Item.all
-    
 
+    @items = Item.all
   end
 
   def new
     @item = Item.new
+
     10.times{@item.images.build}
+    @parents = Category.where(ancestry: nil).order("id ASC")
   end
 
   def create
     @item=Item.create(item_params)
     redirect_to root_path
   end
+
   def buy
   end
   def show

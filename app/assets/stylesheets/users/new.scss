@@ -1,0 +1,114 @@
+.all-contents{
+  background-color: rgba(110, 101, 101, 0.137);
+  height:100%;
+  width:100%;
+  padding-bottom: 80px;
+  .logo-and-search{
+    text-align: center;
+    img {
+      width: 180px;
+      height: 80px;
+      margin-bottom:10px;
+
+    }
+  }
+  .sub-contents{
+    .span{
+      background-color: #fff;
+      height:10vh;
+      font-size: 18px;
+      text-align: center;
+      padding:20px ;
+      margin: 0 230px;
+      font-weight: bold;
+      font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+    }
+    .lists{
+      background-color: #fff;
+      height:60vh;
+      font-size: 20px;
+      text-align: center;
+      padding:20px ;
+      margin: 1px 230px;
+      color:black;
+      a{
+        color: black;
+        text-decoration: none;
+
+      }
+      .lists__top{
+        display: inline-block;
+        margin: 20px 0 0 11px;
+        background-color: rgba(90, 88, 88, 0.158);
+        color:black;
+        font-size: 14px;
+        text-decoration: none;
+        padding:15px 80px;
+        text-align: center;
+
+        img{
+          width: 50px;
+          height: 50px;
+          
+        }
+        .top-btn{
+          
+        }
+      }
+      .lists__center{
+        padding:5px;
+        padding-right:45px;
+        display: inline-block;
+        margin-top:35px;
+        margin-left:45px;
+        margin-right: 40px;
+        background-color:#385185;
+        font-size: 14px;
+        line-height: 40px;
+        .center-btn{
+          padding-right:30px;
+        }
+
+        
+        img{
+          padding-right:70px;
+        }
+        a{
+          color:#fff;
+          line-height: 40px;
+          padding-right:40px;
+
+
+        }
+        
+      } 
+      .lists__under{
+        background-color: #fff;
+        display: inline-block;
+        border: #979797 solid 1px;
+        margin:30px 30px 0;
+        padding:5px ;
+       .under-btn{
+
+       }
+
+        img{
+          padding-right:86px;
+        }
+
+
+        a{
+          color: #333;
+          line-height: 40px;
+          padding-right:40px;
+          
+          
+        }
+      }
+      
+    }
+  }  
+
+
+}
+
