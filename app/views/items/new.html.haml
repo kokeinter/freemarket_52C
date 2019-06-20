@@ -9,7 +9,15 @@
   .container.single-main
 
     .container__contents
-      = form_for @item do |f|
+
+
+ 
+              
+                
+         
+        
+
+      = form_for @item do |f|{id:"new_item_form"}
         -# ページタイトル
         .container__contents__pagetitle.l-single-head
           商品の情報を入力
@@ -22,8 +30,13 @@
               %span.note 必須
           .container__contents__image__middle
           .container__contents__image__under
-            = f.label :image,"ドラッグアンドドロップまたはクリックしてアップロード",class:"item_image_label"
-            = f.file_field :image,class:"item_image"
+            =f.fields_for :images do |i|
+              .image_select_wrapper
+                #image_list
+                  =i.label :image,"",class:"before_label" do
+                    .image_select_text ドラッグアンドドロップ
+                    %pimage_select_text またはクリックをしてファイルをアップロード
+                    = i.file_field :image,class:"image_select",style:"display:none"
         
         -# 商品名と説明
         .container__contents__item
@@ -67,6 +80,7 @@
               .container__contents__details__right__form__condition
                 = f.select :condition,["新品、未使用","未使用に近い"],prompt: "---"
 
+
         -# 配送について
         .container__contents__shipping
 
@@ -76,6 +90,7 @@
               %i.fa.fa-question-circle{"aria-hidden" => "true"}
 
           .container__contents__shipping__right.text
+
 
             = "配送料の負担"
             %span.note 必須
@@ -105,11 +120,13 @@
 
           .container__contents__value__right
 
+
             .container__contents__value__right__price.text
               = "価格"
               %span.note.pricenote 必須
               %span.yen　　　　　　　　¥
               = f.text_field :price,placeholder:"                     例）300"
+
 
 
           .container__contents__value__right__fee
@@ -123,6 +140,7 @@
               = "販売利益"
             .container__contents__value__right__profit__result
               .jq-profit --
+
 
 
 

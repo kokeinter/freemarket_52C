@@ -1,4 +1,5 @@
 $(function(){
+
   function appendSecondSelectBox(){
     var html = `
                 <div class="container__contents__details__right__form__secondgenre">
@@ -32,6 +33,7 @@ $(function(){
                 </option>`
     return html
   }
+
   function appendcost(price,cost){
             if (299 < price && price < 10000000) {
               var html = `<div class="jq-cost">${cost}</div>`
@@ -48,8 +50,32 @@ $(function(){
             } else {
               var html = `<div class="jq-profit">--</div>`
               $('.jq-profit').html(html);
+             
             }
   }
+  function appendimage(id){
+            var html =`<label for="image_select" class="image_select_label" >
+                      <p class="image_select_text">ドラッグアンドドロップ</p>
+                      <p class="image_select_text">またはクリックをしてファイルをアップロード</p>
+                      </label>
+                      <input  type="file" name="item[images_attributes][${id}][image]"  id="image_select" class="image_select" style="display:none" >`
+                      $("#image_list").append(html)
+
+  }
+  function append_selectedimage(url,id){
+    var html =`<div class="selected_image_wrapper" id="selected_image_wrapper_${id}">
+                <div class="selected_image_top">
+                  <img src="${url}" class="selected_image_top_inner">
+                </div>
+                <div class="selected_image_left">
+                  編集
+                </div>
+                <div class="selected_image_right" id="${id}">
+                  削除
+                </div>
+                </div>`
+             $("#image_list").before(html)
+}
 
 
   // セカンドジャンルの追加
@@ -260,8 +286,20 @@ function appendShippingStyle2(){
 // -----------ここまで配送方法------------
 
 
+
   //利益計算
+
+  var id = 0
+
+  
+//カウントアップする関数 countUp の定義
+function countUp(){
+  id++
+  console.log(id)
+}
+  
   $("#item_price").on("keyup", function() {
+  console.log(id)
   var price = $(this).val();
   var cost = price/10
   cost = Math.floor(cost) 
@@ -269,4 +307,39 @@ function appendShippingStyle2(){
   appendcost(price,cost)
   appendprofit(price,profit)
   })
-})
+
+  $(document).ready(function() {
+    var file=document.querySelector('input[class=image_select]')
+    var label=$(file).parent()
+    $(label).attr("class","image_select_label")
+  });
+  
+
+  $(document).on("change",".image_select", function() {
+    var label = $(this).parent()
+    var value = $(this).val()
+    $(label).css("display","none")
+    var reader  = new FileReader();
+    var file    = document.querySelector('input[class=image_select]').files[0];
+    $(this).attr("class","completed")
+    reader.readAsDataURL(file)
+
+    reader.addEventListener("load", function () {
+    var url=reader.result
+    append_selectedimage(url,id)
+    var file=document.querySelector('input[class=image_select]')
+    var label=$(file).parent()
+    $(label).attr("class","image_select_label")
+    }, false);
+
+  });
+  $(document).on("click",".selected_image_right", function() {
+    console.log("ok!")
+    var id = $(this).attr("id")
+    $("#selected_image_wrapper_"+id).remove()
+    $(".input_image_"+id-1).remove()
+  });
+  $('#new_item_form').on('submit', function(){
+    $(".completed").css("display","block");
+  })
+});
