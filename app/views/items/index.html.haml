@@ -16,8 +16,8 @@
           %a{href:"items/#{item.id}",class:"item-show-link"}
             .items-box
               .detail-page
-                -# -images.each do |image|
-                -#   = image_tag image.image.url, class: "detail-page__img"
+                -images.each do |image|
+                  = image_tag image.image.url, class: "detail-page__img"
                 .detail-page__body
                   %h3.item-name
                     = item.name

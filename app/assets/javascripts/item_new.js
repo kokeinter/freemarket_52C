@@ -33,7 +33,8 @@ $(function(){
                 </option>`
     return html
   }
-
+  
+// 利益表示
   function appendcost(price,cost){
             if (299 < price && price < 10000000) {
               var html = `<div class="jq-cost">${cost}</div>`
@@ -53,15 +54,10 @@ $(function(){
              
             }
   }
-  function appendimage(id){
-            var html =`<label for="image_select" class="image_select_label" >
-                      <p class="image_select_text">ドラッグアンドドロップ</p>
-                      <p class="image_select_text">またはクリックをしてファイルをアップロード</p>
-                      </label>
-                      <input  type="file" name="item[images_attributes][${id}][image]"  id="image_select" class="image_select" style="display:none" >`
-                      $("#image_list").append(html)
 
-  }
+  // 
+
+  // 画像追加
   function append_selectedimage(url,id){
     var html =`<div class="selected_image_wrapper" id="selected_image_wrapper_${id}">
                 <div class="selected_image_top">
@@ -287,12 +283,11 @@ function appendShippingStyle2(){
 
 
 
-  //利益計算
 
-  var id = 0
-
-  
 //カウントアップする関数 countUp の定義
+
+var id = -1
+
 function countUp(){
   id++
   console.log(id)
@@ -316,14 +311,13 @@ function countUp(){
   
 
   $(document).on("change",".image_select", function() {
+    countUp()
     var label = $(this).parent()
-    var value = $(this).val()
     $(label).css("display","none")
     var reader  = new FileReader();
     var file    = document.querySelector('input[class=image_select]').files[0];
     $(this).attr("class","completed")
     reader.readAsDataURL(file)
-
     reader.addEventListener("load", function () {
     var url=reader.result
     append_selectedimage(url,id)
@@ -337,7 +331,10 @@ function countUp(){
     console.log("ok!")
     var id = $(this).attr("id")
     $("#selected_image_wrapper_"+id).remove()
-    $(".input_image_"+id-1).remove()
+    $("#item_images_attributes_"+id+"_image").val("")
+    var label=$("#item_images_attributes_"+id+"_image").parent()
+    $(label).css("display","block")
+    $(label).css("class","before_label")
   });
   $('#new_item_form').on('submit', function(){
     $(".completed").css("display","block");

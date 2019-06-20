@@ -7,11 +7,11 @@
       .item-photo-wrapper
         .item-photo_scroll
           .item-photo
-            =image_tag @item.image.url,class: "owl-lazy",id:"7" 
-            =image_tag "https://static.mercdn.net/item/detail/orig/photos/m82375932664_2.jpg?1559389004",class: "owl-lazy",id:"3"
+            -@images.each_with_index do |image,id|
+              =image_tag image.image.url,class:"owl-lazy",id:"#{id}"
         .owl-bots
-          =image_tag @item.image.url,class: "owl-lazy-sub",id:"7" 
-          =image_tag "https://static.mercdn.net/item/detail/orig/photos/m82375932664_2.jpg?1559389004",class: "owl-lazy-sub",id:"3"
+          -@images.each_with_index do |image,id|
+            =image_tag image.image.url,class:"owl-lazy-sub",id:"#{id}"
       %table.item-detail-table
         %tbody
           %tr
@@ -33,15 +33,15 @@
             %td
               %a.item-detail-link{:href => "https://www.mercari.com/jp/category/2/"}
                 %div 
-                  =@first.genre
+                  =@first.name
               %a.item-detail-link{:href => "https://www.mercari.com/jp/category/30/"}
                 .item-detail-table-sub-category
                 %i.fas.fa-chevron-right
-                  =@second.genre
+                  =@second.name
               %a.item-detail-link{:href => "https://www.mercari.com/jp/category/303/"}
                 .item-detail-table-sub-sub-category
                 %i.fas.fa-chevron-right
-                  =@third.genre
+                  =@third.name
           %tr
             %th ブランド
             %td

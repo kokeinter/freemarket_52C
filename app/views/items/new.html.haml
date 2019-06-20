@@ -7,16 +7,7 @@
 
   -# フォーム表示部分
   .container.single-main
-
     .container__contents
-
-
- 
-              
-                
-         
-        
-
       = form_for @item do |f|{id:"new_item_form"}
         -# ページタイトル
         .container__contents__pagetitle.l-single-head
@@ -33,11 +24,11 @@
             =f.fields_for :images do |i|
               .image_select_wrapper
                 #image_list
-                  =i.label :image,"",class:"before_label" do
+                .input-file
+                  =i.label :image,"",class:"before_label",type:"file" do
                     .image_select_text ドラッグアンドドロップ
                     %pimage_select_text またはクリックをしてファイルをアップロード
-                    = i.file_field :image,class:"image_select",style:"display:none"
-        
+                    = i.file_field :image,class:"image_select"
         -# 商品名と説明
         .container__contents__item
           .container__contents__item__name
