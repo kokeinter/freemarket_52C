@@ -18,6 +18,10 @@ class ItemsController < ApplicationController
 
   def buy
   end
+  
+  def done
+  end
+
   def show
     @item=Item.find(params[:id])
     @images=@item.images
@@ -52,11 +56,22 @@ class ItemsController < ApplicationController
     redirect_to "/users/#{current_user.id}/items_status" ,notice: '商品を削除しました'
   end
 
+
+  def pay
+    price = Item.find(params[:id]).price
+    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+    Payjp::Charge.create(
+      amount: price,
+      card: params['payjp-token'],
+      currency: 'jpy'
+    )
+  end
+
+
 private
 
 def item_params
   params.require(:item).permit(:name,:text,:condition,:first_genre_id,:second_genre_id,:third_genre_id,:size,:postage,:sending_region,:shipping_day,:price,:shipping_style,:brand,images_attributes:[:image]).merge(saler_id: current_user.id)
-
 end
 
 end
