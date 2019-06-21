@@ -12,16 +12,19 @@ Rails.application.routes.draw do
 
   resources :users do
     member do
-      get "items_status"
+      get "items_status","info"
     end
     collection do
-      get "mypage","complete","logout","info"
+      get "mypage","complete","logout"
     end
   end
 
   resources :items do
     member do
-      get "buy","before_edit"
+      get "buy","before_edit","done"
+    end
+    member do
+      post "pay"
     end
     resources :comments, only: [:create]
   end

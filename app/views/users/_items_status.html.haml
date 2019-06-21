@@ -1,7 +1,9 @@
 %li
+  - images=Image.where("item_id=?",item.id).limit(1)
   =link_to before_edit_item_path(item.id),class:"mypage-item-link-edit" do
     .tab-content-edit
-      =image_tag item.image.url,class: "mypage-edit-image" 
+      -images.each do |image|
+        =image_tag image.image.url,class: "mypage-edit-image" 
       .mypage-edit-item-body
         .mypage-edit-item-text
           =item.name

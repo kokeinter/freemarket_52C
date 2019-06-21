@@ -16,7 +16,6 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.string  :shipping_day   ,null: false
       t.integer  :price  ,null: false
       t.string  :shipping_style   ,null: false
-
       t.timestamps
     end
   end

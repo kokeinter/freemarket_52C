@@ -79,6 +79,7 @@ gem 'ancestry'
 # gem "omniauth-rails_csrf_protection"
 gem "dropzonejs-rails"
 gem 'fog-aws'
+gem 'payjp'
 
 
 group :production do
