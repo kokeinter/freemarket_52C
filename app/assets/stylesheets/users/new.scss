@@ -2,113 +2,113 @@
   background-color: rgba(110, 101, 101, 0.137);
   height:100%;
   width:100%;
-  padding-bottom: 80px;
   .logo-and-search{
-    text-align: center;
-    img {
-      width: 180px;
-      height: 80px;
-      margin-bottom:10px;
-
+   
+    img{
+      width: 210px;
+      height: 100px;
+      margin-left:450px;
+      
     }
   }
   .sub-contents{
-    .span{
-      background-color: #fff;
-      height:10vh;
-      font-size: 18px;
+    padding-top:25px;
+    padding-bottom:100px;
+    background-color: #fff;
+    margin:auto  250px 300px;
+    h2{
+      font-size: 22px;
       text-align: center;
-      padding:20px ;
-      margin: 0 230px;
+      margin-bottom: 30px;
       font-weight: bold;
       font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
     }
     .lists{
-      background-color: #fff;
-      height:60vh;
-      font-size: 20px;
-      text-align: center;
-      padding:20px ;
-      margin: 1px 230px;
-      color:black;
-      a{
-        color: black;
-        text-decoration: none;
+      margin-top:80px;
+      .lists_top{
+        display: flex;
+        background: #eee;
+        width:300px;
+        height:60px;
+        margin-left:160px;
+        cursor: pointer;
+        
 
-      }
-      .lists__top{
-        display: inline-block;
-        margin: 20px 0 0 11px;
-        background-color: rgba(90, 88, 88, 0.158);
-        color:black;
-        font-size: 14px;
-        text-decoration: none;
-        padding:15px 80px;
-        text-align: center;
-
-        img{
-          width: 50px;
-          height: 50px;
-          
+        .mail-icon{
+          font-size:40px;
+          padding-left:20px;
+          padding-top:10px;
+          color:rgba(187, 182, 182, 0.726);
         }
+      .link-email{
+        margin-top:20px;
+        margin-left: 20px;
         .top-btn{
-          
+          text-decoration: none;
+          color: #000;          
         }
       }
-      .lists__center{
-        padding:5px;
-        padding-right:45px;
-        display: inline-block;
-        margin-top:35px;
-        margin-left:45px;
-        margin-right: 40px;
-        background-color:#385185;
-        font-size: 14px;
-        line-height: 40px;
-        .center-btn{
-          padding-right:30px;
+      }
+      .lists_center{
+        width:300px;
+        height:60px;
+        margin-left:160px;
+        background: #385185;
+        margin-top:20px;
+        cursor: pointer;
+        color:#fff;
+        .lists_left{
+          float: left;
+          .face-icon{
+            font-size:40px;
+            padding-left: 30px;
+            padding-top:10px;
+          }
+          
         }
+        .lists_right{
+          float: right;
+          padding-top:20px;
+          padding-right: 50px;
 
-        
-        img{
-          padding-right:70px;
+          a{
+            color:#fff;
+            text-decoration: none;
+            padding-right:20px;
+          }
         }
-        a{
-          color:#fff;
-          line-height: 40px;
-          padding-right:40px;
-
-
-        }
-        
-      } 
-      .lists__under{
-        background-color: #fff;
-        display: inline-block;
+      }
+      .lists_under{
+        background: #fff;
         border: #979797 solid 1px;
-        margin:30px 30px 0;
-        padding:5px ;
-       .under-btn{
+        margin-top:20px;
+        width:300px;
+        height:60px;
+        margin-left:160px;
+        text-align: center;
+        display: flex;
+        cursor: pointer;
+        .lists_image{
 
-       }
-
-        img{
-          padding-right:86px;
+         img{
+           width:40px;
+           height:40px;
+           margin-left:30px;
+           
+  
+          } 
         }
+        .lists_number{
+          a{
+            text-decoration: none;
+            color: #000;  
+            line-height: 60px;
+            margin-left:40px;
 
-
-        a{
-          color: #333;
-          line-height: 40px;
-          padding-right:40px;
-          
-          
+            
+          }
         }
       }
-      
     }
-  }  
-
-
+  }
 }
-
