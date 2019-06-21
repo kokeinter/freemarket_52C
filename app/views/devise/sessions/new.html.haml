@@ -11,12 +11,16 @@
   
   .second-login  
     .link-facebook
-      =image_tag 'facebook.png'
-      =link_to "Facebookで登録"
+      .list-face
+        %i.fab.fa-facebook-square.facebook-icons
+      .facebook-name
+        =link_to "Facebookで登録"
 
     .link-google
-      =image_tag 'google.png'
-      =link_to "Googleで登録"
+      .list-ggg
+        =image_tag 'google.png'
+      .list-google-icons
+        =link_to "Googleで登録"
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       .field-4
         = f.email_field :email, autofocus: true, autocomplete: "email",placeholder:'メールアドレス',class: "e-mail"
