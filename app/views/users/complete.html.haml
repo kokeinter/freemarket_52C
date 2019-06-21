@@ -1,6 +1,20 @@
-%h2 会員登録完了
-%h3
-  ありがとうございます
-  %br>/
-  会員登録が完了しました
-= link_to "メルカリを始める", root_path
+.complete
+  .logo-complete
+    %a{href:""}
+      = image_tag 'logo2.png'
+    .logo-2
+      = image_tag 'shinchoku.png'
+  .complete-contents
+    .one-complete
+      %h2 会員登録完了
+    .two-complete
+      %h3
+        ありがとうございます
+        %br>/
+        会員登録が完了しました
+    .three-complete
+      = link_to "メルカリを始める", root_path,class:"btn-complete"
+    .footer-complete
+      = image_tag 'complete-footer.jpg',class:"aaa"
+     
+

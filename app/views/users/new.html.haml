@@ -1,18 +1,22 @@
 .all-contents
   .logo-and-search
-    .logo-and-search__logo
-      %a{href:""}
-        = image_tag 'logo2.png'
+    %a{href:""}
+      = image_tag 'logo2.png'
   .sub-contents
-    .span
-      新規会員登録
+    %h2 新規会員登録
     .lists
-      .lists__top
-        = link_to "メールアドレスで登録",new_user_registration_path,method: :get,class: "top-btn"
-      .lists__center
-        =image_tag 'facebook.png'
-        =link_to "Facebookで登録",class:"center-btn"
-
-      .lists__under
-        =image_tag 'google.png'
-        =link_to "Googleで登録",class:"under-btn"
+      .lists_top
+        .font-icon
+          %i.far.fa-envelope.mail-icon
+        .link-email
+          = link_to "メールアドレスで登録",new_user_registration_path,method: :get,class: "top-btn"
+      .lists_center
+        .lists_left
+          %i.fab.fa-facebook-square.face-icon
+        .lists_right
+          =link_to "Facebookで登録",class:"center-btn"
+      .lists_under
+        .lists_image
+          =image_tag 'google.png'
+        .lists_number
+          =link_to "Googleで登録",class:"under-btn"
