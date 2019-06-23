@@ -251,7 +251,8 @@
 
 // 販売価格
 .container__contents__value{
-  display: flex;
+  // display: table;
+  // float: right;
   justify-content: space-between;
   border-bottom: solid 1px rgb(238, 238, 238);
   padding: 40px;
@@ -264,6 +265,7 @@
     }
   }
   &__right{
+    margin-left: 22%;
    &__price{
       border-bottom: 1px solid #ccc;
       .pricenote{
@@ -284,6 +286,7 @@
     }
 
     &__fee{
+      margin-left: 22%;
       border-bottom: 1px solid #ccc;
       display: flex;
       justify-content: space-between;
@@ -291,6 +294,7 @@
       line-height: 60px;
     }
     &__profit{
+      margin-left: 22%;
       display: flex;
       justify-content: space-between;
       height: 60px;
