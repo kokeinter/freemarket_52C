@@ -1,8 +1,9 @@
 class ItemsController < ApplicationController
   before_action :item_params,only:[:create]
   before_action :edit_params,only:[:update]
+
   def index
-    @items = Item.all
+    @items = Item.all.order("id DESC")
   end
 
   def new

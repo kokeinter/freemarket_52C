@@ -25,13 +25,13 @@
         line-height: 1.4;
       }
 
-      ul {
+      .footer-lists {
         list-style: none;
 
-        li {
+        .footer-list {
           margin: 16px 0 0;
 
-          a {
+          &__name {
             display: block;
             opacity: .7;
             font-size: 12px;
@@ -56,7 +56,7 @@
               width: 25%;
               height: 25%;
               float: left;
-              margin-right: 20px;
+              margin: 20px 10px 0 0;
             }
           }
         }
@@ -106,7 +106,7 @@
 
 .sell {
 
-  &-btn{
+  &-btn {
     width: 160px;
     height: 160px;
     position: fixed;
@@ -119,11 +119,11 @@
     text-align: center;
     text-decoration: none;
     
-    &__text{
+    &__text {
       margin: 32px 0 0;
       padding: 0;
     }
-    .fa.fa-camera{
+    .sell-btn__icon {
       margin: 8px 0 0;
       font-size: 54px;
     }

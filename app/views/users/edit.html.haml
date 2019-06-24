@@ -1,5 +1,7 @@
 .default-container
   = render 'header'
+  - breadcrumb :profile
+  = render "layouts/breadcrumbs"
   = render "sidebar"
   .l-container
     .l-content
