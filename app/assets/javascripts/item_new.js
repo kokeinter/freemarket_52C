@@ -284,17 +284,10 @@ function appendShippingStyle2(){
 
 
 
-//カウントアップする関数 countUp の定義
 
-var id = -1
-
-function countUp(){
-  id++
-  console.log(id)
-}
+//
   
   $("#item_price").on("keyup", function() {
-  console.log(id)
   var price = $(this).val();
   var cost = price/10
   cost = Math.floor(cost) 
@@ -303,13 +296,25 @@ function countUp(){
   appendprofit(price,profit)
   })
 
+
+  //カウントアップする関数 countUp の定義
+
+var id = -1
+
+function countUp(){
+  id++
+}
+
+  //ページが読み込まれた時
+
   $(document).ready(function() {
     var file=document.querySelector('input[class=image_select]')
     var label=$(file).parent()
     $(label).attr("class","image_select_label")
   });
-  
 
+  //画像を入力した時
+  
   $(document).on("change",".image_select", function() {
     countUp()
     var label = $(this).parent()
@@ -325,18 +330,53 @@ function countUp(){
     var label=$(file).parent()
     $(label).attr("class","image_select_label")
     }, false);
+    });
 
-  });
+    //削除ボタンが押された時
+
   $(document).on("click",".selected_image_right", function() {
-    console.log("ok!")
     var id = $(this).attr("id")
+    var value =$(this).attr("class") 
+    $("#image_list").append('<input type=hidden name = delete_images[] value=' + value + '>')
     $("#selected_image_wrapper_"+id).remove()
     $("#item_images_attributes_"+id+"_image").val("")
-    var label=$("#item_images_attributes_"+id+"_image").parent()
-    $(label).css("display","block")
-    $(label).css("class","before_label")
+    $("image_select_label").attr("class","before_label")
   });
+
+   //データが送信された時
+   
   $('#new_item_form').on('submit', function(){
     $(".completed").css("display","block");
   })
+
+  //編集ページ
+
+  //ページが読み込まれた時
+  $(document).ready(function() {
+    var image_0=document.querySelector('#selected_image_wrapper_0')
+    var image_1=document.querySelector('#selected_image_wrapper_1')
+    var image_2=document.querySelector('#selected_image_wrapper_2')
+    var image_3=document.querySelector('#selected_image_wrapper_3')
+    var image_4=document.querySelector('#selected_image_wrapper_4')
+    var image_5=document.querySelector('#selected_image_wrapper_5')
+    var image_6=document.querySelector('#selected_image_wrapper_6')
+    var image_7=document.querySelector('#selected_image_wrapper_7')
+    var image_8=document.querySelector('#selected_image_wrapper_8')
+    var image_9=document.querySelector('#selected_image_wrapper_9')
+    var image_10=document.querySelector('#selected_image_wrapper_10')
+    $(image_0).attr("class","selected_image_wrapper")
+    $(image_1).attr("class","selected_image_wrapper")
+    $(image_2).attr("class","selected_image_wrapper")
+    $(image_3).attr("class","selected_image_wrapper")
+    $(image_4).attr("class","selected_image_wrapper")
+    $(image_5).attr("class","selected_image_wrapper")
+    $(image_6).attr("class","selected_image_wrapper")
+    $(image_7).attr("class","selected_image_wrapper")
+    $(image_8).attr("class","selected_image_wrapper")
+    $(image_9).attr("class","selected_image_wrapper")
+    $(image_10).attr("class","selected_image_wrapper")
+    $(".after_delete").remove()
+    // $(".selected_image_wrapper").remove()
+  });
+
 });

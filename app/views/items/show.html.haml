@@ -83,11 +83,13 @@
         %span.item-tax (税込)
         %span.item-shipping-fee
           =@item.shipping_style
-      .sales-point-message
-        売上金 ¥ 270 をお持ちです
-      %section.visible-sp
-        %a.item-buy-btn{"data-client" => "hidden", :href => "/items/#{@item.id}/buy"} 購入画面に進む
-        .item-btn-float-area
+      -if @user.id ==! current_user.id
+        .sales-point-message
+          売上金 ¥ 270 をお持ちです
+        %section.visible-sp
+          %a.item-buy-btn{"data-client" => "hidden", :href => "/items/#{@item.id}/buy"} 購入画面に進む
+          .item-btn-float-area
+      -else
     .item-description
       %p.item-description-inner
       =@item.text
@@ -162,7 +164,7 @@
     %ul.social-media-box
       %li
         %a.share-btn{"data-window-name" => "facebook_window", :href => "http://www.facebook.com/share.php?u=https%3A%2F%2Fitem.mercari.com%2Fjp%2Fm52940456685%2F", :target => "_blank"}
-          %i.fab.fa-facebook-square.fa-3x
+          %i.fab.fa-facebook-square.fa-3x.show_face_icon
       %li
         %a.share-btn{"data-window-name" => "twitter_window", :href => "http://twitter.com/share?count=horizontal&original_referer=https%3A%2F%2Fitem.mercari.com%2Fjp%2Fm52940456685%2F&text=ZARA%20%28%C2%A5%204%2C500%29%20https%3A%2F%2Fitem.mercari.com%2Fjp%2Fm52940456685%2F%20%E3%83%95%E3%83%AA%E3%83%9E%E3%82%A2%E3%83%97%E3%83%AA%E3%80%8C%E3%83%A1%E3%83%AB%E3%82%AB%E3%83%AA%E3%80%8D%E3%81%A7%E8%B2%A9%E5%A3%B2%E4%B8%AD%E2%99%AA%20%23%E3%83%A1%E3%83%AB%E3%82%AB%E3%83%AA%20%40mercari_jp%E3%81%95%E3%82%93%E3%81%8B%E3%82%89", :target => "_blank"}
           %i.fab.fa-twitter-square.fa-3x
