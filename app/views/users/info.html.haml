@@ -1,5 +1,7 @@
 .default-container
-  = render 'header'
+  = render '/items/header'
+  - breadcrumb :info  
+  = render "layouts/breadcrumbs"
 %main.l-container.clearfix
   .l-content
     %section.l-chapter-container.mypage-identification
