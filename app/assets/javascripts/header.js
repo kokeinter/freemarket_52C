@@ -9,7 +9,7 @@ $(function() {
 
 // カテゴリボタン、ブランドボタン、いいね！一覧、お知らせ、やることリスト、マイページの色変更
 $(function() {
-  $('.categories-link-btn, .brands-link-btn, .like-btn__header-like-icon, .like-btn__text, .news-btn__icon, .news-btn__text, .todo-list__btn-icon, .todo-list__btn-text, .mypage-btn__text')
+  $('.categories-link-btn, .brands-link-btn, .like-btn__text, .news-btn__text, .todo-list__btn-text, .mypage-btn__text')
   .hover(function() {
     $(this).css('color', '#0099e8');
   }, function() {

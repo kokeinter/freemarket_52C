@@ -4,24 +4,24 @@ crumb :root do
 end
 
 # マイページ
-crumb :mypage do |user|
+crumb :mypage do
   link "マイページ", mypage_users_path
 end
 
 # プロフィール
-crumb :profile do |user|
+crumb :profile do
   link "プロフィール", edit_user_path
   parent :mypage
 end
 
 # 本人情報編集
-crumb :info do |user|
+crumb :info do
   link "本人情報の登録", info_user_path
   parent :mypage
 end
 
 # ログアウト
-crumb :logout do |user|
+crumb :logout do
   link "ログアウト", logout_users_path
   parent :mypage
 end
