@@ -1,6 +1,5 @@
 class CreditcardsController < MypayjpController
   
-
   def new
     @user=User.find(current_user.id)
   end

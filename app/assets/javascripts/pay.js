@@ -6,7 +6,6 @@ $(function() {
       exp_year = document.querySelector('select[name="exp_year"]')
   ;
 
-
   $('.fill').on('click', function(e) {
     e.preventDefault();
     number.value = '4242424242424242';

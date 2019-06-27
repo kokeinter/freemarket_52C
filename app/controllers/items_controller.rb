@@ -77,13 +77,11 @@ class ItemsController < MypayjpController
     redirect_to "/users/#{current_user.id}/items_status" ,notice: '商品を削除しました'
   end
 
-
 def pay
   item=Item.find(params[:id])
   Mypayjp.pay(params[:customer_id], item.price)
   redirect_to done_item_path(params[:id])
 end
-
 
 private
 
