@@ -81,7 +81,7 @@ gem 'dotenv-rails'
 gem "dropzonejs-rails"
 gem 'fog-aws'
 gem 'payjp'
-
+gem "gretel"
 
 group :production do
   gem 'unicorn', '5.4.1'

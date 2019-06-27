@@ -1,5 +1,7 @@
 .default-container
-  = render 'header'
+  = render 'items/header'
+  - breadcrumb :logout
+  = render "layouts/breadcrumbs"
   = render "sidebar"
   .l-container
     .logout_wrapper

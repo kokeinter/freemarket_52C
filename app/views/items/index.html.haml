@@ -13,7 +13,7 @@
       .items-box-content.clearfix
         - @items.each do |item|
           - images=Image.where("item_id=?",item.id).limit(1)
-          %a{href:"items/#{item.id}",class:"item-show-link"}
+          = link_to "items/#{item.id}", class:"item-show-link" do
             .items-box
               .detail-page
                 -images.each do |image|
@@ -25,7 +25,7 @@
                     = item.price
                   %span.like-count
                     1
-                  %i.far.fa-heart
+                  %i.far.fa-heart.item__like-icon
                   .item-tax
                     (税込)
 
@@ -47,7 +47,7 @@
                 ¥ 15,400
               %span.like-count
                 1
-              %i.far.fa-heart
+              %i.far.fa-heart.item__like-icon
               .item-tax
                 (税込)
         
@@ -62,7 +62,7 @@
                 ¥ 15,400
               %span.like-count
                 1
-              %i.far.fa-heart
+              %i.far.fa-heart.item__like-icon
               .item-tax
                 (税込)
         .items-box.three
@@ -75,7 +75,7 @@
                 ¥ 15,400
               %span.like-count
                 1
-              %i.far.fa-heart
+              %i.far.fa-heart.item__like-icon
               .item-tax
                 (税込)
         .items-box.four
@@ -88,7 +88,7 @@
                 ¥ 18,500
               %span.like-count
                 1
-              %i.far.fa-heart
+              %i.far.fa-heart.item__like-icon
               .item-tax
                 (税込)
   .pickup-content__all
@@ -109,7 +109,7 @@
                 ¥ 9,300
               %span.like-count
                 1
-              %i.far.fa-heart
+              %i.far.fa-heart.item__like-icon
               .item-tax
                 (税込)
         .items-box.two
@@ -122,7 +122,7 @@
                 ¥ 1,500
               %span.like-count
                 1
-              %i.far.fa-heart
+              %i.far.fa-heart.item__like-icon
               .item-tax
                 (税込)
         .items-box.three
@@ -135,7 +135,7 @@
                 ¥ 15,400
               %span.like-count
                 1
-              %i.far.fa-heart
+              %i.far.fa-heart.item__like-icon
               .item-tax
                 (税込)
         .items-box.four
@@ -148,7 +148,7 @@
                 ¥ 18,500
               %span.like-count
                 1
-              %i.far.fa-heart
+              %i.far.fa-heart.item__like-icon
               .item-tax
                 (税込)
   .pickup-content__all
@@ -169,7 +169,7 @@
                 ¥ 9,300
               %span.like-count
                 1
-              %i.far.fa-heart
+              %i.far.fa-heart.item__like-icon
               .item-tax
                 (税込)
         .items-box.two
@@ -182,7 +182,7 @@
                 ¥ 1,500
               %span.like-count
                 1
-              %i.far.fa-heart
+              %i.far.fa-heart.item__like-icon
               .item-tax
                 (税込)
         .items-box.three
@@ -195,7 +195,7 @@
                 ¥ 15,400
               %span.like-count
                 1
-              %i.far.fa-heart
+              %i.far.fa-heart.item__like-icon
               .item-tax
                 (税込)
         .items-box.four
@@ -208,7 +208,7 @@
                 ¥ 18,500
               %span.like-count
                 1
-              %i.far.fa-heart
+              %i.far.fa-heart.item__like-icon
               .item-tax
                 (税込)
   .pickup-content__all
@@ -229,7 +229,7 @@
                 ¥ 9,300
               %span.like-count
                 1
-              %i.far.fa-heart
+              %i.far.fa-heart.item__like-icon
               .item-tax
                 (税込)
         .items-box.two
@@ -242,7 +242,7 @@
                 ¥ 1,500
               %span.like-count
                 1
-              %i.far.fa-heart
+              %i.far.fa-heart.item__like-icon
               .item-tax
                 (税込)
         .items-box.three
@@ -255,7 +255,7 @@
                 ¥ 15,400
               %span.like-count
                 1
-              %i.far.fa-heart
+              %i.far.fa-heart.item__like-icon
               .item-tax
                 (税込)
         .items-box.four
@@ -268,7 +268,7 @@
                 ¥ 18,500
               %span.like-count
                 1
-              %i.far.fa-heart
+              %i.far.fa-heart.item__like-icon
               .item-tax
                 (税込)
   .pickup-content__all
@@ -291,7 +291,7 @@
                 ¥ 7,200
               %span.like-count
                 1
-              %i.far.fa-heart
+              %i.far.fa-heart.item__like-icon
               .item-tax
                 (税込)
         .items-box.two
@@ -304,7 +304,7 @@
                 ¥ 5,900
               %span.like-count
                 1
-              %i.far.fa-heart
+              %i.far.fa-heart.item__like-icon
               .item-tax
                 (税込)
         .items-box.three
@@ -317,7 +317,7 @@
                 ¥ 16,000
               %span.like-count
                 1
-              %i.far.fa-heart
+              %i.far.fa-heart.item__like-icon
               .item-tax
                 (税込)
         .items-box.four
@@ -330,7 +330,7 @@
                 ¥ 13,500
               %span.like-count
                 1
-              %i.far.fa-heart
+              %i.far.fa-heart.item__like-icon
               .item-tax
                 (税込)
   .pickup-content__all
@@ -351,7 +351,7 @@
                 ¥ 7,200
               %span.like-count
                 1
-              %i.far.fa-heart
+              %i.far.fa-heart.item__like-icon
               .item-tax
                 (税込)
         .items-box.two
@@ -364,7 +364,7 @@
                 ¥ 5,900
               %span.like-count
                 1
-              %i.far.fa-heart
+              %i.far.fa-heart.item__like-icon
               .item-tax
                 (税込)
         .items-box.three
@@ -377,7 +377,7 @@
                 ¥ 16,000
               %span.like-count
                 1
-              %i.far.fa-heart
+              %i.far.fa-heart.item__like-icon
               .item-tax
                 (税込)
         .items-box.four
@@ -390,7 +390,7 @@
                 ¥ 13,500
               %span.like-count
                 1
-              %i.far.fa-heart
+              %i.far.fa-heart.item__like-icon
               .item-tax
                 (税込)
   .pickup-content__all
@@ -411,7 +411,7 @@
                 ¥ 7,200
               %span.like-count
                 1
-              %i.far.fa-heart
+              %i.far.fa-heart.item__like-icon
               .item-tax
                 (税込)
         .items-box.two
@@ -424,7 +424,7 @@
                 ¥ 5,900
               %span.like-count
                 1
-              %i.far.fa-heart
+              %i.far.fa-heart.item__like-icon
               .item-tax
                 (税込)
         .items-box.three
@@ -437,7 +437,7 @@
                 ¥ 16,000
               %span.like-count
                 1
-              %i.far.fa-heart
+              %i.far.fa-heart.item__like-icon
               .item-tax
                 (税込)
         .items-box.four
@@ -450,7 +450,7 @@
                 ¥ 13,500
               %span.like-count
                 1
-              %i.far.fa-heart
+              %i.far.fa-heart.item__like-icon
               .item-tax
                 (税込)  
   .pickup-content__all
@@ -471,7 +471,7 @@
                 ¥ 7,200
               %span.like-count
                 1
-              %i.far.fa-heart
+              %i.far.fa-heart.item__like-icon
               .item-tax
                 (税込)
         .items-box.two
@@ -484,7 +484,7 @@
                 ¥ 5,900
               %span.like-count
                 1
-              %i.far.fa-heart
+              %i.far.fa-heart.item__like-icon
               .item-tax
                 (税込)
         .items-box.three
@@ -497,7 +497,7 @@
                 ¥ 16,000
               %span.like-count
                 1
-              %i.far.fa-heart
+              %i.far.fa-heart.item__like-icon
               .item-tax
                 (税込)
         .items-box.four
@@ -510,15 +510,10 @@
                 ¥ 13,500
               %span.like-count
                 1
-              %i.far.fa-heart
+              %i.far.fa-heart.item__like-icon
               .item-tax
                 (税込)
   .pickup-content__all
     = link_to "すべての商品を見る", root_path, class: "pickup-content__all-btn"
-
-  .app-banner
-    .app-banner__dl-btn
-      = link_to "", "https://apps.apple.com/jp/app/id667861049?l=ja", class: "app-banner__dl-btn-ios"
-      = link_to "", "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja" , class: "app-banner__dl-btn-google"
 
   = render 'footer'

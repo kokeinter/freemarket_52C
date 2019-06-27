@@ -1,34 +1,44 @@
 %header
   .logo-and-search
     .logo-and-search__logo
-      %a{href: "/"}
-        = image_tag 'logo.png'
+      = link_to image_tag('logo.png', class:"logo-and-search__logo-image"),"/"
     .search
       %form.logo-and-search__search
         %input{value:"", placeholder:"何をお探しですか？" }
-        %i.fa.fa-search
+        %i.fa.fa-search.header__search-icon
   .lists
     .lists__left
-      %ul
+      %ul.lists__left-list
         %li.categories
-          %h2
-            = link_to "カテゴリから探す", "/", class: "categories-btn"
+          = link_to "/", class:"categories-link" do
+            %i.fas.fa-list-ul.categories-link__list-icon
+            .categories-link-btn
+              カテゴリから探す
         %li.brands
-          %h2
-            = link_to "ブランドから探す", "/", class: "brands-btn"
-    
+          = link_to "/", class:"brands-link" do
+            %i.fas.fa-tag.brands-link__tag-icon
+            .brands-link-btn
+              ブランドから探す
+
     .signin-and-signup
       %ul.account
         - if user_signed_in?
-          %li.kari__signout-btn
-            = link_to "ログアウト",logout_users_path, class: "kari__signout-btn-text"
+          %li.like-btn
+            %i.far.fa-heart.like-btn__header-like-icon
+            = link_to "/", class: "like-btn__text" do
+              いいね！ 一覧
           %li.news-btn
+            %i.far.fa-bell.news-btn__icon
             = link_to "/", class: "news-btn__text" do
               お知らせ
-          %li.todo-list-btn
-            = link_to "/", class: "todo-list-btn__text" do
+            .news-btn__count
+              99
+          %li.todo-list__btn
+            %i.fas.fa-check.todo-list__btn-icon
+            = link_to "/", class: "todo-list__btn-text" do
               やることリスト
           %li.mypage-btn
+            = image_tag "member_photo_noimage_thumb.png", class:"mypage-btn__icon"
             = link_to mypage_users_path, class: "mypage-btn__text" do
               マイページ
         - else
