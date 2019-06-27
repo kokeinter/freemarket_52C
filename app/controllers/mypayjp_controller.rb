@@ -1,6 +1,4 @@
 class MypayjpController < ApplicationController
-  require 'payjp'
-  require 'dotenv'
   protect_from_forgery
   Dotenv.load
   
