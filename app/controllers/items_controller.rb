@@ -1,6 +1,7 @@
-class ItemsController < ApplicationController
+class ItemsController < MypayjpController
   before_action :item_params,only:[:create]
   before_action :edit_params,only:[:update]
+  
   def index
     @items = Item.all
   end
@@ -17,6 +18,8 @@ class ItemsController < ApplicationController
   end
 
   def buy
+    @item=Item.find(params[:id])
+    @creditcard=current_user.creditcard
   end
   
   def done
@@ -32,6 +35,7 @@ class ItemsController < ApplicationController
     @comment=Comment.new
     @comments=@item.comments
   end
+
   def before_edit
     @item=Item.find(params[:id])
     @images=@item.images
@@ -49,6 +53,7 @@ class ItemsController < ApplicationController
     @images=Image.where("item_id=?",@item.id)
     @images_length=@images.length
   end
+
   def update
     item=Item.find(params[:id])
     @images=Image.where("item_id=?",item.id)
@@ -57,7 +62,6 @@ class ItemsController < ApplicationController
       Image.create(item_id:params[:id],image: image_params[:images_attributes][:"#{id}"][:image])
       end
     end
-    
     delete_ids=params[:delete_images]
     if delete_ids.present?
       delete_ids.each do |id|
@@ -67,21 +71,18 @@ class ItemsController < ApplicationController
     item.update(edit_params)
     redirect_to root_path
   end
+
   def destroy
     Item.delete(params[:id])
     redirect_to "/users/#{current_user.id}/items_status" ,notice: '商品を削除しました'
   end
 
 
-  def pay
-    price = Item.find(params[:id]).price
-    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
-    Payjp::Charge.create(
-      amount: price,
-      card: params['payjp-token'],
-      currency: 'jpy'
-    )
-  end
+def pay
+  item=Item.find(params[:id])
+  Mypayjp.pay(params[:customer_id], item.price)
+  redirect_to done_item_path(params[:id])
+end
 
 
 private

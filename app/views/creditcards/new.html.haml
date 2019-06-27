@@ -1,3 +1,6 @@
+%script{:src => "https://js.pay.jp/", :type => "text/javascript"}
+:javascript
+  Payjp.setPublicKey('pk_test_8960e38ee745f246406af653');
 .creditcards
   .logo-creditcards
     %a{href:""}
@@ -7,25 +10,26 @@
   .creditcard-contents
     %h2 支払い方法
     .one-creditcards
-      = form_for @creditcard do |f|
+      %form#charge-form{:action => "/creditcards", :method => "POST"}
         .field-creditcards
           .label-creditcards
-            = f.label :カード番号
-            = f.label :必須,class:"creditcards-label"
-          
+            %label カード番号
+            %label.creditcards-label 必須
             %br/
           .text-creditcards
-            = f.text_field :card_number,placeholder:'半角数字のみ',class:"form-creditcards"
+            %input{:maxlength => "16", :name => "number", :placeholder => "Card #", :type => "text",class:"form-creditcards"}/
           .creditcards-logo
             = image_tag 'creditcards.png'
         .field-creditcards
           .label-creditcards
-            = f.label :有効期限
-            = f.label :必須,class:"creditcards-label"
+            -# = f.label :有効期限
+            -# = f.label :必須,class:"creditcards-label"
+            %label 有効期限
+            %label.creditcards-label 必須
             %br/
           .text-creditcards
-            %select.select-creditcards{name: "creditcard[limit_year]"}
-              %option{value: ""} 年
+            %select.select-creditcards{:name => "exp_year"}
+              %option{value: "-"} 年
               %option{value: "2019"} 2019
               %option{value: "2018"} 2018
               %option{value: "2017"} 2017
@@ -146,7 +150,7 @@
               %option{value: "1902"} 1902
               %option{value: "1901"} 1901
               %option{value: "1900"} 1900
-            %select.select-creditcards-month{name: "creditcard[limit_month]"}
+            %select.select-creditcards-month{:name => "exp_month"}
               %option{value: "-"} 月
               %option{value: "1"} 1
               %option{value: "2"} 2
@@ -162,12 +166,16 @@
               %option{value: "12"} 12
         .field-creditcards
           .label-creditcards
-            = f.label :セキュリティコード
-            = f.label :必須,class:"creditcards-label"
+            %label セキュリティーコード
+            %label.creditcards-label 必須
             %br/
           .text-creditcards
-            = f.text_field :security_code,placeholder:'カード背面4桁もしくは3桁の番号',class:"form-creditcards"
+            %input{:maxlength => "4", :name => "cvc", :placeholder => "カード背面4桁もしくは3桁の番号", :type => "text",class:"form-creditcards"}/
+            %input{value:"#{@user.id}", :name => "user_id", :type => "hidden"}
           .help-creditcards
             =link_to "カード裏面の番号とは？",class:"link-creditcards"
         .actions-creditcards
-          = f.submit "次へ進む",class:"btn-creditcards"
+          %button{:type => "submit",class:"btn-creditcards" } 次へ進む
+        #result
+    %button.ui.button.fill{:tabindex => "0"}
+      サンプルのカード番号を使う

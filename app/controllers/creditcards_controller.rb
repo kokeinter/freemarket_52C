@@ -1,11 +1,14 @@
-class CreditcardsController < ApplicationController
+class CreditcardsController < MypayjpController
+  
+
   def new
-    @creditcard = Creditcard.new
+    @user=User.find(current_user.id)
   end
 
   def create
-    creditcard=Creditcard.create(user_id:current_user.id,card_number: creditcard_params[:card_number],security_code: creditcard_params[:security_code],limit_year: creditcard_params[:limit_year],limit_month: creditcard_params[:limit_month])
-    if creditcard.save
+    if params[:payjpToken].present?
+      customer=Payjp::Customer.create(card: params[:payjpToken])
+      Creditcard.create(token: params[:payjpToken],user_id: creditcard_params[:user_id],customer_id: customer[:id])
       redirect_to "/users/complete"
     else
       redirect_to new_creditcard_path
@@ -15,6 +18,6 @@ class CreditcardsController < ApplicationController
   private
 
   def creditcard_params
-    params.require(:creditcard).permit(:card_number,:security_code,:limit_year,:limit_month,)
+    params.permit(:payjpToken,:user_id)
   end
 end
