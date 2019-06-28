@@ -43,6 +43,6 @@
               マイページ
         - else
           %li.signup-btn
-            = link_to "新規会員登録",new_user_registration_path,method: :get, class: "signup-btn__text"
+            = link_to "新規会員登録",new_user_path, class: "signup-btn__text"
           %li.signin-btn
-            = link_to "ログイン",new_user_session_path,method: :get, class: "signin-btn__text"
+            = link_to "ログイン",new_user_session_path, class: "signin-btn__text"
