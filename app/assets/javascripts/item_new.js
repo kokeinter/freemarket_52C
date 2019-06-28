@@ -1,5 +1,4 @@
 $(function(){
-
   function appendSecondSelectBox(){
     var html = `
                 <div class="container__contents__details__right__form__secondgenre">

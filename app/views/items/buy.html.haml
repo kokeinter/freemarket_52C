@@ -11,12 +11,17 @@
         %section.buy-content.buy-item
           .buy-content-inner
             %h3.buy-item-image
-              %img.buy_image{:alt => "", "data-src" => "https://static.mercdn.net/thumb/photos/m76934274468_1.jpg?1542599990", :src => "https://static.mercdn.net/thumb/photos/m76934274468_1.jpg?1542599990"}/
-            %p.buy-item-name.bold ヴィヴィアンウェストウッド　ハラコバッグ
-            %form.buy-form{:action => "https://www.mercari.com/jp/transaction/buy/done/m76934274468/", :method => "POST", :novalidate => "novalidate"}
+            - images=Image.where("item_id=?",@item.id).limit(1)
+            -images.each do |image|
+              = image_tag image.image.url, class: "buy_image"
+            %p.buy-item-name.bold 
+              =@item.name
+            %form.buy-form{action: pay_item_path(params[:id]), :method => "POST"}
               %p.buy-price-ja.bold
-                ¥ 4,000
-                %span.item-shipping-fee.f14.bold 送料込み
+                ¥
+                =@item.price
+                %span.item-shipping-fee.f14.bold 
+                  =@item.postage
               %ul.buy-accordion.not-have
                 %li.accordion-parent
                   .accordion-toggle
@@ -25,24 +30,29 @@
                 %li.buy-price-row.buy-you-pay.bold
                   .buy-price-cell 支払い金額
                   .buy-price-cell-2
-                    %span{"data-buy-pay" => "4000"} ¥ 4,000
-              %p.has-error-text 配送先と支払い方法の入力を完了してください。
-
-              %a{href:done_item_path(1)}
+                    ¥
+                    =@item.price
+              %a{href:pay_item_path(params[:id])}
                 %button.buy-btn-default.btn-red.bold{type: "submit"} 購入する
+                %form{:action => "/pay", :method => "post"}
+                  %script.payjp-button{"data-key" => "", :src => "https://api.pay.jp/v1/charges"}
+                  %input{type:"hidden",value:"#{@creditcard.customer_id}",name:"customer_id"}
               %input#user_info_is_not_complete{type: "hidden"}/
         %section.buy-content1.buy-item
           .buy-content-inner1
             %h3 配送先
             %address.buy-user-info-text
-              〒620-0034
+              〒
+              =current_user.address.post_id
               %br/
-              京都府 福知山市鍛冶
+              =current_user.address.prefecture
+              =current_user.address.city
               39-1
               %br/
-              佐古田 雄二郎
+              =current_user.address.first_name
+              =current_user.address.last_name
             %p.buy-user-info-text
-            %a.buy-user-info-fix{href: "https://www.mercari.com/jp/transaction/address/m76934274468/"}
+            =link_to info_user_path(current_user.id) do
               .buy-change
                 %span 変更する
                 %i.fas.fa-chevron-right.buy-right-icon
@@ -55,7 +65,7 @@
             %figure
               %img{alt: "", height: "", src: "", width: ""}/
             %p
-            %a.buy-user-info-fix{href: "https://www.mercari.com/jp/transaction/card/m76934274468/"}
+            =link_to root_path do
               .buy-change
                 %span 変更する
                 %i.fas.fa-chevron-right.buy-right-icon
