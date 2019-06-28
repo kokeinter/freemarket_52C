@@ -4,6 +4,14 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.all.order("id DESC")
+    @ladies_items =  Item.all.where(first_genre_id: 1).order("id DESC").limit(4)
+    @mens_items =  Item.all.where(first_genre_id: 200).order("id DESC").limit(4)
+    @baby_kids_items = Item.all.where(first_genre_id: 346).order("id DESC").limit(4)
+    @cosme_items = Item.all.where(first_genre_id: 798).order("id DESC").limit(4)
+    @chanel_items = Item.all.where(brand: "シャネル").order("id DESC").limit(4)
+    @vuitton_items = Item.all.where(brand: "ヴィトン").order("id DESC").limit(4)
+    @supreme_items = Item.all.where(brand: "シュプリーム").order("id DESC").limit(4)
+    @nike_items = Item.all.where(brand: "ナイキ").order("id DESC").limit(4)
   end
 
   def new
