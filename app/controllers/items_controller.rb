@@ -1,6 +1,9 @@
-class ItemsController < MypayjpController
+require "creditcard.rb"
+class ItemsController < ApplicationController
   before_action :item_params,only:[:create]
   before_action :edit_params,only:[:update]
+  protect_from_forgery
+  
 
   def index
     @items = Item.all.order("id DESC")
@@ -79,7 +82,7 @@ class ItemsController < MypayjpController
 
 def pay
   item=Item.find(params[:id])
-  Mypayjp.pay(params[:customer_id], item.price)
+  Creditcard.pay(params[:customer_id], item.price)
   redirect_to done_item_path(params[:id])
 end
 

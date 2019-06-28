@@ -1,6 +1,4 @@
 %script{:src => "https://js.pay.jp/", :type => "text/javascript"}
-:javascript
-  Payjp.setPublicKey('pk_test_8960e38ee745f246406af653');
 .creditcards
   .logo-creditcards
     %a{href:""}
@@ -22,8 +20,6 @@
             = image_tag 'creditcards.png'
         .field-creditcards
           .label-creditcards
-            -# = f.label :有効期限
-            -# = f.label :必須,class:"creditcards-label"
             %label 有効期限
             %label.creditcards-label 必須
             %br/
@@ -172,6 +168,7 @@
           .text-creditcards
             %input{:maxlength => "4", :name => "cvc", :placeholder => "カード背面4桁もしくは3桁の番号", :type => "text",class:"form-creditcards"}/
             %input{value:"#{@user.id}", :name => "user_id", :type => "hidden"}
+            %input{value:"#{@publickey}", :type => "hidden",class:"test"}
           .help-creditcards
             =link_to "カード裏面の番号とは？",class:"link-creditcards"
         .actions-creditcards

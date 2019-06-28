@@ -1,5 +1,5 @@
 $(function() {
-
+ 
   var number = document.querySelector('input[name="number"]'),
       cvc = document.querySelector('input[name="cvc"]'),
       exp_month = document.querySelector('select[name="exp_month"]'),
@@ -22,7 +22,8 @@ $(function() {
       exp_month: exp_month.value,
       exp_year: exp_year.value
     }
-    Payjp.setPublicKey('pk_test_0e0e759673f9685f4dd8af58');
+    var publicKey = $(".test").attr("value")
+    Payjp.setPublicKey(publicKey);
     Payjp.createToken(card, function(s, response) {
       $("#result").append($('<input type="hidden" name="payjpToken" />').val(response.id));
       $("form").submit();

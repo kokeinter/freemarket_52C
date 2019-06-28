@@ -1,7 +1,14 @@
-class CreditcardsController < MypayjpController
+require "creditcard.rb"
+class CreditcardsController < ApplicationController
+  protect_from_forgery
   
   def new
     @user=User.find(current_user.id)
+    if Rails.env.development?
+      @publickey= Rails.application.credentials.payjp[:public_test_key]
+    else
+      @publickey= Rails.application.credentials.payjp[:public_key]
+    end
   end
 
   def create
