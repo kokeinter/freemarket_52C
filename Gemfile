@@ -76,6 +76,7 @@ gem 'carrierwave'
 gem 'kaminari'
 gem 'font-awesome-rails'
 gem 'ancestry'
+gem 'dotenv-rails'
 # gem "omniauth-rails_csrf_protection"
 gem "dropzonejs-rails"
 gem 'fog-aws'

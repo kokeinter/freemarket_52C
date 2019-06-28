@@ -83,13 +83,12 @@
         %span.item-tax (税込)
         %span.item-shipping-fee
           =@item.shipping_style
-      -if @user.id ==! current_user.id
+      -if @user.id != current_user.id
         .sales-point-message
           売上金 ¥ 270 をお持ちです
         %section.visible-sp
           %a.item-buy-btn{"data-client" => "hidden", :href => "/items/#{@item.id}/buy"} 購入画面に進む
           .item-btn-float-area
-      -else
     .item-description
       %p.item-description-inner
       =@item.text
