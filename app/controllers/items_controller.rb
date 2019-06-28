@@ -2,6 +2,8 @@ require "creditcard.rb"
 class ItemsController < ApplicationController
   before_action :item_params,only:[:create]
   before_action :edit_params,only:[:update]
+  before_action :find_item,only:[:buy,:show,:before_edit,:edit,:update,:pay]
+
   protect_from_forgery
   
 
@@ -21,7 +23,6 @@ class ItemsController < ApplicationController
   end
 
   def buy
-    @item=Item.find(params[:id])
     @creditcard=current_user.creditcard
   end
   
@@ -29,7 +30,6 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item=Item.find(params[:id])
     @images=@item.images
     @user=User.find(@item.saler_id)
     @first=Category.find(@item.first_genre_id)
@@ -40,7 +40,6 @@ class ItemsController < ApplicationController
   end
 
   def before_edit
-    @item=Item.find(params[:id])
     @images=@item.images
     @user=User.find(current_user.id)
     @first=Category.find(@item.first_genre_id)
@@ -51,15 +50,13 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(params[:id])
     10.times{@item.images.build}
     @images=Image.where("item_id=?",@item.id)
     @images_length=@images.length
   end
 
   def update
-    item=Item.find(params[:id])
-    @images=Image.where("item_id=?",item.id)
+    @images=Image.where("item_id=?",@item.id)
     @images.each_with_index do |image,id|
       if image_params[:images_attributes][:"#{id}"][:image].present?
       Image.create(item_id:params[:id],image: image_params[:images_attributes][:"#{id}"][:image])
@@ -71,7 +68,7 @@ class ItemsController < ApplicationController
       Image.delete(id)
       end
     end
-    item.update(edit_params)
+    @item.update(edit_params)
     redirect_to root_path
   end
 
@@ -81,9 +78,12 @@ class ItemsController < ApplicationController
   end
 
 def pay
-  item=Item.find(params[:id])
-  Creditcard.pay(params[:customer_id], item.price)
+  Creditcard.pay(params[:customer_id], @item.price)
   redirect_to done_item_path(params[:id])
+end
+
+def find_item
+  @item=Item.find(params[:id])
 end
 
 private
