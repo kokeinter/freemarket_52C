@@ -17,7 +17,14 @@
             .items-box
               .detail-page
                 -images.each do |image|
-                  = image_tag image.image.url, class: "detail-page__img"
+                  -if item.status==2
+                    .sold-item-wrapper
+                      .sold-text
+                        sold
+                      .sold-icon
+                      = image_tag image.image.url, class: "detail-page__img"
+                  -else
+                    = image_tag image.image.url, class: "detail-page__img"
                 .detail-page__body
                   %h3.item-name
                     = item.name
