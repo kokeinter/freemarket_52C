@@ -15,7 +15,27 @@
           - images=Image.where("item_id=?",item.id).limit(1)
           = link_to item_path(item.id), class:"item-show-link" do
             = render 'item', item: item, images: images
-
+            .items-box
+              .detail-page
+                -images.each do |image|
+                  -if item.status==2
+                    .sold-item-wrapper
+                      .sold-text
+                        sold
+                      .sold-icon
+                      = image_tag image.image.url, class: "detail-page__img"
+                  -else
+                    = image_tag image.image.url, class: "detail-page__img"
+                .detail-page__body
+                  %h3.item-name
+                    = item.name
+                  .item-price.clearfix
+                    = item.price
+                  %span.like-count
+                    1
+                  %i.far.fa-heart.item__like-icon
+                  .item-tax
+                    (税込)
   .pickup-contents
     %h2.pickup-contents__title
       ピックアップカテゴリー

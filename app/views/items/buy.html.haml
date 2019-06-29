@@ -37,6 +37,7 @@
                 %form{:action => "/pay", :method => "post"}
                   %script.payjp-button{"data-key" => "", :src => "https://api.pay.jp/v1/charges"}
                   %input{type:"hidden",value:"#{@creditcard.customer_id}",name:"customer_id"}
+                  %input{type:"hidden",value:"#{current_user.id}",name:"current_user_id"}
               %input#user_info_is_not_complete{type: "hidden"}/
         %section.buy-content1.buy-item
           .buy-content-inner1

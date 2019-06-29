@@ -117,3 +117,26 @@
 .item-show-link{
   color: black;
 }
+
+.sold{
+  &-icon{
+  border-right: 50px solid transparent;
+  border-top: 50px solid red;
+  border-bottom: 50px solid transparent;
+  border-left: 50px solid red;
+  position: absolute;
+  float: left;
+  height: 0;
+  width: 0;
+  z-index: 1;
+ }
+ &-text{
+   font-size: 25px;
+    transform:rotate(-45deg);
+   position: absolute;
+   color: white;
+    line-height: 250%;
+    margin-left: 5px;
+   z-index: 2;
+ }
+}

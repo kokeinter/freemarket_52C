@@ -2,7 +2,7 @@ require "creditcard.rb"
 class ItemsController < ApplicationController
   before_action :item_params,only:[:create]
   before_action :edit_params,only:[:update]
-  before_action :find_item,only:[:buy,:show,:before_edit,:edit,:update,:pay]
+  before_action :find_item,only:[:buy,:show,:before_edit,:edit,:update,:pay,:done]
 
   protect_from_forgery
   
@@ -35,6 +35,7 @@ class ItemsController < ApplicationController
   end
   
   def done
+    @address=current_user.address
   end
 
   def show
@@ -90,6 +91,7 @@ class ItemsController < ApplicationController
 
 def pay
   Creditcard.pay(params[:customer_id], @item.price)
+  @item.update(buyer_id: params[:current_user_id],status:2)
   redirect_to done_item_path(params[:id])
 end
 
@@ -100,7 +102,7 @@ end
 private
 
 def item_params
-  params.require(:item).permit(:name,:text,:condition,:first_genre_id,:second_genre_id,:third_genre_id,:size,:postage,:sending_region,:shipping_day,:price,:shipping_style,:brand,images_attributes:[:image]).merge(saler_id: current_user.id)
+  params.require(:item).permit(:name,:text,:condition,:first_genre_id,:second_genre_id,:third_genre_id,:size,:postage,:sending_region,:shipping_day,:price,:shipping_style,:brand,images_attributes:[:image]).merge(saler_id: current_user.id,status: 1)
 end
 
 def edit_params
