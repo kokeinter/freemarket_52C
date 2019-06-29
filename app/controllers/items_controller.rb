@@ -45,6 +45,9 @@ class ItemsController < ApplicationController
     @third=Category.find(@item.third_genre_id)
     @comment=Comment.new
     @comments=@item.comments
+    if @item.saler_id == current_user.id
+      redirect_to action: 'before_edit'
+    end
   end
 
   def before_edit

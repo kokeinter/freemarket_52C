@@ -13,21 +13,8 @@
       .items-box-content.clearfix
         - @items.each do |item|
           - images=Image.where("item_id=?",item.id).limit(1)
-          = link_to "items/#{item.id}", class:"item-show-link" do
-            .items-box
-              .detail-page
-                -images.each do |image|
-                  = image_tag image.image.url, class: "detail-page__img"
-                .detail-page__body
-                  %h3.item-name
-                    = item.name
-                  .item-price.clearfix
-                    = item.price
-                  %span.like-count
-                    1
-                  %i.far.fa-heart.item__like-icon
-                  .item-tax
-                    (税込)
+          = link_to item_path(item.id), class:"item-show-link" do
+            = render 'item', item: item, images: images
 
   .pickup-contents
     %h2.pickup-contents__title
@@ -38,21 +25,8 @@
       .items-box-content.clearfix
         - @ladies_items.each do |item|
           - images=Image.where("item_id=?",item.id).limit(1)
-          = link_to "items/#{item.id}", class:"item-show-link" do
-            .items-box
-              .detail-page
-                -images.each do |image|
-                  = image_tag image.image.url, class: "detail-page__img"
-                .detail-page__body
-                  %h3.item-name
-                    = item.name
-                  .item-price.clearfix
-                    = item.price
-                  %span.like-count
-                    1
-                  %i.far.fa-heart.item__like-icon
-                  .item-tax
-                    (税込)
+          = link_to item_path(item.id), class:"item-show-link" do
+            = render 'item', item: item, images: images
   .pickup-content__all
     = link_to "すべての商品を見る", root_path, class: "pickup-content__all-btn"
   
@@ -63,21 +37,8 @@
       .items-box-content.clearfix
         - @mens_items.each do |item|
           - images=Image.where("item_id=?",item.id).limit(1)
-          = link_to "items/#{item.id}", class:"item-show-link" do
-            .items-box
-              .detail-page
-                -images.each do |image|
-                  = image_tag image.image.url, class: "detail-page__img"
-                .detail-page__body
-                  %h3.item-name
-                    = item.name
-                  .item-price.clearfix
-                    = item.price
-                  %span.like-count
-                    1
-                  %i.far.fa-heart.item__like-icon
-                  .item-tax
-                    (税込)
+          = link_to item_path(item.id), class:"item-show-link" do
+            = render 'item', item: item, images: images
   .pickup-content__all
     = link_to "すべての商品を見る", root_path, class: "pickup-content__all-btn"
   
@@ -88,21 +49,8 @@
       .items-box-content.clearfix
         - @baby_kids_items.each do |item|
           - images=Image.where("item_id=?",item.id).limit(1)
-          = link_to "items/#{item.id}", class:"item-show-link" do
-            .items-box
-              .detail-page
-                -images.each do |image|
-                  = image_tag image.image.url, class: "detail-page__img"
-                .detail-page__body
-                  %h3.item-name
-                    = item.name
-                  .item-price.clearfix
-                    = item.price
-                  %span.like-count
-                    1
-                  %i.far.fa-heart.item__like-icon
-                  .item-tax
-                    (税込)
+          = link_to item_path(item.id), class:"item-show-link" do
+            = render 'item', item: item, images: images
   .pickup-content__all
     = link_to "すべての商品を見る", root_path, class: "pickup-content__all-btn"
   
@@ -113,21 +61,8 @@
       .items-box-content.clearfix
         - @cosme_items.each do |item|
           - images=Image.where("item_id=?",item.id).limit(1)
-          = link_to "items/#{item.id}", class:"item-show-link" do
-            .items-box
-              .detail-page
-                -images.each do |image|
-                  = image_tag image.image.url, class: "detail-page__img"
-                .detail-page__body
-                  %h3.item-name
-                    = item.name
-                  .item-price.clearfix
-                    = item.price
-                  %span.like-count
-                    1
-                  %i.far.fa-heart.item__like-icon
-                  .item-tax
-                    (税込)
+          = link_to item_path(item.id), class:"item-show-link" do
+            = render 'item', item: item, images: images
   .pickup-content__all
     = link_to "すべての商品を見る", root_path, class: "pickup-content__all-btn"
   
@@ -140,21 +75,8 @@
       .items-box-content.clearfix
         - @chanel_items.each do |item|
           - images=Image.where("item_id=?",item.id).limit(1)
-          = link_to "items/#{item.id}", class:"item-show-link" do
-            .items-box
-              .detail-page
-                -images.each do |image|
-                  = image_tag image.image.url, class: "detail-page__img"
-                .detail-page__body
-                  %h3.item-name
-                    = item.name
-                  .item-price.clearfix
-                    = item.price
-                  %span.like-count
-                    1
-                  %i.far.fa-heart.item__like-icon
-                  .item-tax
-                    (税込)
+          = link_to item_path(item.id), class:"item-show-link" do
+            = render 'item', item: item, images: images
   .pickup-content__all
     = link_to "すべての商品を見る", root_path, class: "pickup-content__all-btn"
   
@@ -165,21 +87,8 @@
       .items-box-content.clearfix
         - @vuitton_items.each do |item|
           - images=Image.where("item_id=?",item.id).limit(1)
-          = link_to "items/#{item.id}", class:"item-show-link" do
-            .items-box
-              .detail-page
-                -images.each do |image|
-                  = image_tag image.image.url, class: "detail-page__img"
-                .detail-page__body
-                  %h3.item-name
-                    = item.name
-                  .item-price.clearfix
-                    = item.price
-                  %span.like-count
-                    1
-                  %i.far.fa-heart.item__like-icon
-                  .item-tax
-                    (税込)
+          = link_to item_path(item.id), class:"item-show-link" do
+            = render 'item', item: item, images: images
   .pickup-content__all
     = link_to "すべての商品を見る", root_path, class: "pickup-content__all-btn"
 
@@ -190,21 +99,8 @@
       .items-box-content.clearfix
         - @supreme_items.each do |item|
           - images=Image.where("item_id=?",item.id).limit(1)
-          = link_to "items/#{item.id}", class:"item-show-link" do
-            .items-box
-              .detail-page
-                -images.each do |image|
-                  = image_tag image.image.url, class: "detail-page__img"
-                .detail-page__body
-                  %h3.item-name
-                    = item.name
-                  .item-price.clearfix
-                    = item.price
-                  %span.like-count
-                    1
-                  %i.far.fa-heart.item__like-icon
-                  .item-tax
-                    (税込)
+          = link_to item_path(item.id), class:"item-show-link" do
+            = render 'item', item: item, images: images
   .pickup-content__all
     = link_to "すべての商品を見る", root_path, class: "pickup-content__all-btn"
 
@@ -215,21 +111,8 @@
       .items-box-content.clearfix
         - @nike_items.each do |item|
           - images=Image.where("item_id=?",item.id).limit(1)
-          = link_to "items/#{item.id}", class:"item-show-link" do
-            .items-box
-              .detail-page
-                -images.each do |image|
-                  = image_tag image.image.url, class: "detail-page__img"
-                .detail-page__body
-                  %h3.item-name
-                    = item.name
-                  .item-price.clearfix
-                    = item.price
-                  %span.like-count
-                    1
-                  %i.far.fa-heart.item__like-icon
-                  .item-tax
-                    (税込)
+          = link_to item_path(item.id), class:"item-show-link" do
+            = render 'item', item: item, images: images
   .pickup-content__all
     = link_to "すべての商品を見る", root_path, class: "pickup-content__all-btn"
 
