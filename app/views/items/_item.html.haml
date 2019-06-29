@@ -1,0 +1,14 @@
+.items-box
+  .detail-page
+    - images.each do |image|
+      = image_tag image.image.url, class: "detail-page__img"
+    .detail-page__body
+      %h3.item-name
+        = item.name
+      .item-price.clearfix
+        = item.price
+      %span.like-count
+        1
+      %i.far.fa-heart.item__like-icon
+      .item-tax
+        (税込)
