@@ -1,5 +1,7 @@
 .default-container
-  = render 'header'
+  = render 'items/header'
+  - breadcrumb :mypage
+  = render "layouts/breadcrumbs"
 %main.l-container.clearfix
   = render "sidebar"
   .l-content

@@ -70,7 +70,7 @@
     %h3.mypage-nav-head 設定
     %ul.mypage-nav-list
       %li
-        %a.mypage-nav-list-item{:href => "/"}
+        %a.mypage-nav-list-item{:href => "/users/#{current_user.id}/edit"}
           プロフィール
           %i.fas.fa-chevron-right.mypage-fa
       %li
@@ -86,7 +86,7 @@
           メール/パスワード
           %i.fas.fa-chevron-right.mypage-fa
       %li
-        %a.mypage-nav-list-item{:href => "/"}
+        %a.mypage-nav-list-item{:href => "/users/#{current_user.id}/info"}
           本人情報
           %i.fas.fa-chevron-right.mypage-fa
       %li

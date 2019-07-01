@@ -1,5 +1,4 @@
 $(function(){
-
   function appendSecondSelectBox(){
     var html = `
                 <div class="container__contents__details__right__form__secondgenre">
@@ -223,6 +222,7 @@ $(".container__contents__details__right__form__genre").on("change","#item_third_
 
 function appendShippingStyle1(){
   var html = `
+              <div class="new_select_space">
                 <p>
                   配送の方法
                     <span class="note">
@@ -240,11 +240,14 @@ function appendShippingStyle1(){
                   <option value="ゆうパック">ゆうパック</option>
                   <option value="クリックポスト">クリックポスト</option>
                   <option value="ゆうパケット">ゆうパケット</option>
-              </select>`
+                </select>
+              </div>
+                      `
   return html
 }
 function appendShippingStyle2(){
   var html = `
+            <div class="new_select_space">
               <p>
                 配送の方法
                   <span class="note">
@@ -257,7 +260,8 @@ function appendShippingStyle2(){
                 <option value="クロネコヤマト">クロネコヤマト</option>
                 <option value="ゆうパック">ゆうパック</option>
                 <option value="ゆうメール">ゆうメール</option>
-              </select>`
+              </select>
+              </div>`
   return html
 }
 
@@ -286,17 +290,10 @@ function appendShippingStyle2(){
 
 
 
-//カウントアップする関数 countUp の定義
 
-var id = -1
-
-function countUp(){
-  id++
-  console.log(id)
-}
+//
   
   $("#item_price").on("keyup", function() {
-  console.log(id)
   var price = $(this).val();
   var cost = price/10
   cost = Math.floor(cost) 
@@ -305,19 +302,31 @@ function countUp(){
   appendprofit(price,profit)
   })
 
+
+  //カウントアップする関数 countUp の定義
+
+var id = -1
+
+function countUp(){
+  id++
+}
+
+  //ページが読み込まれた時
+
   $(document).ready(function() {
     var file=document.querySelector('input[class=image_select]')
     var label=$(file).parent()
     $(label).attr("class","image_select_label")
   });
-  
 
+  //画像を入力した時
+  
   $(document).on("change",".image_select", function() {
-    countUp()
+    countUp()    
     var label = $(this).parent()
     $(label).css("display","none")
     var reader  = new FileReader();
-    var file    = document.querySelector('input[class=image_select]').files[0];
+    var file    = this.files[0]
     $(this).attr("class","completed")
     reader.readAsDataURL(file)
     reader.addEventListener("load", function () {
@@ -327,18 +336,157 @@ function countUp(){
     var label=$(file).parent()
     $(label).attr("class","image_select_label")
     }, false);
+    $("#item_images_attributes_0_image-error").remove()
+    });
 
-  });
+
+
+    //削除ボタンが押された時
+
   $(document).on("click",".selected_image_right", function() {
-    console.log("ok!")
     var id = $(this).attr("id")
+    var value =$(this).attr("class") 
+    $("#image_list").append('<input type=hidden name = delete_images[] value=' + value + '>')
     $("#selected_image_wrapper_"+id).remove()
     $("#item_images_attributes_"+id+"_image").val("")
-    var label=$("#item_images_attributes_"+id+"_image").parent()
-    $(label).css("display","block")
-    $(label).css("class","before_label")
+    $("image_select_label").attr("class","before_label")
   });
-  $('#new_item_form').on('submit', function(){
+
+  //バリデーション
+
+  $("#new_item").validate({
+    rules : {
+      "item[images_attributes][0][image]": {
+        required: true
+       },
+      "item[name]": {
+        required: true
+       },
+       "item[text]": {
+        required: true
+       },
+       "item[first_genre_id]": {
+        required: true
+       },
+       "item[second_genre_id]": {
+        required: true
+       },
+       "item[third_genre_id]": {
+        required: true
+       },
+       "item[size]": {
+        required: true
+       },
+       "item[condition]": {
+        required: true
+       },
+       "item[postage]": {
+        required: true
+       },
+       "item[shipping_style]": {
+        required: true
+       },
+       "item[sending_region]": {
+        required: true
+       },
+       "item[shipping_day]": {
+        required: true
+       },
+       "item[price]": {
+        required: true
+       }
+    },
+    messages: {
+      "item[images_attributes][0][image]": {
+        required: "画像がありません"
+       },
+      "item[name]":{
+          required: "入力してください"
+       },
+       "item[text]": {
+        required: "入力してください"
+       },
+       "item[first_genre_id]": {
+        required: "選択してください"
+       },
+       "item[second_genre_id]": {
+        required: "選択してください"
+       },
+       "item[third_genre_id]": {
+        required: "選択してください"
+       },
+       "item[size]": {
+        required: "選択してください"
+       },
+       "item[condition]": {
+        required: "選択してください"
+       },
+       "item[postage]": {
+        required: "選択してください"
+       },
+       "item[shipping_style]": {
+        required: "選択してください"
+       },
+       "item[sending_region]": {
+        required: "選択してください"
+       },
+       "item[shipping_day]": {
+        required: "選択してください"
+       },
+       "item[price]": {
+        required:"300以上9999999以下で入力してください",
+       }
+      },
+      errorPlacement: function(error, element) {
+        if(element.attr("name")=="item[price]")
+        {
+          error.insertAfter("#price_error");	
+        }
+        else if(element.attr("name")=="item[images_attributes][0][image]") {
+          error.insertAfter("#image_error");
+        }
+        else{
+          error.insertAfter(element);	
+        }
+      }
+  });
+
+   //データが送信された時
+   
+  $('#new_item').on('click', function(){
     $(".completed").css("display","block");
   })
+
+
+
+  //編集ページ
+
+  //ページが読み込まれた時
+  $(document).ready(function() {
+    var image_0=document.querySelector('#selected_image_wrapper_0')
+    var image_1=document.querySelector('#selected_image_wrapper_1')
+    var image_2=document.querySelector('#selected_image_wrapper_2')
+    var image_3=document.querySelector('#selected_image_wrapper_3')
+    var image_4=document.querySelector('#selected_image_wrapper_4')
+    var image_5=document.querySelector('#selected_image_wrapper_5')
+    var image_6=document.querySelector('#selected_image_wrapper_6')
+    var image_7=document.querySelector('#selected_image_wrapper_7')
+    var image_8=document.querySelector('#selected_image_wrapper_8')
+    var image_9=document.querySelector('#selected_image_wrapper_9')
+    var image_10=document.querySelector('#selected_image_wrapper_10')
+    $(image_0).attr("class","selected_image_wrapper")
+    $(image_1).attr("class","selected_image_wrapper")
+    $(image_2).attr("class","selected_image_wrapper")
+    $(image_3).attr("class","selected_image_wrapper")
+    $(image_4).attr("class","selected_image_wrapper")
+    $(image_5).attr("class","selected_image_wrapper")
+    $(image_6).attr("class","selected_image_wrapper")
+    $(image_7).attr("class","selected_image_wrapper")
+    $(image_8).attr("class","selected_image_wrapper")
+    $(image_9).attr("class","selected_image_wrapper")
+    $(image_10).attr("class","selected_image_wrapper")
+    $(".after_delete").remove()
+    // $(".selected_image_wrapper").remove()
+  });
+
 });

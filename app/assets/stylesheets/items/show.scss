@@ -31,7 +31,7 @@
     height: 420px;
   }
   &-price-box{
-    padding:30px 50px 0 40px;
+    margin-top:20px;
     float: left;
     margin-bottom: 30px;
   }
@@ -54,8 +54,17 @@
     text-decoration: none;
     color:white;
     padding: 8px 240px 8px 240px;
-    // visibility:hidden
     font-size: 25px;
+    &2{
+      border-radius: 5px;
+    float: left;
+    margin: 0px 0px 0px 20px;
+    background-color: gray;
+    text-decoration: none;
+    color:white;
+    padding: 8px 240px 8px 240px;
+    font-size: 25px;
+    }
   
   }
   &-detail-table{

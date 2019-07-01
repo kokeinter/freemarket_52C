@@ -1,4 +1,6 @@
 = render 'header'
+- breadcrumb :item,@item
+= render "layouts/breadcrumbs"
 .item-show-wrapper
   %section.item-box-container
     %h1.item-name-show 
@@ -81,11 +83,14 @@
         %span.item-tax (税込)
         %span.item-shipping-fee
           =@item.shipping_style
-      .sales-point-message
-        売上金 ¥ 270 をお持ちです
-      %section.visible-sp
-        %a.item-buy-btn{"data-client" => "hidden", :href => "/items/#{@item.id}/buy"} 購入画面に進む
-        .item-btn-float-area
+      -if @item.status == 1
+        .sales-point-message
+          売上金 ¥ 270 をお持ちです
+        %section.visible-sp
+          %a.item-buy-btn{ :href => "/items/#{@item.id}/buy"} 購入画面に進む
+          .item-btn-float-area
+      -else
+        %a.item-buy-btn2 売り切れです
     .item-description
       %p.item-description-inner
       =@item.text

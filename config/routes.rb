@@ -22,15 +22,13 @@ Rails.application.routes.draw do
   resources :items do
     member do
       get "buy","before_edit","done"
-    end
-    member do
       post "pay"
     end
     resources :comments, only: [:create]
   end
   
   resources :addresses ,only:[:new,:create]
-  resources :creditcards ,only:[:new,:create]
+  resources :creditcards ,only:[:new,:create] 
   resources :categories
 
 

@@ -9,6 +9,6 @@ class User < ApplicationRecord
         has_many :points, dependent: :destroy		
         has_many :creditcards, dependent: :destroy		
         has_many :items, dependent: :destroy		
-        has_one :adress, dependent: :destroy
-        
+        has_one :address, dependent: :destroy
+        has_one :creditcard,  dependent: :destroy
 end

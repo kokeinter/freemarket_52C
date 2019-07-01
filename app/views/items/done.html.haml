@@ -22,13 +22,16 @@
       -# 商品情報
       .container__contents__itemdone
         .container__contents__itemdone__image
-          = "image"
+          - images=Image.where("item_id=?",@item.id).limit(1)
+          -images.each do |image|
+            = image_tag image.image.url, width: "100%" ,height: "100%"
         .container__contents__itemdone__name
-          = "name"
+          = @item.name
           
       -# 金額
       .container__contents__price
-        %span ¥ 金額
+        %span ¥ 
+        =@item.price
         = "送料込み"
 
       -# 配送先
@@ -37,11 +40,14 @@
           .container__contents__address__box__title
             = "配送先"
           .container__contents__address__box__address
-            = "〒000-0000"
+            〒
+            = @address.post_id
             %br
-            = "神奈川県"
+            = @address.prefecture 
+            = @address.city
+            = @address.address 
             %br
-            = "名前"
+            = @current_user.nickname
 
       -# 支払い方法
       .container__contents__payment
