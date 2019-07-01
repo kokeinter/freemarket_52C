@@ -41,36 +41,44 @@
     padding: 30px 32px;
     .link-facebook{
       background-color: #385185;
-      margin: 0 40px 20px;
-      padding:10px 0;
+      margin: 10px 40px 20px;
+      padding-top:10px;
       cursor: pointer;
-
+      .facebook-icon-1{
+        color:#fff;
+        background: #385185;
+        font-size:30px;
+        margin-right:10px;
+        
+      }
       
       a{
         color:#fff;
         line-height: 40px;
         text-decoration: none;
+        margin-left:20px;
 
       }
-      img{
-        float: left;
-        padding-top:5px;
-      }
+      
     }
     .link-google{
       background-color: #fff;
       border: #979797 solid 1px;
       margin: 0 40px 20px;
+      padding:5px 0;
       line-height: 40px;
       cursor: pointer;
-      padding:10px 0;
 
       a{
         color: black;
         text-decoration: none;
+        margin-right:30px;
       }
       img{
+        width:40px;
+        height:35px;
         float: left;
+        margin-left: 60px;
       }
     }
     .field-4{

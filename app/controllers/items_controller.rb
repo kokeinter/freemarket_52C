@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   before_action :item_params,only:[:create]
 
   def index
+    @parents = Category.where(ancestry: nil).order("id ASC")
     @items = Item.all
   end
 

@@ -11,12 +11,34 @@
     .lists__left
       %ul
         %li.categories
+          %i.fas.fa-bars.gategorys-icon
           %h2
             = link_to "カテゴリから探す", "/", class: "categories-btn"
+          .category-first
+            - @parents.each do |parent|
+              .category-item{value:"#{parent.id}"} 
+                =parent.name
+          .category-second
+          .category-third
+            
         %li.brands
+          %i.fas.fa-tag.tag-icon
           %h2
             = link_to "ブランドから探す", "/", class: "brands-btn"
-    
+          .brands-values
+            .brands-category-1
+              シャネル
+            .brands-category-2
+              ナイキ
+            .brands-category-3
+              ルイヴィトン
+            .brands-category-4
+              シュプリーム
+            .brands-category-5
+              アディダス
+            .brands-category-6
+              ブランド一覧
+      
     .signin-and-signup
       %ul.account
         - if user_signed_in?

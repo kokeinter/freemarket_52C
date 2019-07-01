@@ -65,34 +65,60 @@ header {
         .categories {
           position: relative;
           display: inline-block;
-          
           h2 {
             font-size: 14px;
             font-weight: 600;
+          }
+          .gategorys-icon{
+            color:red;
+            background:#fff;
+          
+          }
+          
+         
             
             .categories-btn {
               display: block;
               color: #333;
               text-decoration: none;
-             
+              font-size: 14px;
+              font-weight: 600;  
             }
+          
+          .category-first{
+            border: 1px solid rgba(87, 85, 85, 0.205);
           }
+          .category-second{
+            border: 1px solid rgba(87, 85, 85, 0.205);
+          }
+          .category-third{
+            border: 1px solid rgba(87, 85, 85, 0.205); 
+          }
+          
         }
 
         .brands {
           position: relative;
           display: inline-block;
           padding: 0 0 0 16px;
+          .tag-icon{
+            color:red;
+            background:#fff;
+          }
           
           h2 {
             font-size: 14px;
             font-weight: 600;
+            
             
             .brands-btn {
               display: block;
               color: #333;
               text-decoration: none;
             }
+          }
+          .brands-values{
+            border: 1px solid rgba(87, 85, 85, 0.205);
           }
         }  
       }
@@ -215,3 +241,11 @@ header {
     }
   }
 }
+
+.category-first{
+  display:none;
+}
+.brands-values{
+  display:none;
+}
+

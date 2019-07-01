@@ -1,20 +1,150 @@
 $(function(){
-  function append_first_category(){
-    var html = `
-                <div class ="category-contents">
-                  <div class ="category-item">レディース</div><div class ="category-item">メンズ</div><div class ="category-item">ベビー・キッズ</div>
-                  <div class ="category-item">インテリア・住まい・小物</div><div class ="category-item">本・音楽・ゲーム</div>
-                  <div class ="category-item">おもちゃ・ホビー・グッズ</div><div class ="category-item">コスメ・香水・美容</div>
-                  <div class ="category-item">家電・スマホ・カメラ</div><div class ="category-item">スポーツ・レジャー</div><div class ="category-item">ハンドメイド</div>
-                  <div class ="category-item">チケット</div><div class ="category-item">自動車・オートバイ</div><div class ="category-item">その他</div>
-                  <div class ="category-item">カテゴリ一覧</div>
-                </div>`
-    return html
+  function appendOptionGrandchild(grandchild){
+    var html = `<div class ="third-item" value="${grandchild.id}">${grandchild.name}</div>`
+    $(".category-third").append(html)
   }
+  function appendOptionChild(child){
+    var html = `<div class ="second-item" value="${child.id}">${child.name}</div>`
+  $(".category-second").append(html)
+  }
+  
+      //カテゴリから探すをhoverしたら1個目を表示させる
   $(".categories").hover(function(){
-   var html = append_first_category();
-   $('.categories-btn') .append(html)
-   $('.categories').parent().css("display","block","position","fixed")
-   $('.default-container').parent().css("position","absolute")
-  });
+    $('.category-first').css("display","block");
+      //_headerのcssでdisplay:noneと指定してる
+    },function(){
+      //hoverを外したら
+      $('.category-first').css("display","none");
+    });
+ 
+  
+    //一個目にカーソルを当てる(documentは全体の親要素)
+  $(document).on({"mouseenter":function(){
+    $(this).css('background-color','red')
+    $(this).css('color','#fff')
+  
+
+    var parentValue = $(this).attr("value")
+    var url = '/categories'
+    $.ajax({
+      url:url,
+      type:"GET",
+      data:{
+        parent_id: parentValue
+      },
+      dataType: 'json'
+    })
+   
+
+    .done(function(children){
+      children.forEach(function(child){
+       appendOptionChild(child);
+    
+   });
+    })
+    .fail(function(){
+      alert('error');
+    })
+  },"mouseleave": function(){
+    $(this).css('background-color','#fff')
+    $(this).css('color','black')
+
+    $(".second-item").remove();
+  }},".category-item")
+
+  $(document).on({"mouseenter":function(){
+//documentはcategory全体の親要素なのでその親要素の2番目(.second-item)を指定   
+    $(this).css('background-color','red')
+    $(this).css('color','#fff')
+    var secondValue = $(this).attr("value")
+    var url = "categories/" + secondValue
+    $.ajax({
+      url:url,
+      type:"GET",
+      data:{
+        child_id: secondValue
+      },
+      dataType: 'json'
+    })
+
+    .done(function(grandchildren){
+      grandchildren.forEach(function(grandchild){
+        appendOptionGrandchild(grandchild);
+      });
+    })
+    .fail(function(){
+      alert('error');
+    })
+  },"mouseleave": function(){
+    $(this).css('background-color','#fff')
+    $(this).css('color','black')
+
+    $("third-item").remove();
+  }},".second-item")
+
+  //ブランドから探す
+  $('.brands').hover(function(){
+    $('.brands-values').css("display","block")
+  },function(){
+    $('.brands-values').css("display","none");
+  })
+
+  $('.brands-category-1').hover(function(){
+    $('.brands-category-1').css('background-color','red')
+    $('.brands-category-1').css('color','#fff')
+  },function(){
+    $('.brands-category-1').css('background-color','#fff')
+    $('.brands-category-1').css('color','black')
+
+  })
+
+  $('.brands-category-2').hover(function(){
+    $('.brands-category-2').css('background-color','red')
+    $('.brands-category-2').css('color','#fff')
+
+  },function(){
+    $('.brands-category-2').css('background-color','#fff')
+    $('.brands-category-2').css('color','black')
+
+  })
+
+  $('.brands-category-3').hover(function(){
+    $('.brands-category-3').css('background-color','red')
+    $('.brands-category-3').css('color','#fff')
+
+  },function(){
+    $('.brands-category-3').css('background-color','#fff')
+    $('.brands-category-3').css('color','black')
+
+  })
+
+  $('.brands-category-4').hover(function(){
+    $('.brands-category-4').css('background-color','red')
+    $('.brands-category-4').css('color','#fff')
+
+  },function(){
+    $('.brands-category-4').css('background-color','#fff')
+    $('.brands-category-4').css('color','black')
+
+  })
+
+  $('.brands-category-5').hover(function(){
+    $('.brands-category-5').css('background-color','red')
+    $('.brands-category-5').css('color','#fff')
+
+  },function(){
+    $('.brands-category-5').css('background-color','#fff')
+    $('.brands-category-5').css('color','black')
+
+  })
+
+  $('.brands-category-6').hover(function(){
+    $('.brands-category-6').css('background-color','red')
+    $('.brands-category-6').css('color','#fff')
+
+  },function(){
+    $('.brands-category-6').css('background-color','#fff')
+    $('.brands-category-6').css('color','black')
+
+  })
 });
