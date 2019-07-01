@@ -60,6 +60,21 @@ header {
         .categories {
           position: relative;
           display: inline-block;
+
+          // display: table;
+          h2 {
+            font-size: 14px;
+            font-weight: 600;
+          }
+          
+         
+            
+            .categories-btn {
+              display: block;
+              color: #333;
+              text-decoration: none;
+              font-size: 14px;
+              font-weight: 600;  
           
           .categories-link {
             font-size: 14px;
@@ -75,19 +90,31 @@ header {
             }
             &-btn  {
               color: #333;
+
             }
-          }
+          
+        
+          
         }
 
         .brands {
           position: relative;
           display: inline-block;
           padding: 0 0 0 16px;
+          .tag-icon{
+            color:red;
+            background:#fff;
+          }
           
           .brands-link {
             width: 150px;
             font-size: 14px;
             font-weight: 600;
+            
+            
+            .brands-btn {
+              display: block;
+
             text-decoration: none;
             display: inline-block;
             &__tag-icon {
@@ -98,8 +125,12 @@ header {
             }
 
             &-btn {
+
               color: #333;
             }
+          }
+          .brands-values{
+            border: 1px solid rgba(87, 85, 85, 0.205);
           }
         }  
       }
@@ -264,3 +295,28 @@ header {
     }
   }
 }
+
+.category-first{
+  border: 1px solid rgba(87, 85, 85, 0.205);
+  // display: table;
+  // table-layout:fixed;
+  display: none;
+}
+.category-second{
+  border: 1px solid rgba(87, 85, 85, 0.205);
+  // display: table-cell;
+  // table-layout:fixed;
+
+}
+.category-third{
+  border: 1px solid rgba(87, 85, 85, 0.205);
+  // display: table-cell; 
+  // table-layout:fixed;
+  // display:none;
+
+}
+
+.brands-values{
+  display:none;
+}
+
