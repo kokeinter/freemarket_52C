@@ -5,7 +5,7 @@ $(function(){
   }
   function appendOptionChild(child){
     var html = `<div class ="second-item" value="${child.id}">${child.name}</div>`
-  $(".category-second").append(html)
+  $(".category-second").after(html)
   }
   
       //カテゴリから探すをhoverしたら1個目を表示させる
@@ -15,6 +15,7 @@ $(function(){
     },function(){
       //hoverを外したら
       $('.category-first').css("display","none");
+      // $('.category-second').css("display","none");
 
     });
  
@@ -23,11 +24,9 @@ $(function(){
   $(document).on({"mouseenter":function(){
     $(this).css('background-color','red')
     $(this).css('color','#fff')
+    $(".third-item").remove()
+
     // $('.category-second').css("display","block");
-
-
-  
-
     var parentValue = $(this).attr("value")
     var url = '/categories'
     $.ajax({
@@ -41,11 +40,9 @@ $(function(){
    
 
     .done(function(children){
-      $(".second-item").empty()
+      $(".second-item").remove()
       children.forEach(function(child){
        appendOptionChild(child);
-       console.log("add")
-    
    });
     })
     .fail(function(){
@@ -54,6 +51,8 @@ $(function(){
   },"mouseleave": function(){
     $(this).css('background-color','#fff')
     $(this).css('color','black')
+    
+
 
   }},".category-item")
 
@@ -61,7 +60,7 @@ $(function(){
 //documentはcategory全体の親要素なのでその親要素の2番目(.second-item)を指定   
     $(this).css('background-color','red')
     $(this).css('color','#fff')
-    console.log("ok")
+
     var secondValue = $(this).attr("value")
     var url = "categories/" + secondValue
     $.ajax({
@@ -72,8 +71,9 @@ $(function(){
       },
       dataType: 'json'
     })
+
     .done(function(grandchildren){
-      console.log("ok2")
+      $(".third-item").remove()
       grandchildren.forEach(function(grandchild){
         appendOptionGrandchild(grandchild);
       });
@@ -84,8 +84,25 @@ $(function(){
   },"mouseleave": function(){
     $(this).css('background-color','#fff')
     $(this).css('color','black')
+    
+
   }},".second-item")
-  
+
+  $(document).on({"mouseenter":function(){
+    $(this).css('background-color','red')
+    $(this).css('color','#fff')
+  },"mouseleave": function(){
+    $(this).css('background-color','#fff')
+    $(this).css('color','black')
+    
+
+  }},".third-item")
+
+  $('.category-first').hover(function(){
+  },function(){
+    $(".second-item").remove();
+  })
+
 
   //ブランドから探す
   $('.brands').hover(function(){

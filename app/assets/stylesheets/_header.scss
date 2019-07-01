@@ -232,13 +232,13 @@ header {
 
 .category-first{
   border: 1px solid rgba(87, 85, 85, 0.205);
-  display: table;
-  table-layout:fixed;
+  // display: table;
+  // table-layout:fixed;
   display: none;
 }
 .category-second{
   border: 1px solid rgba(87, 85, 85, 0.205);
-  display: table-cell;
+  // display: table-cell;
   // table-layout:fixed;
 
 }
