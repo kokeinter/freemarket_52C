@@ -10,10 +10,10 @@
     .lists__left
       %ul.lists__left-list
         %li.categories
-
-          %h2
-            = link_to "カテゴリから探す", "/", class: "categories-btn" do
-              %i.fas.fa-list-ul.categories-link__list-icon
+          = link_to "/", class:"categories-link" do
+            %i.fas.fa-list-ul.categories-link__list-icon
+            .categories-link-btn
+              カテゴリから探す
           .category-first
             - @parents.each do |parent|
               .category-item{value:"#{parent.id}"} 
@@ -22,9 +22,10 @@
             .category-third
 
         %li.brands
-          %h2
-            = link_to "ブランドから探す", "/", class: "brands-btn" do 
-              %i.fas.fa-tag.brands-link__tag-icon
+          = link_to "/", class:"brands-link" do
+            %i.fas.fa-tag.brands-link__tag-icon
+            .brands-link-btn
+              ブランドから探す
           .brands-values
             .brands-category-1
               シャネル

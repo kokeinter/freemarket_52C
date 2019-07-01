@@ -20,7 +20,6 @@ header {
         cursor: pointer;        
       }
     }
-
     &__search {
       position: relative;
       width: calc(100% - (134px + 40px));
@@ -46,6 +45,7 @@ header {
       }
     }
   }
+  
 
   .lists {
     margin: 8px 0 0 ;
@@ -66,15 +66,13 @@ header {
             font-size: 14px;
             font-weight: 600;
           }
-          
-         
-            
             .categories-btn {
               display: block;
               color: #333;
               text-decoration: none;
               font-size: 14px;
-              font-weight: 600;  
+              font-weight: 600; 
+            } 
           
           .categories-link {
             font-size: 14px;
@@ -92,9 +90,7 @@ header {
               color: #333;
 
             }
-          
-        
-          
+          }
         }
 
         .brands {
@@ -114,7 +110,6 @@ header {
             
             .brands-btn {
               display: block;
-
             text-decoration: none;
             display: inline-block;
             &__tag-icon {
@@ -123,18 +118,19 @@ header {
               margin: 2px 10px 2px 0;
               float: left;
             }
-
             &-btn {
 
               color: #333;
             }
           }
+        }
           .brands-values{
             border: 1px solid rgba(87, 85, 85, 0.205);
           }
         }  
       }
     }
+    
 
     .signin-and-signup {
       .account {
@@ -319,4 +315,3 @@ header {
 .brands-values{
   display:none;
 }
-
