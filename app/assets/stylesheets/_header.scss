@@ -65,14 +65,10 @@ header {
         .categories {
           position: relative;
           display: inline-block;
+          // display: table;
           h2 {
             font-size: 14px;
             font-weight: 600;
-          }
-          .gategorys-icon{
-            color:red;
-            background:#fff;
-          
           }
           
          
@@ -85,15 +81,7 @@ header {
               font-weight: 600;  
             }
           
-          .category-first{
-            border: 1px solid rgba(87, 85, 85, 0.205);
-          }
-          .category-second{
-            border: 1px solid rgba(87, 85, 85, 0.205);
-          }
-          .category-third{
-            border: 1px solid rgba(87, 85, 85, 0.205); 
-          }
+        
           
         }
 
@@ -243,8 +231,25 @@ header {
 }
 
 .category-first{
-  display:none;
+  border: 1px solid rgba(87, 85, 85, 0.205);
+  display: table;
+  table-layout:fixed;
+  display: none;
 }
+.category-second{
+  border: 1px solid rgba(87, 85, 85, 0.205);
+  display: table-cell;
+  // table-layout:fixed;
+
+}
+.category-third{
+  border: 1px solid rgba(87, 85, 85, 0.205);
+  // display: table-cell; 
+  // table-layout:fixed;
+  // display:none;
+
+}
+
 .brands-values{
   display:none;
 }

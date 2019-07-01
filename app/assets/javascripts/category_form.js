@@ -15,6 +15,7 @@ $(function(){
     },function(){
       //hoverを外したら
       $('.category-first').css("display","none");
+
     });
  
   
@@ -22,6 +23,9 @@ $(function(){
   $(document).on({"mouseenter":function(){
     $(this).css('background-color','red')
     $(this).css('color','#fff')
+    // $('.category-second').css("display","block");
+
+
   
 
     var parentValue = $(this).attr("value")
@@ -37,8 +41,10 @@ $(function(){
    
 
     .done(function(children){
+      $(".second-item").empty()
       children.forEach(function(child){
        appendOptionChild(child);
+       console.log("add")
     
    });
     })
@@ -49,13 +55,13 @@ $(function(){
     $(this).css('background-color','#fff')
     $(this).css('color','black')
 
-    $(".second-item").remove();
   }},".category-item")
 
   $(document).on({"mouseenter":function(){
 //documentはcategory全体の親要素なのでその親要素の2番目(.second-item)を指定   
     $(this).css('background-color','red')
     $(this).css('color','#fff')
+    console.log("ok")
     var secondValue = $(this).attr("value")
     var url = "categories/" + secondValue
     $.ajax({
@@ -66,8 +72,8 @@ $(function(){
       },
       dataType: 'json'
     })
-
     .done(function(grandchildren){
+      console.log("ok2")
       grandchildren.forEach(function(grandchild){
         appendOptionGrandchild(grandchild);
       });
@@ -78,9 +84,8 @@ $(function(){
   },"mouseleave": function(){
     $(this).css('background-color','#fff')
     $(this).css('color','black')
-
-    $("third-item").remove();
   }},".second-item")
+  
 
   //ブランドから探す
   $('.brands').hover(function(){
