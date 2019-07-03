@@ -1,16 +1,16 @@
 .addresses-new
   .logo-addresses
-    %a{href:"/"}
-      = image_tag 'logo2.png'
+    %a{href: root_path}
+      = image_tag 'logo2.png', class: "user-form__main-logo"
     .logo-2
-      = image_tag 'shinchoku.png'
+      = image_tag 'address-chart.png', class: "chart"
   .addresses
     %h2 発送元・お届け先住所入力
     .one-addresses
-      = form_for @address do |f|
-        .field-addresses
+      = form_for @address,  html: { id: :user_address_form } do |f|
+        .field-addresses.user-address-form__border
           .label-addresses
-            = f.label :お名前 
+            = f.label :お名前
             = f.label :必須,class:"label"
             %br/
           .text-addresses
@@ -62,3 +62,4 @@
         
         .actions-addresses
           = f.submit "次へ進む",class:"btn-addresses"
+  = render '/items/buy_footer'

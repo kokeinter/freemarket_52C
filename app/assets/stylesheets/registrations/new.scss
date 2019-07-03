@@ -1,31 +1,30 @@
 .all-contents{
   height:100%;
   width:100%;
-  background-color: rgba(110, 101, 101, 0.089);
+  background: rgb(245, 245, 245);
+  padding-bottom: 50px;
 
-  
- 
-  .logo
-    img{
-      width: 210px;
+  .logo {
+    width: 100%;
+    .user-form__main-logo{
       height: 100px;
-      margin-left:120px;
-
+      padding-left: 330px;
     }
-  .logo-2{
-    float: right;
-    img{
-      width: 450px;
-      height: 40px;
-      margin-right:200px;
-      margin-top: 40px;
+    .logo-2{
+      float: right;
+      .chart {
+        width: 500px;
+        height: 50px;
+        margin: 20px 360px 0 0;
+      }
     }
   }
   .block{
     padding-top:25px;
     padding-bottom:100px;
     background-color: #fff;
-    margin:auto  250px 300px;
+    margin: 0 auto;
+    width: 700px;
     .second-contents{
       .span{
         font-size: 18px;
@@ -36,9 +35,10 @@
       }
     }
     .one-contens{
+      width: 100%;
       .field{
         padding-top:30px;
-        padding-left:200px;
+        padding-left:220px;
         .form-one{
           margin-bottom:5px;
 
@@ -51,9 +51,12 @@
 
         }
         .form-two{
+          width: 260px;
           .form-name{
-            padding:10px 100px 10px 0;
-            border-radius: 4px; 
+            padding:10px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            width: 260px;
           }
         }
       }
@@ -96,4 +99,7 @@
       }
     }
   }
+}
+.user-form__border {
+  border-top: 1px solid #f5f5f5;
 }
