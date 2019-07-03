@@ -6,96 +6,99 @@
 
   .logo {
     width: 100%;
+    &-header {
+      width: 60%;
+      margin: 0 auto;
     .user-form__main-logo{
       height: 100px;
-      padding-left: 330px;
     }
     .logo-2{
       float: right;
       .chart {
         width: 500px;
         height: 50px;
-        margin: 20px 360px 0 0;
+        margin: 20px 65px 0 0;
+        }
       }
     }
-  }
-  .block{
-    padding-top:25px;
-    padding-bottom:100px;
-    background-color: #fff;
-    margin: 0 auto;
-    width: 700px;
-    .second-contents{
-      .span{
-        font-size: 18px;
-        text-align: center;
-        margin-bottom: 30px;
-        font-weight: bold;
-        font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+    .block{
+      padding-top:25px;
+      padding-bottom:100px;
+      background-color: #fff;
+      margin: 0 auto;
+      width: 700px;
+      .second-contents{
+        .span{
+          font-size: 18px;
+          text-align: center;
+          margin-bottom: 30px;
+          font-weight: bold;
+          font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+        }
       }
-    }
-    .one-contens{
-      width: 100%;
-      .field{
-        padding-top:30px;
-        padding-left:220px;
-        .form-one{
-          margin-bottom:5px;
-
-        }
-        .label{
-          padding:3px ;
-          
-          background-color: red;
-          color:#fff;
-
-        }
-        .form-two{
-          width: 260px;
-          .form-name{
-            padding:10px 0;
-            border-radius: 4px;
-            border: 1px solid #ccc;
+      .one-contens{
+        width: 100%;
+        .field{
+          padding-top:30px;
+          padding-left:220px;
+          .form-one{
+            margin-bottom:5px;
+  
+          }
+          .label{
+            padding:3px ;
+            
+            background-color: red;
+            color:#fff;
+  
+          }
+          .form-two{
             width: 260px;
+            .form-name{
+              padding:10px 0;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              width: 260px;
+            }
           }
         }
-      }
-      select{
-        width:80px;
-        height:50px;
-        cursor: pointer;
-        text-align: center;
-      }
-      h3{
-        text-align: center;
-        padding:10px;
-      }
-      .lobo{
-        text-align: center;
-        .lobo-message{
-          background-color: rgba(110, 101, 101, 0.089);
-          margin:30px 200px;
+        select{
+          width:80px;
+          height:50px;
+          cursor: pointer;
+          text-align: center;
+        }
+        h3{
+          text-align: center;
           padding:10px;
         }
-      }
-      .aaa{
-        text-align: center;
-      }
-      .actions{
-        text-align: center;
-        padding-top:40px;
-        .btn-next{
-          height: 50px;
-          width: 300px;
-          background-color: red;
-          color:#fff;
-          cursor: pointer;
+        .lobo{
+          text-align: center;
+          .lobo-message{
+            background-color: rgba(110, 101, 101, 0.089);
+            margin:30px 200px;
+            padding:10px;
+          }
         }
-      }
-      .in-fo{
-        float: right;
-        padding:30px 170px 0 0;
-        
+        .aaa{
+          text-align: center;
+        }
+        .actions{
+          text-align: center;
+          padding-top:40px;
+          .btn-next{
+            height: 50px;
+            width: 300px;
+            background-color: red;
+            color:#fff;
+            cursor: pointer;
+          }
+        }
+        .in-fo{
+          float: right;
+          padding:30px 170px 0 0;
+          
+        }
       }
     }
   }
