@@ -14,12 +14,12 @@
             %i.fas.fa-list-ul.categories-link__list-icon
             .categories-link-btn
               カテゴリから探す
-          .category-first
-            - @parents.each do |parent|
-              .category-item{value:"#{parent.id}"} 
-                =parent.name
-            .category-second
-            .category-third
+          -# .category-first
+          -#   - @parents.each do |parent|
+          -#     .category-item{value:"#{parent.id}"} 
+          -#       =parent.name
+          -#   .category-second
+          -#   .category-third
 
         %li.brands
           = link_to "/", class:"brands-link" do
