@@ -1,9 +1,9 @@
 .complete
   .logo-complete
-    %a{href:""}
-      = image_tag 'logo2.png'
+    %a{href: root_path}
+      = image_tag 'logo2.png', class: "user-form__main-logo"
     .logo-2
-      = image_tag 'shinchoku.png'
+      = image_tag 'complete-chart.png', class: "chart"
   .complete-contents
     .one-complete
       %h2 会員登録完了
@@ -15,6 +15,6 @@
     .three-complete
       = link_to "メルカリを始める", root_path,class:"btn-complete"
     .footer-complete
-      = image_tag 'complete-footer.jpg',class:"aaa"
-     
+      = link_to image_tag('complete-footer.jpg',class:"aaa"),root_path
+  = render '/items/buy_footer'
 

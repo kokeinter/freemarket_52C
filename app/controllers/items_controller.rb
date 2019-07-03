@@ -31,7 +31,11 @@ class ItemsController < ApplicationController
   end
 
   def buy
-    @creditcard=current_user.creditcard
+    if user_signed_in?
+      @creditcard=current_user.creditcard
+    else
+      redirect_to new_user_path
+    end
   end
   
   def done
@@ -39,15 +43,24 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @images=@item.images
-    @user=User.find(@item.saler_id)
-    @first=Category.find(@item.first_genre_id)
-    @second=Category.find(@item.second_genre_id)
-    @third=Category.find(@item.third_genre_id)
-    @comment=Comment.new
-    @comments=@item.comments
-    if @item.saler_id == current_user.id
+    if current_user == nil
+      @images=@item.images
+      @user=User.find(@item.saler_id)
+      @first=Category.find(@item.first_genre_id)
+      @second=Category.find(@item.second_genre_id)
+      @third=Category.find(@item.third_genre_id)
+      @comment=Comment.new
+      @comments=@item.comments
+    elsif @item.saler_id == current_user.id
       redirect_to action: 'before_edit'
+    else
+      @images=@item.images
+      @user=User.find(@item.saler_id)
+      @first=Category.find(@item.first_genre_id)
+      @second=Category.find(@item.second_genre_id)
+      @third=Category.find(@item.third_genre_id)
+      @comment=Comment.new
+      @comments=@item.comments
     end
   end
 
