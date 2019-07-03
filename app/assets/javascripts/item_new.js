@@ -78,6 +78,8 @@ $(function(){
 
     // ファーストジャンルのidを取得してそのidをAjax通信でコントローラーへ送る
     var parentValue = document.getElementById("item_first_genre_id").value;
+    console.log(parentValue)
+
 
     // 選択したのがprompt（　"---" ）でセカンドジャンルがあれば、削除する
     // なければ非同期通信を実行する

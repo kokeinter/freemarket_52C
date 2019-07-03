@@ -20,7 +20,6 @@ header {
         cursor: pointer;        
       }
     }
-
     &__search {
       position: relative;
       width: calc(100% - (134px + 40px));
@@ -46,6 +45,7 @@ header {
       }
     }
   }
+  
 
   .lists {
     margin: 8px 0 0 ;
@@ -60,6 +60,19 @@ header {
         .categories {
           position: relative;
           display: inline-block;
+
+          // display: table;
+          // h2 {
+          //   font-size: 14px;
+          //   font-weight: 600;
+          // }
+          //   .categories-btn {
+          //     display: block;
+          //     color: #333;
+          //     text-decoration: none;
+          //     font-size: 14px;
+          //     font-weight: 600; 
+          //   } 
           
           .categories-link {
             font-size: 14px;
@@ -83,6 +96,10 @@ header {
           position: relative;
           display: inline-block;
           padding: 0 0 0 16px;
+          // .tag-icon{
+          //   color:red;
+          //   background:#fff;
+          // }
           
           .brands-link {
             width: 150px;
@@ -90,20 +107,29 @@ header {
             font-weight: 600;
             text-decoration: none;
             display: inline-block;
+            
+            // .brands-btn {
+            //   display: block;
+            //   text-decoration: none;
+            //   display: inline-block;
             &__tag-icon {
               color: #ea352d;
               font-size: 16px;
               margin: 2px 10px 2px 0;
               float: left;
             }
-
             &-btn {
+
               color: #333;
             }
+            .brands-values{
+              border: 1px solid rgba(87, 85, 85, 0.205);
+            }
           }
-        }  
+        }
       }
     }
+
 
     .signin-and-signup {
       .account {
@@ -263,4 +289,28 @@ header {
       }
     }
   }
+}
+
+.category-first{
+  border: 1px solid rgba(87, 85, 85, 0.205);
+  // display: table;
+  // table-layout:fixed;
+  display: none;
+}
+.category-second{
+  border: 1px solid rgba(87, 85, 85, 0.205);
+  // display: table-cell;
+  // table-layout:fixed;
+
+}
+.category-third{
+  border: 1px solid rgba(87, 85, 85, 0.205);
+  // display: table-cell; 
+  // table-layout:fixed;
+  // display:none;
+
+}
+
+.brands-values{
+  display:none;
 }

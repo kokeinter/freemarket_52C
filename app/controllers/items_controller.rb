@@ -8,6 +8,10 @@ class ItemsController < ApplicationController
   
 
   def index
+
+    @parents = Category.where(ancestry: nil).order("id ASC")
+    
+
     @items = Item.all.order("id DESC")
     @ladies_items =  Item.all.where(first_genre_id: 1).order("id DESC").limit(4)
     @mens_items =  Item.all.where(first_genre_id: 200).order("id DESC").limit(4)
@@ -17,6 +21,7 @@ class ItemsController < ApplicationController
     @vuitton_items = Item.all.where(brand: "ヴィトン").order("id DESC").limit(4)
     @supreme_items = Item.all.where(brand: "シュプリーム").order("id DESC").limit(4)
     @nike_items = Item.all.where(brand: "ナイキ").order("id DESC").limit(4)
+
   end
 
   def new

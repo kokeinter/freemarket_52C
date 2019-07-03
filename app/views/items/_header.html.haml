@@ -14,11 +14,33 @@
             %i.fas.fa-list-ul.categories-link__list-icon
             .categories-link-btn
               カテゴリから探す
+          -# .category-first
+          -#   - @parents.each do |parent|
+          -#     .category-item{value:"#{parent.id}"} 
+          -#       =parent.name
+          -#   .category-second
+          -#   .category-third
+
         %li.brands
           = link_to "/", class:"brands-link" do
             %i.fas.fa-tag.brands-link__tag-icon
             .brands-link-btn
               ブランドから探す
+          .brands-values
+            .brands-category-1
+              シャネル
+            .brands-category-2
+              ナイキ
+            .brands-category-3
+              ルイヴィトン
+            .brands-category-4
+              シュプリーム
+            .brands-category-5
+              アディダス
+            .brands-category-6
+              ブランド一覧
+      
+
 
     .signin-and-signup
       %ul.account
