@@ -14,8 +14,8 @@
   .new-login{
     background-color: #fff;
     height:100%;
-    width: 40%;
-    margin-left:345px;
+    width: 456px;
+    margin: 0 auto;
     .font{
       padding-top:20px;
       font-size:10px;
@@ -23,82 +23,87 @@
     .link-to-new{
       .link-nav{
         display: block;
-        margin: 8px 70px 20px;
+        margin: 8px 70px 60px;
         border: 1px solid #0099e8;
         background: #0099e8;
         color: #fff;
-        line-height: 40px;
         cursor: pointer;
         text-decoration: none;
-        padding:10px 0;
+        padding:8px 0;
 
       }
     }
   }
   .second-login {
     background-color: #fff;
-    margin:1px 343px 200px;
+    margin: 0 auto;
     padding: 30px 32px;
+    width: 456px;
+    height: 100%;
     .link-facebook{
       background-color: #385185;
-      margin: 10px 40px 20px;
-      padding-top:10px;
+      margin: 0 40px 30px;
+      padding: 5px 0;
       cursor: pointer;
+      position: relative;
+      width: 315px;
       .facebook-icon-1{
         color:#fff;
         background: #385185;
         font-size:30px;
-        margin-right:10px;
-        
+        padding: 5px 15px 0;
+        left: 0;
+        position: absolute; 
       }
       
       a{
         color:#fff;
         line-height: 40px;
         text-decoration: none;
-        margin-left:20px;
-
+        text-align: center;
       }
-      
     }
     .link-google{
       background-color: #fff;
       border: #979797 solid 1px;
       margin: 0 40px 20px;
-      padding:5px 0;
+      padding: 2px 0;
       line-height: 40px;
       cursor: pointer;
-
+      position: relative;
+      width: 315px;
       a{
         color: black;
         text-decoration: none;
-        margin-right:30px;
+        text-align: center;
       }
       img{
         width:40px;
         height:35px;
-        float: left;
-        margin-left: 60px;
+        margin-left: 10px;
+        position: absolute;
+        left: 0;
       }
     }
     .field-4{
       padding-top:30px;
       padding-bottom:30px;
       .e-mail{
-        padding:10px 60px;
-        
+        padding: 10px 10px;
+        width: 315px;
       }
     }
     .field-5{
       .password{
-        padding:10px 60px;
+        padding: 10px 10px;
+        width: 315px;
       }
     }
     .lobot{
       border: #979797 solid 1px;
       background: #f9f9f9;
       color: #000;
-      margin:30px 60px;
+      margin:30px 70px;
       padding:10px;
     }
     .actions{
@@ -107,7 +112,7 @@
         cursor: pointer;
         margin-top:30px;
         height:50px;
-        width: 300px;
+        width: 315px;
         background: #ea352d;
         border: 1px solid #ea352d;
         color: #fff;
