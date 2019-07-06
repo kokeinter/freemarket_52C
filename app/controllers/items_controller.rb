@@ -107,11 +107,11 @@ class ItemsController < ApplicationController
     redirect_to "/users/#{current_user.id}/items_status" ,notice: '商品を削除しました'
   end
 
-def pay
-  Creditcard.pay(params[:customer_id], @item.price)
-  @item.update(buyer_id: params[:current_user_id],status:2)
-  redirect_to done_item_path(params[:id])
-end
+# def pay
+#   Creditcard.pay(params[:customer_id], @item.price)
+#   @item.update(buyer_id: params[:current_user_id],status:2)
+#   redirect_to done_item_path(params[:id])
+# end
 
 def find_item
   @item=Item.find(params[:id])
