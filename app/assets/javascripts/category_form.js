@@ -8,7 +8,7 @@
 //     var html = `<div class ="second-item" value="${child.id}">${child.name}</div>`
 //   $(".category-second").after(html)
 //   }
-  
+
 //       //カテゴリから探すをhoverしたら1個目を表示させる
 //   $(".categories").hover(function(){
 //     $('.category-first').css("display","block");

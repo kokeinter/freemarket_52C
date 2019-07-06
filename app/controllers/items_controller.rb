@@ -12,7 +12,7 @@ class ItemsController < ApplicationController
     @parents = Category.where(ancestry: nil).order("id ASC")
     
 
-    @items = Item.all.order("id DESC")
+    # @items = Item.all.order("id DESC")
     @ladies_items =  Item.all.where(first_genre_id: 1).order("id DESC").limit(4)
     @mens_items =  Item.all.where(first_genre_id: 200).order("id DESC").limit(4)
     @baby_kids_items = Item.all.where(first_genre_id: 346).order("id DESC").limit(4)

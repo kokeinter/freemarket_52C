@@ -5,16 +5,16 @@
       = image_tag "banner-6th-thanks.jpg"
       = image_tag "banner-camp.jpg"
       = image_tag "banner-natsukashi.jpg"
-  .pickup-contents
-    %h2.pickup-contents__title
-      商品一覧表示
-    %section.items-contents.clearfix
-      %h3.items-contents__title
-      .items-box-content.clearfix
-        - @items.each do |item|
-          - images=Image.where("item_id=?",item.id).limit(1)
-          = link_to item_path(item.id), class:"item-show-link" do
-            = render 'item', item: item, images: images
+  -# .pickup-contents
+    -# %h2.pickup-contents__title
+    -#   商品一覧表示
+    -# %section.items-contents.clearfix
+    -#   %h3.items-contents__title
+    -#   .items-box-content.clearfix
+    -#     - @items.each do |item|
+    -#       - images=Image.where("item_id=?",item.id).limit(1)
+    -#       = link_to item_path(item.id), class:"item-show-link" do
+    -#         = render 'item', item: item, images: images
 
   .pickup-contents
     %h2.pickup-contents__title
