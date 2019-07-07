@@ -6,9 +6,9 @@
           .sold-text
             sold
           .sold-icon
-          -# = image_tag image.image.url, class: "detail-page__img"
+          = image_tag image.image.url, class: "detail-page__img"
       -else
-        -# = image_tag image.image.url, class: "detail-page__img"
+        = image_tag image.image.url, class: "detail-page__img"
     .detail-page__body
       %h3.item-name
         = item.name
