@@ -106,6 +106,7 @@
 }
 .delete-complete{
   &-log{
+  text-align: center;
   height: 60px;
   width: 100%;
   background-color: #dff0d8;
@@ -113,7 +114,6 @@
   opacity: 0;
   }
   &-text{
-    float: right;
     line-height: 60px;
   }
 }

@@ -450,6 +450,104 @@ function countUp(){
         }
       }
   });
+  var edit_id = $('.edit_item').attr("id")
+
+  $("#" + edit_id).validate({
+    rules : {
+      // "item[images_attributes][0][image]": {
+      //   required: true
+      //  },
+      "item[name]": {
+        required: true
+       },
+       "item[text]": {
+        required: true
+       },
+       "item[first_genre_id]": {
+        required: true
+       },
+       "item[second_genre_id]": {
+        required: true
+       },
+       "item[third_genre_id]": {
+        required: true
+       },
+       "item[size]": {
+        required: true
+       },
+       "item[condition]": {
+        required: true
+       },
+       "item[postage]": {
+        required: true
+       },
+       "item[shipping_style]": {
+        required: true
+       },
+       "item[sending_region]": {
+        required: true
+       },
+       "item[shipping_day]": {
+        required: true
+       },
+       "item[price]": {
+        required: true
+       }
+    },
+    messages: {
+      // "item[images_attributes][0][image]": {
+      //   required: "画像がありません"
+      //  },
+      "item[name]":{
+          required: "入力してください"
+       },
+       "item[text]": {
+        required: "入力してください"
+       },
+       "item[first_genre_id]": {
+        required: "選択してください"
+       },
+       "item[second_genre_id]": {
+        required: "選択してください"
+       },
+       "item[third_genre_id]": {
+        required: "選択してください"
+       },
+       "item[size]": {
+        required: "選択してください"
+       },
+       "item[condition]": {
+        required: "選択してください"
+       },
+       "item[postage]": {
+        required: "選択してください"
+       },
+       "item[shipping_style]": {
+        required: "選択してください"
+       },
+       "item[sending_region]": {
+        required: "選択してください"
+       },
+       "item[shipping_day]": {
+        required: "選択してください"
+       },
+       "item[price]": {
+        required:"300以上9999999以下で入力してください",
+       }
+      },
+      errorPlacement: function(error, element) {
+        if(element.attr("name")=="item[price]")
+        {
+          error.insertAfter("#price_error");	
+        }
+        else if(element.attr("name")=="item[images_attributes][0][image]") {
+          error.insertAfter("#image_error");
+        }
+        else{
+          error.insertAfter(element);	
+        }
+      }
+  });
 
    //データが送信された時
    
