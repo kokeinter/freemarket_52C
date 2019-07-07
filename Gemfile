@@ -79,8 +79,7 @@ gem 'ancestry'
 gem 'dotenv-rails'
 # gem "omniauth-rails_csrf_protection"
 gem "dropzonejs-rails"
-# gem 'fog-aws'
-gem 'fog'
+gem 'fog-aws'
 gem 'payjp'
 gem "gretel"
 
