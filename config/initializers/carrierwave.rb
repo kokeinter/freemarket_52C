@@ -17,7 +17,6 @@ CarrierWave.configure do |config|
   config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/freemarket52c2'
 end
 
-storage :fog
 
 # CarrierWave.configure do |config|
 #   if Rails.env.production?
