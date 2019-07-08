@@ -61,7 +61,6 @@
             %input{:maxlength => "4", :name => "cvc", :placeholder => "カード背面4桁もしくは3桁の番号", :type => "text",class:"form-creditcards"}/
             %input{value:"#{@user.id}", :name => "user_id", :type => "hidden"}
             %input{value:"#{@publickey}", :type => "hidden",class:"test"}
-            %input{value:"#{@secretkey}", :type => "hidden"}
           .help-creditcards
             =link_to "カード裏面の番号とは？",class:"link-creditcards"
         .actions-creditcards
