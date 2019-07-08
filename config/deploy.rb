@@ -80,6 +80,7 @@ set :default_env, {
   BASIC_AUTH_USER: ENV["BASIC_AUTH_USER"],
   BASIC_AUTH_PASSWORD: ENV["BASIC_AUTH_PASSWORD"],
   PUBLIC_KEY: ENV["PUBLIC_KEY"]
+  SECRET_KEY: ENV["SECRET_KEY"]
 }
 
 # デプロイ処理が終わった後、Unicornを再起動するための記述
