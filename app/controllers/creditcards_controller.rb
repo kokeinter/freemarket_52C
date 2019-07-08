@@ -4,10 +4,10 @@ class CreditcardsController < ApplicationController
   
   def new
     @user=User.find(current_user.id)
-    if Rails.env.development?
-      @publickey= ENV["PUBLIC_TEST_KEY"]
+    if Rails.env.production?
+     @publickey= ENV["PUBLIC_KEY"]
     else
-      @publickey= ENV["PUBLIC_KEY"]
+      @publickey= ENV["PUBLIC_TEST_KEY"]
     end
   end
 
