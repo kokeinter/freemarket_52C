@@ -1,5 +1,5 @@
 app_path = File.expand_path('../../', __FILE__)
-ENV['BUNDLE_GEMFILE'] = app_path + "/Gemfile"
+ENV['BUNDLE_GEMFILE'] = app_path + "/current/Gemfile"
 
 worker_processes 1
 
