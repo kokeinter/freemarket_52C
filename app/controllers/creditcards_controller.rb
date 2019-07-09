@@ -9,8 +9,7 @@ class CreditcardsController < ApplicationController
 
   def create
     if params[:payjpToken].present?
-      # Payjp::api_key = ENV["SECRET_TEST_KEY"]
-      # customer=Payjp::Customer.create(card: params[:payjpToken])
+      customer=Payjp::Customer.create()
       # Creditcard.create(token: params[:payjpToken],user_id: creditcard_params[:user_id],customer_id: customer[:id])
       redirect_to "/users/complete"
     else
