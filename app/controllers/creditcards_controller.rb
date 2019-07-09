@@ -4,11 +4,7 @@ class CreditcardsController < ApplicationController
   
   def new
     @user=User.find(current_user.id)
-    if Rails.env.production?
-      @publickey= ENV["PUBLIC_KEY"]
-    else
       @publickey= Rails.application.credentials.payjp[:public_test_key]
-    end
   end
 
   def create

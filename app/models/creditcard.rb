@@ -1,11 +1,5 @@
 class Creditcard < ApplicationRecord
-
-    if Rails.env.development?
-      Payjp::api_key = ENV["SECRET_TEST_KEY"]
-    else
-      Payjp::api_key = ENV["SECRET_KEY"]
-    end
-
+    Payjp::api_key = ENV["SECRET_TEST_KEY"]
     def self.pay(customer, amount)
       Payjp::Charge.create(
         amount:   amount,
