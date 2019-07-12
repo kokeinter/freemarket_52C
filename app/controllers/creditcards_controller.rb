@@ -5,6 +5,7 @@ class CreditcardsController < ApplicationController
   def new
     @user=User.find(current_user.id)
     @publickey= ENV["PUBLIC_TEST_KEY"]
+    @test= ENV["SECRET_TEST_KEY"]
   end
 
   def create
